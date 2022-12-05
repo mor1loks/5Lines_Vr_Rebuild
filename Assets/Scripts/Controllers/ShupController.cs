@@ -57,7 +57,8 @@ public class ShupController : AosObjectBase
 
             else if (_blackShup.transform.position == newPos.position)
             {
-                _blackShup.transform.position = Vector3.zero;   
+                _blackShup.transform.position = Vector3.zero;
+                _measureController.SetBlackText(null);
             }
             else if (_redShup.transform.position == newPos.position)
             {
@@ -67,9 +68,11 @@ public class ShupController : AosObjectBase
             }
         }
         if (_redShup.transform.position == Vector3.zero && _blackShup.transform.position == Vector3.zero)
+        {
             _firstMeasure = false;
- 
-
+            _measureController.SetRedText(null);
+            _measureController.SetBlackText(null);
+        }
         return measureText;
     }
 
