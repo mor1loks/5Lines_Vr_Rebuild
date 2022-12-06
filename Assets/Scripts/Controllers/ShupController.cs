@@ -34,6 +34,7 @@ public class ShupController : AosObjectBase
             else if (_redShup.transform.position == newPos.position)
             {
                 _redShup.transform.position = Vector3.zero;
+                _measureController.SetRedText(null);
             }
             else if (_blackShup.transform.position == newPos.position)
             {

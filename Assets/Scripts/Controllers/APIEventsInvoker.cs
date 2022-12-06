@@ -122,7 +122,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnSetStartText(string headerText, string commentText, string buttonText, NextButtonState state)
     {
-        _startScreenController.EnableStartScreen(headerText, commentText, buttonText, state);
+        _startScreenController.EnableStartScreen(headerText, HtmlToText.Instance.HTMLToTextReplace(commentText), buttonText, state);
     }
     private void OnSetMeasureValue(float value)
     {

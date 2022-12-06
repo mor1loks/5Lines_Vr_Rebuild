@@ -384,12 +384,14 @@ namespace AosSdk.Core.Utils
                 return;
             }
 
+            //Debug.Log($"Disconnecting socket");
+
             ResetSocket();
         }
 
         private void ResetSocket()
         {
-            Debug.Log("AosSdk: web socket server restart: client lost");
+            Debug.LogWarning("AosSdk: web socket server restart: client lost");
 
             _serverSocket.Close();
             _serverSocket = null;
@@ -399,7 +401,7 @@ namespace AosSdk.Core.Utils
             Init(_ipEndPoint);
         }
 
-        private static bool IsSocketConnected(Socket socket) => !socket.Poll(1000, SelectMode.SelectRead) || socket.Available != 0;
+        private static bool IsSocketConnected(Socket socket) => socket.Connected;
 
         private void OnDisable()
         {
