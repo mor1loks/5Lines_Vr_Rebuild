@@ -12,15 +12,8 @@ public class MeasureController : MonoBehaviour
     private string _blackValue;
     private string _redValue;
     private string _pointerValue;
-    private void OnEnable()
-    {
-        _api.OnSetMeasureValue += OnSetDeviceValue;
-    }
-    private void OnDisable()
-    {
-        _api.OnSetMeasureValue += OnSetDeviceValue;
-    }
-    private void OnSetDeviceValue(float value)
+
+   public void SetDeviceValue(float value)
     {
         _pointerValue = _pointerDevice.SetValue(value);
         _measuretext = $"measure_device:{_type}:{_blackValue}:{_redValue}:{_pointerValue}";

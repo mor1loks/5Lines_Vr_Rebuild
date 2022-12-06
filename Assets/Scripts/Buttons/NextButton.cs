@@ -11,26 +11,24 @@ public enum NextButtonState
     Start,
     Fault
 }
-
 public class NextButton : BaseButton
 {
     public UnityAction<string> OnNextButtonPressed;
-    public NextButtonState CurrentState;
-
+    [HideInInspector] public NextButtonState CurrentState;
+    [SerializeField] private API _api;
     public override void OnClicked(InteractHand interactHand)
     {
         if (CurrentState == NextButtonState.Start)
         {
-            OnNextButtonPressed?.Invoke("next");
+            _api.OnInvokeNavAction("next");
             Player.Instance.CanMove = false;
         }
      
         else if (CurrentState == NextButtonState.Fault)
         {
-            OnNextButtonPressed?.Invoke("start");
+            _api.OnInvokeNavAction("start");
             Player.Instance.CanMove = true;
         }
-         
     }
 }
 

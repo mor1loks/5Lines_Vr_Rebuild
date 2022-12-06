@@ -9,7 +9,6 @@ using UnityEngine.Events;
 
 public class Teleporter : MonoBehaviour
 {
-    [SerializeField] private API _api;
     [SerializeField] private CameraFlash _cameraFlash;
     [SerializeField] private Transform _corridorFromFieldPosition;
     [SerializeField] private Transform _fieldPosition;
@@ -20,15 +19,8 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private Transform _startPosition;
 
     private string _previousLocation;
-    private void OnEnable()
-    {
-        _api.OnSetTeleportLocation += OnTeleport;
-    }
-    private void OnDisable()
-    {
-        _api.OnSetTeleportLocation -= OnTeleport;
-    }
-    private void OnTeleport(string locationName)
+
+    public void Teleport(string locationName)
     {
         if (locationName == "start")
             TeleportPlayer(_startPosition);

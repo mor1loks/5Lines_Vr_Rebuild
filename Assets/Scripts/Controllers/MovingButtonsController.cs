@@ -17,15 +17,7 @@ public class MovingButtonsController : MonoBehaviour
     [SerializeField] private GameObject _watchButton;
     [SerializeField] private GameObject _repairButton;
     [SerializeField] private GameObject _adjustButton;
-    private void OnEnable()
-    {
-        _api.OnEnableMovingButton += OnShowButton;
-    }
-    private void OnDisable()
-    {
-        _api.OnEnableMovingButton += OnShowButton;
-    }
-    private void OnShowButton(string name, string text)
+    public void ShowButton(string name, string text)
     {
         if (name == "eye")
         {

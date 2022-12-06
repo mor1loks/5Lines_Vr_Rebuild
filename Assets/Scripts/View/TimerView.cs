@@ -11,16 +11,7 @@ public class TimerView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timerText;
     [SerializeField] private TextMeshProUGUI _vrTimerText;
     [SerializeField] private Timer _timer;
-    [SerializeField] private API _api;
-    private void OnEnable()
-    {
-        _api.OnSetTimerText += OnShowTimerText;
-    }
-    private void OnDisable()
-    {
-        _api.OnSetTimerText -= OnShowTimerText;
-    }
-    public void OnShowTimerText(string time)
+    public void ShowTimerText(string time)
     {
         _timer.TimeChanger(Convert.ToDouble(time));
 

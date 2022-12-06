@@ -17,23 +17,21 @@ public class API : AosObjectBase
 {
     public UnityAction OnShowPlace;
     public UnityAction OnResetMeasureButtons;
+    public UnityAction<float> OnSetMeasureValue;
     public UnityAction<string> OnSetTeleportLocation;
     public UnityAction<string> OnSetNewLocationText;
     public UnityAction<string> OnSetLocation;
     public UnityAction<string> OnActivateBackButton;
     public UnityAction<string> OnEnableDietButtons;
-    public UnityAction<string, string> OnEnableMovingButton;
     public UnityAction<string> OnSetTimerText;
     public UnityAction<string> OnAddMeasureButton;
+    public UnityAction<string, string> OnEnableMovingButton;
     public UnityAction<string, string> OnActivateByName;
     public UnityAction<string, string> OnSetMessageText;
-    public UnityAction<string, string> OnSetResultext;
+    public UnityAction<string, string> OnSetResultText;
     public UnityAction<string, string> OnShowExitText;
     public UnityAction<string, string, string> OnShowMenuText;
     public UnityAction<string, string, string, NextButtonState> OnSetStartText;
-    public UnityAction<float> OnSetMeasureValue;
-
-    [SerializeField] private NextButton _nextButton;
 
     [AosEvent(name: "Перемещение игрока")]
     public event AosEventHandlerWithAttribute EndTween;
@@ -47,15 +45,7 @@ public class API : AosObjectBase
     public event AosEventHandler OnMenu;
 
     public bool MenuTeleport = true;
-    public override void OnEnable()
-    {
-        base.OnEnable();
-       _nextButton.OnNextButtonPressed += OnInvokeNavAction;
-    }
-    private void OnDisable()
-    {
-        _nextButton.OnNextButtonPressed -= OnInvokeNavAction;
-    }
+
     public void Teleport([AosParameter("Задать локацию для перемещения")] string location)
     {
         OnSetTeleportLocation?.Invoke(location);
@@ -108,7 +98,6 @@ public class API : AosObjectBase
         {
             OnActivateBackButton?.Invoke(nav.SelectToken("back").SelectToken("action").ToString());
         }
-        StreetCollidersActivator.Instance.ActivateColliders(place.SelectToken("apiId").ToString());
     }
     [AosAction(name: "Обновить место")]
     public void updatePlace(JArray data)
@@ -119,13 +108,13 @@ public class API : AosObjectBase
             var temp = item.SelectToken("points");
             if (temp != null)
             {
-                Diet diet = FindObjectOfType<Diet>();
-                diet.EnablePlusOrMinus(null);
+                OnEnableDietButtons(null);
                 if (temp is JArray)
                 {
                     foreach (var temp2 in temp)
                     {
-                        diet.EnablePlusOrMinus(temp2.SelectToken("apiId").ToString());
+                        string buttonName = temp2.SelectToken("apiId").ToString();
+                        OnEnableDietButtons(buttonName);
                     }
                 }
             }
@@ -151,7 +140,7 @@ public class API : AosObjectBase
     {
         string headText = info.SelectToken("name").ToString();
         string commentText = HtmlToText.Instance.HTMLToTextReplace(info.SelectToken("eval").ToString()) + "\n" + HtmlToText.Instance.HTMLToTextReplace(info.SelectToken("text").ToString());
-        OnSetResultext?.Invoke(headText, commentText);
+        OnSetResultText?.Invoke(headText, commentText);
     }
     [AosAction(name: "Показать точки")]
     public void showPoints(string info, JArray data)
@@ -186,12 +175,8 @@ public class API : AosObjectBase
            
             else if (item.SelectToken("apiId") != null)
             {
-                Debug.Log("Sucess");
                 string buttonName = item.SelectToken("apiId").ToString();
-                Debug.Log(item.SelectToken("apiId").ToString() + "RADIO");
-                Diet diet = FindObjectOfType<Diet>();
-                Debug.Log(buttonName + "FROM RADIO!");
-                diet.EnablePlusOrMinus(buttonName);
+                OnEnableDietButtons?.Invoke(buttonName);
             }
         }
     }

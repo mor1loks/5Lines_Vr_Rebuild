@@ -12,23 +12,12 @@ public class LastScreenController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _commentText;
     [SerializeField] private GameObject _exitButton;
     [SerializeField] private GameObject _backButton;
-    [SerializeField] private API _api;
-    private void OnEnable()
-    {
-        _api.OnSetMessageText += OnShowMessageScreen;
-        _api.OnSetResultext += OnShowLastScteen;
-    }
-    private void OnDisable()
-    {
-        _api.OnSetMessageText -= OnShowMessageScreen;
-        _api.OnSetResultext -= OnShowLastScteen;
-    }
-    private void OnShowMessageScreen(string headText, string commentText)
+    public void ShowMessageScreen(string headText, string commentText)
     {
         ShowMessageScreen();
       SetText(headText, commentText);
     }
-    private void OnShowLastScteen(string headText, string commentText)
+    public void ShowLastScteen(string headText, string commentText)
     {
         ShowLastScreen();
         SetText(headText, commentText);

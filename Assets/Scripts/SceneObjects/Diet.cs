@@ -9,7 +9,6 @@ public class Diet : MonoBehaviour
     [SerializeField] private SoundPlayer _soundPlayer;
     [SerializeField] private StrelkaButton _strelkaMinus;
     [SerializeField] private StrelkaButton _strelkaPlus;
-
     public void EnableDiet(bool value, Transform position)
     {
         if (value)
@@ -51,8 +50,6 @@ public class Diet : MonoBehaviour
         {
             _diet.SetActive(false);
         }
-
-
     }
     public void EnablePlusOrMinus(string button)
     {
@@ -91,6 +88,5 @@ public class Diet : MonoBehaviour
             _buttonMinus.SetActive(false);
             _buttonPlus.SetActive(false);
         }
-
     }
 }
