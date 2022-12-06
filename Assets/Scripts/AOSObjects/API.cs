@@ -21,6 +21,7 @@ public class API : AosObjectBase
     public UnityAction<string> OnSetTeleportLocation;
     public UnityAction<string> OnSetNewLocationText;
     public UnityAction<string> OnSetLocation;
+    public UnityAction<string> OnSetLocationForFieldColliders;
     public UnityAction<string> OnActivateBackButton;
     public UnityAction<string> OnEnableDietButtons;
     public UnityAction<string> OnSetTimerText;
@@ -98,6 +99,7 @@ public class API : AosObjectBase
         {
             OnActivateBackButton?.Invoke(nav.SelectToken("back").SelectToken("action").ToString());
         }
+        OnSetLocationForFieldColliders?.Invoke(location);
     }
     [AosAction(name: "Обновить место")]
     public void updatePlace(JArray data)

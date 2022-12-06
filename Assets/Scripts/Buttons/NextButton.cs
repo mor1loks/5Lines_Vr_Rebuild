@@ -21,12 +21,14 @@ public class NextButton : BaseButton
         if (CurrentState == NextButtonState.Start)
         {
             _api.OnInvokeNavAction("next");
+            OnNextButtonPressed?.Invoke("next");
             Player.Instance.CanMove = false;
         }
      
         else if (CurrentState == NextButtonState.Fault)
         {
             _api.OnInvokeNavAction("start");
+            OnNextButtonPressed?.Invoke("start");
             Player.Instance.CanMove = true;
         }
     }

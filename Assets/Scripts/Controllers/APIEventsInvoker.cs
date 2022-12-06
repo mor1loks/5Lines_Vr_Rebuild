@@ -24,7 +24,7 @@ public class APIEventsInvoker : MonoBehaviour
         _api.OnSetTeleportLocation += OnSetLoationToTeleport;
         _api.OnSetNewLocationText += OnSetLocationTextToLocationController;
         _api.OnSetLocation += OnSetLocationToLocationController;
-        _api.OnSetLocation += OnActivateStreetColliders;
+        _api.OnSetLocationForFieldColliders += OnActivateStreetColliders;
         _api.OnEnableDietButtons += OnEnableDietButton;
         _api.OnEnableMovingButton += OnEnableMovingButton;
         _api.OnSetTimerText+= OnSetTimerText;
@@ -46,7 +46,7 @@ public class APIEventsInvoker : MonoBehaviour
         _api.OnSetTeleportLocation -= OnSetLoationToTeleport;
         _api.OnSetNewLocationText -= OnSetLocationTextToLocationController;
         _api.OnSetLocation -= OnSetLocationToLocationController;
-        _api.OnSetLocation += OnActivateStreetColliders;
+        _api.OnSetLocationForFieldColliders -= OnActivateStreetColliders;
         _api.OnEnableDietButtons -= OnEnableDietButton;
         _api.OnEnableMovingButton -= OnEnableMovingButton;
         _api.OnSetTimerText -= OnSetTimerText;
