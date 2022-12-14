@@ -16,10 +16,12 @@ public class Sp6Animation : MonoBehaviour, IAnimationObject
             if(value)
             Player.Instance.CanMove = false;
             _isAmimated = true;
+            if(value)
             _anim.SetTrigger("kurbelOut");
             yield return new WaitForSeconds(GetAnimLenght());
             StartCoroutine(RoofRotator(value));
-            _anim.SetTrigger("kurbelIn");
+            if (value)
+                _anim.SetTrigger("kurbelIn");
             yield return new WaitForSeconds(GetAnimLenght());
             _isAmimated = false;
             yield return new WaitForSeconds(2f);

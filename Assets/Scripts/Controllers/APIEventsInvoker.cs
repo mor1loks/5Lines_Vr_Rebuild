@@ -108,9 +108,9 @@ public class APIEventsInvoker : MonoBehaviour
     {
         _lastScreenController.ShowMessageScreen(headertext, commentText);
     }
-    private void OnSetResultScreenText(string headertext, string commentText)
+    private void OnSetResultScreenText(string headertext, string commentText, string evalText)
     {
-        _lastScreenController.ShowLastScteen(headertext, commentText);
+        _lastScreenController.ShowLastScteen(headertext, commentText,evalText);
     }
     private void OnSetExitText(string exitText, string warntext)
     {

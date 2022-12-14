@@ -9,6 +9,7 @@ public class LastScreenController : MonoBehaviour
     [SerializeField] private MainMenuController _mainMenuController;
     [SerializeField] private GameObject _lastScreen;
     [SerializeField] private TextMeshProUGUI _headerText;
+    [SerializeField] private TextMeshProUGUI _evalText;
     [SerializeField] private TextMeshProUGUI _commentText;
     [SerializeField] private GameObject _exitButton;
     [SerializeField] private GameObject _backButton;
@@ -17,15 +18,21 @@ public class LastScreenController : MonoBehaviour
         ShowMessageScreen();
       SetText(headText, commentText);
     }
-    public void ShowLastScteen(string headText, string commentText)
+    public void ShowLastScteen(string headText, string commentText, string evaltext)
     {
         ShowLastScreen();
-        SetText(headText, commentText);
+        SetText(headText, commentText,evaltext);
     }
     private void SetText(string headText, string commentText)
     {
         _headerText.text = headText;
         _commentText.text = commentText;
+    }
+    private void SetText(string headText, string commentText, string evalText)
+    {
+        _headerText.text = headText;
+        _commentText.text = commentText;
+        _evalText.text = evalText;
     }
 
     private void ShowMessageScreen()

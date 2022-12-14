@@ -27,7 +27,7 @@ public class API : AosObjectBase
     public UnityAction<string, string> OnEnableMovingButton;
     public UnityAction<string, string> OnActivateByName;
     public UnityAction<string, string> OnSetMessageText;
-    public UnityAction<string, string> OnSetResultText;
+    public UnityAction<string, string,string> OnSetResultText;
     public UnityAction<string, string> OnShowExitText;
     public UnityAction<string, string, string> OnShowMenuText;
     public UnityAction<string, string, string, NextButtonState> OnSetStartText;
@@ -139,8 +139,9 @@ public class API : AosObjectBase
     public void showResult(JObject info, JObject nav)
     {
         string headText = info.SelectToken("name").ToString();
-        string commentText = HtmlToText.Instance.HTMLToTextReplace(info.SelectToken("eval").ToString()) + "\n" + HtmlToText.Instance.HTMLToTextReplace(info.SelectToken("text").ToString());
-        OnSetResultText?.Invoke(headText, commentText);
+        string commentText = HtmlToText.Instance.HTMLToTextReplace(HtmlToText.Instance.HTMLToTextReplace(info.SelectToken("text").ToString()));
+        string evalText = HtmlToText.Instance.HTMLToTextReplace(info.SelectToken("eval").ToString());
+        OnSetResultText?.Invoke(headText, commentText, evalText);
     }
     [AosAction(name: "Показать точки")]
     public void showPoints(string info, JArray data)
