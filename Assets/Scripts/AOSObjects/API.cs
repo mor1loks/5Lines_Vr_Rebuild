@@ -24,6 +24,7 @@ public class API : AosObjectBase
     public UnityAction<string> OnEnableDietButtons;
     public UnityAction<string> OnSetTimerText;
     public UnityAction<string> OnAddMeasureButton;
+    public UnityAction<string> OnReaction;
     public UnityAction<string, string> OnEnableMovingButton;
     public UnityAction<string, string> OnActivateByName;
     public UnityAction<string, string> OnSetMessageText;
@@ -125,6 +126,11 @@ public class API : AosObjectBase
     [AosAction(name: "Показать реакцию")]
     public void showReaction(JObject info, JObject nav)
     {
+        if (info.SelectToken("text") != null)
+        {
+            var reactionText = info.SelectToken("text").ToString();
+            OnReaction?.Invoke(reactionText);
+        }
         navAction?.Invoke("msgClose");
     }
 
