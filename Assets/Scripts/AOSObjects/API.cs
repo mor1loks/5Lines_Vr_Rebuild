@@ -131,7 +131,6 @@ public class API : AosObjectBase
             var reactionText = info.SelectToken("text").ToString();
             OnReaction?.Invoke(reactionText);
         }
-        navAction?.Invoke("msgClose");
     }
 
     [AosAction(name: "Показать сообщение")]
