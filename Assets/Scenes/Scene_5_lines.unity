@@ -1508,8 +1508,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2.560001, y: 2.5600011, z: 0.20000057}
-  m_Center: {x: 0, y: -0.00012207031, z: 0.001953125}
+  m_Size: {x: 2.5599997, y: 2.560002, z: 0.75886124}
+  m_Center: {x: -0.00000018296048, y: -0.00012207526, z: -0.47747847}
 --- !u!212 &45333910
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11968,7 +11968,6 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
-  _actionName: exit
 --- !u!114 &390260463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21280,7 +21279,6 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
-  _actionName: exit
 --- !u!65 &703326440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21385,7 +21383,6 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
-  _actionName: 
 --- !u!222 &703326444
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24634,8 +24631,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2.560001, y: 2.5600011, z: 0.20000057}
-  m_Center: {x: 0.00390625, y: -0.000061035156, z: 0}
+  m_Size: {x: 2.5599997, y: 2.560002, z: 0.76644343}
+  m_Center: {x: 0.0039061438, y: -0.000061034552, z: -0.28322154}
 --- !u!212 &800643353
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63209,8 +63206,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2.560001, y: 2.5600011, z: 0.20000057}
-  m_Center: {x: 0.00390625, y: -0.00012207031, z: 0}
+  m_Size: {x: 2.56, y: 2.560002, z: 1.2249414}
+  m_Center: {x: 0.0039060568, y: -0.00012207324, z: -0.5124707}
 --- !u!212 &1992029072
 SpriteRenderer:
   m_ObjectHideFlags: 0

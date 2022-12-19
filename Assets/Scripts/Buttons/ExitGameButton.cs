@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class ExitGameButton : BaseButton
 {
-    [SerializeField] private string _actionName;
     public override void OnClicked(InteractHand interactHand)
     {
         API api = FindObjectOfType<API>();
-        api.OnInvokeNavAction(_actionName);
+        api.OnInvokeNavAction("exit");
     }
 }
