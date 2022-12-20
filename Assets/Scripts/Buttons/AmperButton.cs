@@ -48,7 +48,8 @@ public class AmperButton : BaseButton
         _amper = false;
         _ampermetr.EnableAmper(_amper, _amperPosition);
         MeasureButtonsActivator.Instance.DeactivateAllButtons();
-        API api = FindObjectOfType<API>();
+        PointerDevice device = FindObjectOfType<PointerDevice>();
+        device.SetValue(1);
     }
     private IEnumerator ButtonsActivatorAsync()
     {
