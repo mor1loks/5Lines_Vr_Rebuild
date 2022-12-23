@@ -21,8 +21,11 @@ public class StaticSoundsPlayerController : MonoBehaviour
             _staticSounds.StopSoundPlayer();
             _staticSounds.PlayFieldSound();
         }
-
-
-
+       else if(soundName == "hall")
+            _staticSounds.StopSoundPlayer();
+        else if(soundName == "dsp")
+            _staticSounds.StopSoundPlayer();
+        else if(soundName == "relay_room")
+            _staticSounds.StopSoundPlayer();
     }
 }
