@@ -21,6 +21,7 @@ public class BaseObject : MonoBehaviour, IClickAble, IHoverAble
     [SerializeField] protected OutlineCore[] outlineObjects;
     [SerializeField] protected Transform helperPos;
     [SerializeField] protected string helperName;
+    [SerializeField] private bool _door;
 
     protected virtual void Start()
     {
@@ -44,6 +45,8 @@ public class BaseObject : MonoBehaviour, IClickAble, IHoverAble
                 sceneAosObject.InvokeOnClick();
                 MovingButtonsController.Instance.ObjectName = sceneAosObject.ObjectId;
             }
+            if (_door)
+                SoundPlayer.Instance.PlayDoorSound();
         }
     }
     public virtual void OnHoverIn(InteractHand interactHand)

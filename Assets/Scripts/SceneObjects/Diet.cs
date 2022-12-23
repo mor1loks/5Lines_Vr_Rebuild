@@ -6,7 +6,6 @@ public class Diet : MonoBehaviour
     [SerializeField] private GameObject _diet;
     [SerializeField] private GameObject _buttonPlus;
     [SerializeField] private GameObject _buttonMinus;
-    [SerializeField] private SoundPlayer _soundPlayer;
     [SerializeField] private StrelkaButton _strelkaMinus;
     [SerializeField] private StrelkaButton _strelkaPlus;
     public void EnableDiet(bool value, Transform position)
@@ -24,7 +23,7 @@ public class Diet : MonoBehaviour
     {
         if (value)
         {
-            _soundPlayer.PlayRadioSound();
+            SoundPlayer.Instance.PlayRadioSound();
             _buttonMinus.SetActive(false);
             _buttonPlus.SetActive(false);
         }

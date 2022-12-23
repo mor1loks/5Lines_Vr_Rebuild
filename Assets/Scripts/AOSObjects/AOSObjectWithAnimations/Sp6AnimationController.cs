@@ -5,6 +5,7 @@ using UnityEngine;
 [AosSdk.Core.Utils.AosObject(name: "Анимация Sp6")]
 public class Sp6AnimationController : AosObjectBase
 {
+    [SerializeField] private LocationController _locationController;
     private Animator _anim;
     private void Start()
     {
@@ -98,6 +99,8 @@ public class Sp6AnimationController : AosObjectBase
     [AosAction(name: "Проиграть анимацию Стретка минус трение плюс")]
     public void PlayStrelMinusFrictPlusAnim()
     {
+        if (InSoundPlace(_locationController.GetLocationName()))
+            SoundPlayer.Instance.PlayRailFriktSound();
         _anim.SetTrigger("otkazStrelMinusFrictPlus");
     }
     [AosAction(name: "Проиграть анимацию Стретка плюс двигатель минус")]
@@ -124,13 +127,24 @@ public class Sp6AnimationController : AosObjectBase
     [AosAction(name: "Проиграть анимацию плюс")]
     public void PlayPlusAnim()
     {
+        if (InSoundPlace(_locationController.GetLocationName()))
+            SoundPlayer.Instance.PlayRailNormSound();
         _anim.SetTrigger("plusAnim");
     }
     [AosAction(name: "Проиграть анимацию минус")]
     public void PlayMinusAnim()
     {
+        if (InSoundPlace(_locationController.GetLocationName()))
+            SoundPlayer.Instance.PlayRailNormSound();
         _anim.SetTrigger("minusAnim");
     }
-
-
+    private bool InSoundPlace(string placeName)
+    {
+        if (placeName == "field" || placeName == "clutch" || placeName == "actuator" ||
+            placeName == "e_drive" || placeName == "switch" || placeName == "apron" ||
+            placeName == "rod" || placeName == "hollow_left" || placeName == "hollow_right")
+            return true;
+        else
+     return false;
+    }
 }

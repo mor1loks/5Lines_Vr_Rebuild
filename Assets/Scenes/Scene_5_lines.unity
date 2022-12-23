@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ObjectId>k__BackingField: sp6_anim
+  _locationController: {fileID: 226403586}
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +311,7 @@ MonoBehaviour:
   - {fileID: 9488795}
   helperPos: {fileID: 17761032}
   helperName: "\u0414\u0443\u0436\u043A\u0430 \u041B5"
+  _door: 0
   _buttonsPos: {fileID: 1108320584}
   _vertical: 0
 --- !u!114 &9488795
@@ -413,6 +415,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1610776860}
   helperName: "\u0418\u0437\u043C\u0435\u0440\u0435\u043D\u0438\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u0438\u044F"
+  _door: 0
   _ampermetr: {fileID: 285753627}
   _backButton: {fileID: 2052672674}
   _amperPosition: {fileID: 1744748134}
@@ -573,6 +576,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &14778251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -761,6 +765,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &18349278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -949,6 +954,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &36343171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1433,6 +1439,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &45333905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,6 +1504,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &45333909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1689,6 +1697,7 @@ MonoBehaviour:
   - {fileID: 57640705}
   helperPos: {fileID: 1998133759}
   helperName: "\u0420\u0435\u043B\u0435 \u041F\u041A"
+  _door: 0
   _buttonsPos: {fileID: 184822996}
   _vertical: 1
 --- !u!114 &57640705
@@ -1781,7 +1790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68632745}
   m_Layer: 0
-  m_Name: HelpPos (1)
+  m_Name: HelpPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1795,7 +1804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68632744}
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.172, y: 0.334, z: 1.681}
+  m_LocalPosition: {x: 6.172, y: 0.334, z: 1.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5197780681962323980}
@@ -1954,6 +1963,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &71663547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,6 +2147,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &71936524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,6 +2212,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &71936528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2329,6 +2341,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &72114296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2461,7 +2474,6 @@ MonoBehaviour:
   _diet: {fileID: 932132830632219862}
   _buttonPlus: {fileID: 553098194}
   _buttonMinus: {fileID: 1064169880}
-  _soundPlayer: {fileID: 708189354}
   _strelkaMinus: {fileID: 1064169882}
   _strelkaPlus: {fileID: 553098196}
 --- !u!4 &73139995
@@ -2594,6 +2606,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1364011415}
   _hideScreen: {fileID: 1574012198}
 --- !u!114 &73741613
@@ -2709,6 +2722,7 @@ MonoBehaviour:
   helperPos: {fileID: 416439846}
   helperName: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u041C\u0421"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!65 &76190136
@@ -2839,6 +2853,7 @@ MonoBehaviour:
   - {fileID: 78257205}
   helperPos: {fileID: 68632745}
   helperName: "\u0414\u0432\u0435\u0440\u044C \u0432 \u0414\u0421\u041F"
+  _door: 1
 --- !u!114 &78257205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3175,6 +3190,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!114 &87478536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3195,6 +3211,7 @@ MonoBehaviour:
   - {fileID: 407022609}
   helperPos: {fileID: 765159959}
   helperName: "\u0424\u0430\u0437\u044B"
+  _door: 0
   _buttonsPos: {fileID: 1441027140}
   _vertical: 0
 --- !u!114 &87478537
@@ -3340,6 +3357,7 @@ MonoBehaviour:
   helperPos: {fileID: 824604023}
   helperName: "\u041B\u0438\u0446\u0435\u0432\u0430\u044F \u0447\u0430\u0441\u0442\u044C
     \u043F\u0443\u043B\u044C\u0442-\u0442\u0430\u0431\u043B\u043E"
+  _door: 0
 --- !u!65 &89472052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3423,6 +3441,7 @@ MonoBehaviour:
   helperPos: {fileID: 1088563194}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 99047259}
   _dietPosition: {fileID: 922696190}
@@ -3630,6 +3649,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1475242445}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: field
   _animationObject: {fileID: 2065367716}
   _backTriggerObj: {fileID: 1001368722}
@@ -3898,6 +3918,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &104763994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4037,6 +4058,7 @@ MonoBehaviour:
   helperPos: {fileID: 426289032}
   helperName: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u041E\u0425\u041A\u0421"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!65 &106913560
@@ -4150,6 +4172,7 @@ MonoBehaviour:
   - {fileID: 115534726}
   helperPos: {fileID: 647779588}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 1871147674}
   _vertical: 0
 --- !u!114 &115534725
@@ -4605,6 +4628,7 @@ MonoBehaviour:
   - {fileID: 125666185}
   helperPos: {fileID: 1457201150}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 1379153751}
   _vertical: 0
 --- !u!114 &125666185
@@ -4734,6 +4758,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &127750726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5167,6 +5192,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &143340832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,6 +5409,7 @@ MonoBehaviour:
   - {fileID: 283918239}
   helperPos: {fileID: 60722944}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 1941492092}
   _vertical: 0
 --- !u!114 &149735389
@@ -5497,6 +5524,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &152673871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5714,6 +5742,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &153365986
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,6 +5896,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &165711239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5961,6 +5991,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &166678533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6155,6 +6186,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &174778532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6452,6 +6484,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &190171427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6580,6 +6613,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &191334013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6790,6 +6824,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &199549600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7078,6 +7113,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &224433349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7714,6 +7750,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1757337775}
   _hideScreen: {fileID: 1574012198}
 --- !u!114 &250524106
@@ -7907,6 +7944,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &252772548
 GameObject:
   m_ObjectHideFlags: 0
@@ -8085,6 +8123,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1353504173}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 1631661642}
   _backButtonObject: {fileID: 402547892}
 --- !u!114 &255655058
@@ -8244,6 +8283,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &257708823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8372,6 +8412,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &258477383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8501,6 +8542,7 @@ MonoBehaviour:
   - {fileID: 261345563}
   helperPos: {fileID: 1903032269}
   helperName: "\u0414\u0432\u0435\u0440\u044C \u0432 \u043A\u043E\u0440\u0438\u0434\u043E\u0440"
+  _door: 1
 --- !u!114 &261345563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8590,6 +8632,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1364011415}
   _hideScreen: {fileID: 124150324}
 --- !u!114 &266331750
@@ -8747,6 +8790,7 @@ MonoBehaviour:
   - {fileID: 267286434}
   helperPos: {fileID: 1538991130}
   helperName: "\u0420\u0435\u043B\u0435 \u041E\u041A"
+  _door: 0
   _buttonsPos: {fileID: 2068621472}
   _vertical: 1
 --- !u!65 &267286442
@@ -8826,6 +8870,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &269262516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9053,6 +9098,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1574012198}
   _hideScreen: {fileID: 1364011415}
 --- !u!114 &272997208
@@ -9344,6 +9390,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &287728286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9472,6 +9519,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &292486189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10007,6 +10055,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &316671085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10140,6 +10189,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _side: 0
 --- !u!114 &319309308
 MonoBehaviour:
@@ -10281,6 +10331,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &321446937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10646,6 +10697,7 @@ MonoBehaviour:
   helperPos: {fileID: 897789661}
   helperName: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u041C"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!65 &325771665
@@ -10988,6 +11040,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &333419057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11087,6 +11140,7 @@ MonoBehaviour:
   - {fileID: 334102261}
   helperPos: {fileID: 669051587}
   helperName: "\u0414\u0432\u0435\u0440\u044C \u043D\u0430 \u0443\u043B\u0438\u0446\u0443"
+  _door: 1
 --- !u!114 &334102261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11158,6 +11212,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1972834068}
   helperName: "\u0418\u0437\u043C\u0435\u0440\u0435\u043D\u0438\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u0438\u044F"
+  _door: 0
   _ampermetr: {fileID: 285753627}
   _backButton: {fileID: 1809026723}
   _amperPosition: {fileID: 2073950979}
@@ -11577,6 +11632,7 @@ MonoBehaviour:
   helperPos: {fileID: 1576966827}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 1953633367}
   _dietPosition: {fileID: 2042751319}
@@ -11768,6 +11824,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1947388227}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 896830373}
   _backButtonObject: {fileID: 1809026723}
 --- !u!114 &379747591
@@ -11968,6 +12025,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!114 &390260463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12263,6 +12321,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 630799139}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: field
   _animationObject: {fileID: 0}
   _backTriggerObj: {fileID: 1001368722}
@@ -12365,6 +12424,7 @@ MonoBehaviour:
   - {fileID: 405061426}
   helperPos: {fileID: 252772549}
   helperName: "\u0420\u0435\u043B\u0435 \u041D\u041F\u0421"
+  _door: 0
   _buttonsPos: {fileID: 624484365}
   _vertical: 1
 --- !u!114 &405061428
@@ -12623,7 +12683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416439845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002, y: 0.035, z: 0.1645}
+  m_LocalPosition: {x: 0.002, y: 0.035, z: 0.1719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 76190133}
@@ -12782,6 +12842,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &420427674
 GameObject:
   m_ObjectHideFlags: 0
@@ -12865,6 +12926,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 2049165886}
   helperName: "\u0418\u0437\u043C\u0435\u0440\u0435\u043D\u0438\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u0438\u044F"
+  _door: 0
   _ampermetr: {fileID: 285753627}
   _backButton: {fileID: 1466998151}
   _amperPosition: {fileID: 1593111329}
@@ -13185,6 +13247,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &441031840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13447,6 +13510,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &445013085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13575,6 +13639,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &446027776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13796,6 +13861,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &449768342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14150,7 +14216,7 @@ Transform:
   m_GameObject: {fileID: 467933247}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: 1.174, y: 0.693, z: -0.044}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 72902557}
   m_RootOrder: 4
@@ -14169,7 +14235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprites:
   - {fileID: 21300000, guid: 7cea7ea77d323c847b426e1605675ba1, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &467933250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14181,7 +14247,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &467933251
 MonoBehaviour:
@@ -14235,7 +14301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 62ec46f479592ce4b9b85f87e3a75fb8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7cea7ea77d323c847b426e1605675ba1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14340,6 +14406,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &471142098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14636,6 +14703,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &490392937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14736,6 +14804,7 @@ MonoBehaviour:
   - {fileID: 495733068}
   helperPos: {fileID: 17761032}
   helperName: "\u0414\u0443\u0436\u043A\u0430 \u041B2"
+  _door: 0
   _buttonsPos: {fileID: 1108320584}
   _vertical: 0
 --- !u!65 &495733066
@@ -14820,6 +14889,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _buttonBox: {fileID: 699516956}
   _index: 0
   _currentNapr: 0
@@ -15031,6 +15101,7 @@ MonoBehaviour:
   - {fileID: 994540008917915741}
   helperPos: {fileID: 1073243900}
   helperName: "\u041E\u0441\u0442\u0440\u044F\u043A \u0441\u043F\u0440\u0430\u0432\u0430"
+  _door: 0
 --- !u!65 &503601423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15314,6 +15385,7 @@ MonoBehaviour:
   - {fileID: 510973449}
   helperPos: {fileID: 206933151}
   helperName: "\u0420\u0435\u043B\u0435 \u041F\u041F\u0421"
+  _door: 0
   _buttonsPos: {fileID: 377891123}
   _vertical: 1
 --- !u!65 &510973451
@@ -15423,6 +15495,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &520513346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15511,7 +15584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521896927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.30599973, y: 1.013, z: 0.111}
+  m_LocalPosition: {x: 0.263, y: 1.013, z: 0.111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1007868742}
@@ -15922,7 +15995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529034565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002, y: 0.035, z: 0.1645}
+  m_LocalPosition: {x: 0.002, y: 0.035, z: 0.1719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1127942846}
@@ -16038,6 +16111,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &529966479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16497,6 +16571,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _side: 1
 --- !u!65 &553098197
 BoxCollider:
@@ -16671,6 +16746,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &555529637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17067,6 +17143,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &574609942
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17355,6 +17432,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &585530540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17483,6 +17561,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &595203609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17595,6 +17674,7 @@ MonoBehaviour:
   - {fileID: 598706493}
   helperPos: {fileID: 296911829}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 1345492587}
   _vertical: 0
 --- !u!114 &598706493
@@ -17692,6 +17772,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!212 &604284667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17807,6 +17888,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &604360226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18107,6 +18189,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &617572530
 GameObject:
   m_ObjectHideFlags: 0
@@ -18171,6 +18254,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &617572534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18433,6 +18517,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &621996686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18691,6 +18776,7 @@ MonoBehaviour:
   helperPos: {fileID: 165711240}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 701592021}
   _dietPosition: {fileID: 673345394}
@@ -18841,6 +18927,7 @@ MonoBehaviour:
   helperPos: {fileID: 719793407}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 1601765989}
   _dietPosition: {fileID: 515347690}
@@ -19072,6 +19159,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &643101262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19200,6 +19288,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &643860015
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19445,6 +19534,7 @@ MonoBehaviour:
   helperName: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0446\u0435\u043F\u0438 \u0424\u0430\u0437\u0430
     \u0421"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!65 &653979503
@@ -19548,6 +19638,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 434916162}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _escButton: {fileID: 2127393318}
   _menuButton: {fileID: 1621829333}
   _mainController: {fileID: 1228086298}
@@ -19653,6 +19744,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &657409018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19832,6 +19924,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1574012198}
   _hideScreen: {fileID: 1757337775}
 --- !u!114 &662085924
@@ -19938,6 +20031,7 @@ MonoBehaviour:
   helperPos: {fileID: 759874032}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 1629477213}
   _dietPosition: {fileID: 646155194}
@@ -20180,6 +20274,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1885475323}
   helperName: 
+  _door: 0
   actionText: 
   _currentAction: 0
 --- !u!1 &673345393
@@ -20546,6 +20641,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &685456856
 GameObject:
   m_ObjectHideFlags: 0
@@ -20870,6 +20966,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 18112630}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: relay_room
   _animationObject: {fileID: 0}
   _backTriggerObj: {fileID: 1614741294}
@@ -21125,6 +21222,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 232000288}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 1880085024}
   _backButtonObject: {fileID: 1601765989}
 --- !u!114 &702600500
@@ -21279,6 +21377,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &703326440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21383,6 +21482,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!222 &703326444
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21751,6 +21851,10 @@ MonoBehaviour:
   _mapCloseSound: {fileID: 8300000, guid: 266b105f66b4b14419f1e78f4c9e01a9, type: 3}
   _radioSound: {fileID: 8300000, guid: 4a2a1cc1bc7befb4bbc76a08519e336f, type: 3}
   _stoneSound: {fileID: 8300000, guid: f2b66e7351494954988de864544ac8f1, type: 3}
+  _doorSound: {fileID: 8300000, guid: f508f652aeb960e49beb161264eea51a, type: 3}
+  _railNormalSound: {fileID: 8300000, guid: ae6732db229ee294eba3548dcf0098c5, type: 3}
+  _railNoSound: {fileID: 8300000, guid: c70e415dc022d2343b3c6432c03ea7eb, type: 3}
+  _railFriktSound: {fileID: 8300000, guid: fcfe04ec77e510c4e89031fb1e577f32, type: 3}
 --- !u!4 &708189355
 Transform:
   m_ObjectHideFlags: 0
@@ -21829,6 +21933,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &713041391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21959,6 +22064,7 @@ MonoBehaviour:
   helperPos: {fileID: 1694148694}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 2052672674}
   _dietPosition: {fileID: 748246699}
@@ -22107,6 +22213,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &719087812
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22265,6 +22372,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &723152810
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22574,6 +22682,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 761862479}
   _hideScreen: {fileID: 1574012198}
 --- !u!114 &725615361
@@ -22678,6 +22787,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &733914144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22852,6 +22962,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &741657008
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22946,6 +23057,51 @@ Transform:
   m_Father: {fileID: 5996705592089356250}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &745250855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 745250856}
+  - component: {fileID: 745250857}
+  m_Layer: 0
+  m_Name: StaticSoundPlayerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &745250856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745250855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 868297410}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &745250857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745250855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc06e44b33cc584ba6614d0e0464d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _staticSounds: {fileID: 812597029}
+  _teleporter: {fileID: 1474826603}
 --- !u!1 &746454335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8694038195878021665, guid: bbdc965c4f6175946adae30dc5b2a08f, type: 3}
@@ -23200,6 +23356,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &756211604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23569,6 +23726,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &768351255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23682,6 +23840,7 @@ MonoBehaviour:
   - {fileID: 770170899}
   helperPos: {fileID: 17761032}
   helperName: "\u0414\u0443\u0436\u043A\u0430 \u041B3"
+  _door: 0
   _buttonsPos: {fileID: 1108320584}
   _vertical: 0
 --- !u!114 &770170899
@@ -23756,6 +23915,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _locationName: t_field_t_switch
   _exitObject: {fileID: 1365885308}
   _field: 0
@@ -24292,6 +24452,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &791086515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24431,6 +24592,7 @@ MonoBehaviour:
   helperPos: {fileID: 1183793980}
   helperName: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u041F\u0425\u041A\u0421"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!65 &793995479
@@ -24620,6 +24782,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &800643352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24881,7 +25044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804793344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.152, y: -0.0811, z: -0.00030517578}
+  m_LocalPosition: {x: 0.183, y: -0.0811, z: -0.00030517578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2096378453853889710}
@@ -25022,6 +25185,150 @@ RectTransform:
   m_AnchoredPosition: {x: -0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &812597026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 812597028}
+  - component: {fileID: 812597027}
+  - component: {fileID: 812597029}
+  m_Layer: 0
+  m_Name: StaticSoundsPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &812597027
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812597026}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e7dba3145ed68de4ab27c7e91e2573f7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &812597028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812597026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -53.445312, y: 1.1423599, z: -107.78277}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &812597029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812597026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf34158260899d4cb2781b3de0795d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dspSound: {fileID: 0}
+  _relaySound: {fileID: 0}
+  _fieldSound: {fileID: 8300000, guid: e7dba3145ed68de4ab27c7e91e2573f7, type: 3}
+  koridSound: {fileID: 0}
 --- !u!1 &814941069
 GameObject:
   m_ObjectHideFlags: 0
@@ -25300,6 +25607,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &821014185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25348,6 +25656,7 @@ MonoBehaviour:
   - {fileID: 821014188}
   helperPos: {fileID: 1074805616}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 130499493}
   _vertical: 0
 --- !u!114 &821014188
@@ -25602,6 +25911,7 @@ MonoBehaviour:
   - {fileID: 847388709}
   helperPos: {fileID: 1318221671}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 931532337}
   _vertical: 0
 --- !u!114 &847388711
@@ -25685,6 +25995,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &848665836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25918,6 +26229,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &862530439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26108,6 +26420,7 @@ Transform:
   - {fileID: 2096451374}
   - {fileID: 1712493210}
   - {fileID: 8019206876411328623}
+  - {fileID: 745250856}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26209,6 +26522,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &873082392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26337,6 +26651,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &878284181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26734,6 +27049,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &880926413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26862,6 +27178,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &882117231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26990,6 +27307,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &892034504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27113,7 +27431,7 @@ Transform:
   m_GameObject: {fileID: 896830373}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: 0.457, y: 0.751, z: 0.015}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 192881354}
   m_RootOrder: 3
@@ -27132,7 +27450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprites:
   - {fileID: 21300000, guid: 7cea7ea77d323c847b426e1605675ba1, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &896830376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27144,7 +27462,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &896830377
 MonoBehaviour:
@@ -27423,6 +27741,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &903681212
 GameObject:
   m_ObjectHideFlags: 0
@@ -27487,6 +27806,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &903681216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27645,6 +27965,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &905666507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27743,7 +28064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprites:
   - {fileID: 21300000, guid: 7cea7ea77d323c847b426e1605675ba1, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &913933974
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27755,7 +28076,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &913933975
 MonoBehaviour:
@@ -27829,7 +28150,7 @@ Transform:
   m_GameObject: {fileID: 913933972}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: -0.236, y: 0.756, z: 0.015}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 1255510425}
   m_RootOrder: 3
@@ -28088,6 +28409,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1574012198}
   _hideScreen: {fileID: 810145839}
 --- !u!114 &917593697
@@ -28403,6 +28725,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &924203038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28531,6 +28854,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &925455665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28690,6 +29014,7 @@ MonoBehaviour:
   - {fileID: 941899082}
   helperPos: {fileID: 260917095}
   helperName: "\u0414\u0432\u0435\u0440\u044C \u0432 \u043A\u043E\u0440\u0438\u0434\u043E\u0440"
+  _door: 1
 --- !u!114 &941899082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28867,6 +29192,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &945637128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28995,6 +29321,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &948587126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29212,6 +29539,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &952360315
 GameObject:
   m_ObjectHideFlags: 0
@@ -29343,6 +29671,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &960610062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29902,6 +30231,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!212 &982156968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30056,6 +30386,7 @@ MonoBehaviour:
   helperPos: {fileID: 994540007727830269}
   helperName: "\u0410\u0432\u0442\u043E\u043F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0430\u0442\u0435\u043B\u044C
     \u043F\u043B\u044E\u0441\u043E\u0432\u044B\u0435 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
+  _door: 0
   _buttonsPos: {fileID: 470537331}
   _vertical: 0
 --- !u!1 &982613457
@@ -30111,6 +30442,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _locationName: field
   _exitObject: {fileID: 0}
   _field: 1
@@ -30273,6 +30605,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &983032457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30401,6 +30734,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &989689823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30518,6 +30852,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1014586136}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 997188442}
   _backButtonObject: {fileID: 1629477213}
 --- !u!114 &991038386
@@ -30631,6 +30966,7 @@ MonoBehaviour:
   - {fileID: 995031552}
   helperPos: {fileID: 2055599686}
   helperName: "\u0414\u0432\u0435\u0440\u044C \u0432 \u043A\u043E\u0440\u0438\u0434\u043E\u0440"
+  _door: 1
 --- !u!114 &995031552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30695,7 +31031,7 @@ Transform:
   m_GameObject: {fileID: 997188442}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: -0.064, y: 0.65, z: -0.424}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 547185732}
   m_RootOrder: 3
@@ -30714,7 +31050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprites:
   - {fileID: 21300000, guid: 7cea7ea77d323c847b426e1605675ba1, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &997188445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30726,7 +31062,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &997188446
 MonoBehaviour:
@@ -30854,6 +31190,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!33 &1001368724
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -30988,6 +31325,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1007927114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31205,6 +31543,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1014586135
 GameObject:
   m_ObjectHideFlags: 0
@@ -31470,6 +31809,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 979139965}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 1777604022}
   _backButtonObject: {fileID: 2052672674}
 --- !u!114 &1017365805
@@ -31724,6 +32064,7 @@ MonoBehaviour:
   helperPos: {fileID: 1750037843}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 1809026723}
   _dietPosition: {fileID: 686776031}
@@ -31872,6 +32213,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1031941253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32073,8 +32415,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.37217268, y: 0.6876957, z: 0.11838605}
-  m_Center: {x: -0.64421886, y: 0.00082364085, z: 0.13655493}
+  m_Size: {x: 0.37217268, y: 0.6876957, z: 0.07650406}
+  m_Center: {x: -0.64421886, y: 0.00082364085, z: 0.15749617}
 --- !u!114 &1037588435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32092,6 +32434,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!33 &1037588436
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32164,6 +32507,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1038012358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32407,6 +32751,7 @@ MonoBehaviour:
   helperPos: {fileID: 544029735}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 1762972239}
   _dietPosition: {fileID: 1071164899}
@@ -32782,6 +33127,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1061179258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32902,6 +33248,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _side: 0
 --- !u!65 &1064169883
 BoxCollider:
@@ -33107,6 +33454,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1071164898
 GameObject:
   m_ObjectHideFlags: 0
@@ -33320,6 +33668,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1074718661
 GameObject:
   m_ObjectHideFlags: 0
@@ -33473,6 +33822,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1074805615
 GameObject:
   m_ObjectHideFlags: 0
@@ -34125,6 +34475,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1087809139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34285,6 +34636,7 @@ MonoBehaviour:
   - {fileID: 1102849928}
   helperPos: {fileID: 17761032}
   helperName: "\u0414\u0443\u0436\u043A\u0430 \u041B4"
+  _door: 0
   _buttonsPos: {fileID: 1108320584}
   _vertical: 0
 --- !u!65 &1102849926
@@ -34382,6 +34734,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1103856995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34514,6 +34867,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _buttonBox: {fileID: 1638787521}
   _index: 2
   _currentNapr: 2
@@ -34834,6 +35188,7 @@ MonoBehaviour:
   helperPos: {fileID: 529034566}
   helperName: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u0421\u0425\u041A"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!65 &1127942849
@@ -34993,6 +35348,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1129103335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35305,6 +35661,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1136063263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 52850058101641011, guid: bbdc965c4f6175946adae30dc5b2a08f, type: 3}
@@ -35446,6 +35803,7 @@ MonoBehaviour:
   - {fileID: 1140362851}
   helperPos: {fileID: 742880587}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 1379351243}
   _vertical: 0
 --- !u!65 &1140362853
@@ -35680,6 +36038,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1146659061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35819,6 +36178,7 @@ MonoBehaviour:
   helperPos: {fileID: 2135458740}
   helperName: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u041F"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!65 &1146884786
@@ -35978,6 +36338,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1147319637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36287,6 +36648,7 @@ MonoBehaviour:
   - {fileID: 1157147937}
   helperPos: {fileID: 33228596}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 782056319}
   _vertical: 0
 --- !u!1 &1161462812
@@ -36851,6 +37213,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1175668805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36979,6 +37342,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1179892678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37195,6 +37559,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!212 &1186865319
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37345,6 +37710,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1196402224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37473,6 +37839,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1199521034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37631,6 +37998,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1202649968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37759,6 +38127,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1203137273
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37887,6 +38256,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1218287671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38015,6 +38385,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1218685081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38238,6 +38609,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1220436241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38418,6 +38790,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!114 &1229144258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38435,6 +38808,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1230725292
 GameObject:
   m_ObjectHideFlags: 0
@@ -38588,6 +38962,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1234019707
 GameObject:
   m_ObjectHideFlags: 0
@@ -38642,6 +39017,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _locationName: t_field_t_actuator
   _exitObject: {fileID: 329818856}
   _field: 0
@@ -38834,6 +39210,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1247044825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38997,6 +39374,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1249970704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39356,6 +39734,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1255624475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39484,6 +39863,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1261642051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39612,6 +39992,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1262350556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39724,6 +40105,7 @@ MonoBehaviour:
   - {fileID: 1263449766}
   helperPos: {fileID: 1847165439}
   helperName: 
+  _door: 0
   _buttonsPos: {fileID: 1838396144}
   _vertical: 0
 --- !u!114 &1263449766
@@ -39795,6 +40177,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _buttonBox: {fileID: 746454335}
   _aosObject: {fileID: 0}
 --- !u!114 &1267093172
@@ -40026,6 +40409,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1270691323
 GameObject:
   m_ObjectHideFlags: 0
@@ -40120,6 +40504,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1274554071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40471,6 +40856,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1286082761
 GameObject:
   m_ObjectHideFlags: 0
@@ -40795,6 +41181,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1299744985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40908,6 +41295,7 @@ MonoBehaviour:
   - {fileID: 1301365005}
   helperPos: {fileID: 17761032}
   helperName: "\u0414\u0443\u0436\u043A\u0430 \u041B1"
+  _door: 0
   _buttonsPos: {fileID: 1108320584}
   _vertical: 0
 --- !u!114 &1301365005
@@ -41058,6 +41446,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1308917101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41275,6 +41664,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!114 &1310370785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41313,6 +41703,7 @@ MonoBehaviour:
   helperName: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0446\u0435\u043F\u0438 \u0424\u0430\u0437\u0430
     \u0410"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!65 &1310370788
@@ -41461,6 +41852,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1574012198}
   _hideScreen: {fileID: 761862479}
 --- !u!114 &1311995237
@@ -41578,6 +41970,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1314740339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41719,6 +42112,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!212 &1315928975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41823,6 +42217,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1677816182}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 467933247}
   _backButtonObject: {fileID: 99047259}
 --- !u!114 &1317264934
@@ -41958,7 +42353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1319440820}
   m_Layer: 0
-  m_Name: HelpPos (2)
+  m_Name: HelpPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41972,7 +42367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319440819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.327, y: 0.359, z: 0.108}
+  m_LocalPosition: {x: 6.327, y: 0.359, z: 0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7652048821052107504}
@@ -42398,6 +42793,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1334960339
 GameObject:
   m_ObjectHideFlags: 0
@@ -42462,6 +42858,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1334960343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42834,6 +43231,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1360264970
 GameObject:
   m_ObjectHideFlags: 0
@@ -43268,6 +43666,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1368848999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43428,7 +43827,7 @@ Transform:
   m_GameObject: {fileID: 1373087863}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: 0.792, y: 0.089, z: -0.226}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 1248566437}
   m_RootOrder: 4
@@ -43454,7 +43853,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d8d24561e193f20478e234e216b48ea0, type: 3}
   - {fileID: 21300000, guid: cc70e9751cc234c4b82c307a37a95471, type: 3}
   - {fileID: 21300000, guid: f4e1efb5aee16f843969eb5370b6ec1d, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &1373087866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43466,7 +43865,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &1373087867
 MonoBehaviour:
@@ -43725,6 +44124,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1390684260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43814,7 +44214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391704459}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -3.008, y: 1.594, z: -0.854}
+  m_LocalPosition: {x: -3.008, y: 1.774, z: -0.854}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.1}
   m_Children: []
   m_Father: {fileID: 8319267248454431944}
@@ -44183,6 +44583,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1402412870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44311,6 +44712,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1402642177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44439,6 +44841,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1403724905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44567,6 +44970,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1405320608
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44765,6 +45169,7 @@ MonoBehaviour:
   - {fileID: 1420149058}
   helperPos: {fileID: 1862685362}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 936256768}
   _vertical: 0
 --- !u!114 &1420149058
@@ -45413,6 +45818,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1444000239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45559,6 +45965,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1448609812
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46086,6 +46493,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 420427675}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: dsp
   _animationObject: {fileID: 0}
   _backTriggerObj: {fileID: 1037588435}
@@ -46440,6 +46848,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _side: 1
 --- !u!114 &1474416175
 MonoBehaviour:
@@ -46828,6 +47237,7 @@ MonoBehaviour:
   - {fileID: 1708348466}
   helperPos: {fileID: 1811103627}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 1372016392}
   _vertical: 0
 --- !u!114 &1489689700
@@ -47143,6 +47553,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 850157694}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 1373087863}
   _backButtonObject: {fileID: 701592021}
 --- !u!114 &1513631423
@@ -47871,6 +48282,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 124150324}
   _hideScreen: {fileID: 1364011415}
 --- !u!65 &1541202402
@@ -48157,6 +48569,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 227857840}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 1549039473}
   _backButtonObject: {fileID: 1466998151}
 --- !u!114 &1542230397
@@ -48487,7 +48900,7 @@ Transform:
   m_GameObject: {fileID: 1549039473}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: -0.798, y: -0.668, z: -0.085}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 1305524835}
   m_RootOrder: 2
@@ -48513,7 +48926,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d8d24561e193f20478e234e216b48ea0, type: 3}
   - {fileID: 21300000, guid: cc70e9751cc234c4b82c307a37a95471, type: 3}
   - {fileID: 21300000, guid: f4e1efb5aee16f843969eb5370b6ec1d, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &1549039476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48525,7 +48938,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &1549039477
 MonoBehaviour:
@@ -48716,6 +49129,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1557612205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49055,6 +49469,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1565768796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49203,6 +49618,7 @@ MonoBehaviour:
   - {fileID: 1571813815}
   helperPos: {fileID: 756178135}
   helperName: "\u0411\u043B\u043E\u043A \u0411\u041A-76"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!114 &1571813812
@@ -49447,6 +49863,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!114 &1575198773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49484,6 +49901,7 @@ MonoBehaviour:
   - {fileID: 1575198773}
   helperPos: {fileID: 510204293}
   helperName: "\u0420\u0435\u043B\u0435 \u041C\u041A"
+  _door: 0
   _buttonsPos: {fileID: 1146349735}
   _vertical: 1
 --- !u!114 &1575198775
@@ -49642,6 +50060,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!212 &1579483227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49846,6 +50265,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1582504525
 GameObject:
   m_ObjectHideFlags: 0
@@ -50212,6 +50632,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1593390031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50487,6 +50908,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1600801533
 GameObject:
   m_ObjectHideFlags: 0
@@ -50617,6 +51039,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1715517972}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: field
   _animationObject: {fileID: 0}
   _backTriggerObj: {fileID: 1001368722}
@@ -50775,6 +51198,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1603638568
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50909,6 +51333,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 217594317}
   helperName: "\u0418\u0437\u043C\u0435\u0440\u0435\u043D\u0438\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u0438\u044F"
+  _door: 0
   _ampermetr: {fileID: 285753627}
   _backButton: {fileID: 701592021}
   _amperPosition: {fileID: 2050193521}
@@ -51052,6 +51477,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1610720187
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51255,6 +51681,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!33 &1614741295
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -51532,6 +51959,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1625273256
 GameObject:
   m_ObjectHideFlags: 0
@@ -51647,6 +52075,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1574012198}
   _hideScreen: {fileID: 1641845060}
 --- !u!114 &1625273261
@@ -51888,6 +52317,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 799836637}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: field
   _animationObject: {fileID: 0}
   _backTriggerObj: {fileID: 1001368722}
@@ -52032,7 +52462,7 @@ Transform:
   m_GameObject: {fileID: 1631661642}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: 0.426, y: 0.683, z: -0.255}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 2042607010}
   m_RootOrder: 3
@@ -52051,7 +52481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprites:
   - {fileID: 21300000, guid: 7cea7ea77d323c847b426e1605675ba1, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &1631661645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52063,7 +52493,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &1631661646
 MonoBehaviour:
@@ -52181,6 +52611,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1942429314}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 913933972}
   _backButtonObject: {fileID: 1762972239}
 --- !u!114 &1632617710
@@ -52459,6 +52890,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1638497425
 GameObject:
   m_ObjectHideFlags: 0
@@ -52523,6 +52955,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1638497429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52776,6 +53209,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1651364795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52984,6 +53418,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _buttonBox: {fileID: 1479503510}
   _index: 1
   _currentNapr: 1
@@ -53558,6 +53993,7 @@ MonoBehaviour:
   - {fileID: 365243641}
   helperPos: {fileID: 1909577990}
   helperName: "\u0411\u043B\u043E\u043A \u0411\u0424\u041A"
+  _door: 0
   _buttonsPos: {fileID: 2755053}
   _vertical: 1
 --- !u!114 &1692874205
@@ -53731,6 +54167,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1694148693
 GameObject:
   m_ObjectHideFlags: 0
@@ -53987,6 +54424,7 @@ MonoBehaviour:
   helperName: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C
     \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0446\u0435\u043F\u0438 \u0424\u0430\u0437\u0430
     \u0412"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!114 &1711744385
@@ -54225,6 +54663,7 @@ MonoBehaviour:
   - {fileID: 1511382132600578818}
   helperPos: {fileID: 103980113}
   helperName: "\u0424\u0430\u0440\u0442\u0443\u043A \u043F\u0440\u0438\u0432\u043E\u0434\u0430"
+  _door: 0
 --- !u!1 &1719056512
 GameObject:
   m_ObjectHideFlags: 0
@@ -54495,6 +54934,7 @@ MonoBehaviour:
   - {fileID: 1728393752}
   helperPos: {fileID: 1319440820}
   helperName: "\u0414\u0432\u0435\u0440\u044C \u0432 \u0440\u0435\u043B\u0435\u0439\u043D\u0443\u044E"
+  _door: 1
 --- !u!114 &1728393752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54607,6 +55047,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1735129497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54889,6 +55330,7 @@ MonoBehaviour:
   helperPos: {fileID: 1563040129}
   helperName: "\u0421\u043E\u0435\u0434\u0435\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F
     \u0442\u044F\u0433\u0430"
+  _door: 0
 --- !u!65 &1743474510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54984,6 +55426,7 @@ MonoBehaviour:
   - {fileID: 5912872492587646282}
   helperPos: {fileID: 1879877685}
   helperName: "\u0411\u043B\u043E\u043A \u0421"
+  _door: 0
   _buttonsPos: {fileID: 415749033}
   _vertical: 1
 --- !u!65 &1745353309
@@ -55081,6 +55524,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1745663803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55377,6 +55821,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1752461881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55714,7 +56159,7 @@ Transform:
   m_GameObject: {fileID: 1758467320}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: -0.394, y: 0.131, z: 0.075}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 869318634}
   m_RootOrder: 2
@@ -55740,7 +56185,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d8d24561e193f20478e234e216b48ea0, type: 3}
   - {fileID: 21300000, guid: cc70e9751cc234c4b82c307a37a95471, type: 3}
   - {fileID: 21300000, guid: f4e1efb5aee16f843969eb5370b6ec1d, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &1758467323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55752,7 +56197,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &1758467324
 MonoBehaviour:
@@ -56016,6 +56461,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1762328347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56117,6 +56563,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1241298348}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: field
   _animationObject: {fileID: 315931166}
   _backTriggerObj: {fileID: 1001368722}
@@ -56309,6 +56756,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1768369531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56437,6 +56885,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1771654046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56565,6 +57014,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1771908919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56658,7 +57108,7 @@ Transform:
   m_GameObject: {fileID: 1777604022}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: 0.777, y: 0.089, z: -0.101}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 1909302239}
   m_RootOrder: 4
@@ -56684,7 +57134,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d8d24561e193f20478e234e216b48ea0, type: 3}
   - {fileID: 21300000, guid: cc70e9751cc234c4b82c307a37a95471, type: 3}
   - {fileID: 21300000, guid: f4e1efb5aee16f843969eb5370b6ec1d, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &1777604025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56696,7 +57146,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &1777604026
 MonoBehaviour:
@@ -56857,6 +57307,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1794548603
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56985,6 +57436,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1801349489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57283,6 +57735,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1806905173
 GameObject:
   m_ObjectHideFlags: 0
@@ -57436,6 +57889,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1809026722
 GameObject:
   m_ObjectHideFlags: 0
@@ -57473,6 +57927,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1377211416}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: field
   _animationObject: {fileID: 1051155194}
   _backTriggerObj: {fileID: 1001368722}
@@ -57720,6 +58175,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1811103626
 GameObject:
   m_ObjectHideFlags: 0
@@ -57832,6 +58288,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1818202768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58093,6 +58550,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &1826936081
 GameObject:
   m_ObjectHideFlags: 0
@@ -58300,6 +58758,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1829749987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58401,6 +58860,7 @@ MonoBehaviour:
   - {fileID: 994540007666187234}
   helperPos: {fileID: 1436185664}
   helperName: "\u041E\u0441\u0442\u0440\u044F\u043A \u0441\u043B\u0435\u0432\u0430"
+  _door: 0
 --- !u!4 &1836868989
 Transform:
   m_ObjectHideFlags: 0
@@ -58870,6 +59330,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1867215502
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59049,6 +59510,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1641845060}
   _hideScreen: {fileID: 1574012198}
 --- !u!114 &1868672479
@@ -59215,6 +59677,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1874385619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59338,7 +59801,7 @@ Transform:
   m_GameObject: {fileID: 1880085024}
   m_LocalRotation: {x: 0.00000008940705, y: -0, z: -2.910383e-11, w: 1}
   m_LocalPosition: {x: -0.37, y: 0.534, z: -0.46}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.0002}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.0002}
   m_Children: []
   m_Father: {fileID: 385832949}
   m_RootOrder: 3
@@ -59357,7 +59820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprites:
   - {fileID: 21300000, guid: 7cea7ea77d323c847b426e1605675ba1, type: 3}
-  - {fileID: 21300000, guid: 435583765c656b944b20f0ddd728d8aa, type: 3}
+  - {fileID: 21300000, guid: 2874c8f186397f54798250d31e5ed915, type: 3}
 --- !u!65 &1880085027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59369,7 +59832,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 22.281599, y: 17.117197, z: 0.19999997}
+  m_Size: {x: 12, y: 8, z: 0.19999997}
   m_Center: {x: 0.032162666, y: 0.16077459, z: -0.00015258593}
 --- !u!114 &1880085028
 MonoBehaviour:
@@ -59593,6 +60056,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1887984723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59772,6 +60236,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 810145839}
   _hideScreen: {fileID: 1574012198}
 --- !u!114 &1894265826
@@ -60022,9 +60487,10 @@ MonoBehaviour:
   _buttonInPlace: 0
   outlineObjects:
   - {fileID: 7401682128798077851}
-  - {fileID: 7401682128337734799}
+  - {fileID: 7088239467348954759}
   helperPos: {fileID: 895885254}
   helperName: "\u041C\u0443\u0444\u0442\u0430"
+  _door: 0
 --- !u!1 &1909302238
 GameObject:
   m_ObjectHideFlags: 0
@@ -60155,6 +60621,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1910730081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60479,6 +60946,7 @@ MonoBehaviour:
   helperPos: {fileID: 221559014}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 1466998151}
   _dietPosition: {fileID: 814941070}
@@ -60874,6 +61342,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1932259861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61002,6 +61471,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1936630696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61574,6 +62044,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1251340167}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: dsp
   _animationObject: {fileID: 0}
   _backTriggerObj: {fileID: 1037588435}
@@ -61738,6 +62209,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1881626141}
   helperName: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0441\u0445\u0435\u043C\u0443"
+  _door: 0
   _object: {fileID: 1758467320}
   _backButtonObject: {fileID: 1953633367}
 --- !u!114 &1955618768
@@ -61992,6 +62464,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 2100776866}
   helperName: 
+  _door: 0
   actionText: 
   _currentAction: 1
 --- !u!1 &1972612787
@@ -62109,6 +62582,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1364011415}
   _hideScreen: {fileID: 1229144255}
 --- !u!114 &1972612792
@@ -62308,6 +62782,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1547170146}
   helperName: "\u0418\u0437\u043C\u0435\u0440\u0435\u043D\u0438\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u0438\u044F"
+  _door: 0
   _ampermetr: {fileID: 285753627}
   _backButton: {fileID: 99047259}
   _amperPosition: {fileID: 2106350347}
@@ -62526,6 +63001,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1980875456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62654,6 +63130,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1985126920
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62782,6 +63259,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1989846416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62912,6 +63390,7 @@ MonoBehaviour:
   helperPos: {fileID: 477215472}
   helperName: "\u0417\u0430\u043F\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0435\u0440\u0435\u0432\u043E\u0434
     \u0441\u0442\u0440\u0435\u043B\u043A\u0438"
+  _door: 0
   _diet: {fileID: 73139994}
   _backButton: {fileID: 402547892}
   _dietPosition: {fileID: 145783277}
@@ -63195,6 +63674,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &1992029071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63753,6 +64233,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &2002551908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63881,6 +64362,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &2004484974
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64003,6 +64485,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   _showScreen: {fileID: 1229144255}
   _hideScreen: {fileID: 1364011415}
 --- !u!65 &2005988155
@@ -64579,6 +65062,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &2040596648
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64943,6 +65427,7 @@ MonoBehaviour:
   - {fileID: 994540007569269216}
   helperPos: {fileID: 11480736}
   helperName: "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0430\u0442\u0435\u043B\u044C"
+  _door: 0
   _buttonsPos: {fileID: 470537331}
   _vertical: 0
 --- !u!1 &2044392379
@@ -65178,6 +65663,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1308878523}
   helperName: "\u041D\u0430\u0437\u0430\u0434"
+  _door: 0
   _locationBackName: relay_room
   _animationObject: {fileID: 0}
   _backTriggerObj: {fileID: 1614741294}
@@ -65674,6 +66160,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &2077858635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65832,6 +66319,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &2079365857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66011,6 +66499,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!114 &2079576387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66152,6 +66641,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 1100041554}
   helperName: 
+  _door: 0
   actionText: 
   _currentAction: 2
 --- !u!1 &2083235211
@@ -67110,6 +67600,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &2116747717
 GameObject:
   m_ObjectHideFlags: 0
@@ -67294,6 +67785,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &2119436420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67515,6 +68007,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!65 &2124604182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67703,6 +68196,7 @@ MonoBehaviour:
   - {fileID: 318063229}
   helperPos: {fileID: 804793345}
   helperName: "\u0411\u043B\u043E\u043A \u0421\u041F"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 1
 --- !u!1 &2130420731
@@ -67888,6 +68382,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!1 &2134356914
 GameObject:
   m_ObjectHideFlags: 0
@@ -68205,6 +68700,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
 --- !u!23 &3725354558732028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68637,6 +69133,7 @@ MonoBehaviour:
   helperPos: {fileID: 0}
   helperName: "\u0410\u0432\u0442\u043E\u043F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0430\u0442\u0435\u043B\u044C
     \u043C\u0438\u043D\u0443\u0441\u043E\u0432\u044B\u0435 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!1 &91688350536212871
@@ -73001,6 +73498,7 @@ MonoBehaviour:
   helperName: "\u041A\u043E\u043D\u0442\u0440\u043E\u043B\u044C\u043D\u0430\u044F
     \u043B\u0438\u043D\u0435\u0439\u043A\u0430 \u043A\u043E\u0440\u043E\u0442\u043A\u043E\u0439
     \u0442\u044F\u0433\u0438"
+  _door: 0
   _buttonsPos: {fileID: 994540007337877530}
   _vertical: 0
 --- !u!114 &994540007138246941
@@ -73127,6 +73625,7 @@ MonoBehaviour:
   - {fileID: 994540007451757875}
   helperPos: {fileID: 994540008863424595}
   helperName: "\u0414\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!4 &994540007277168370
@@ -73258,6 +73757,7 @@ MonoBehaviour:
   - {fileID: 994540007311082828}
   helperPos: {fileID: 994540008370577788}
   helperName: "\u0416\u0435\u043B\u043E\u0431 \u043E\u0441\u0442\u0440\u044F\u043A\u0430"
+  _door: 0
   _buttonsPos: {fileID: 994540007831289702}
   _vertical: 0
 --- !u!23 &994540007311082830
@@ -73411,6 +73911,7 @@ MonoBehaviour:
   helperPos: {fileID: 994540008491237524}
   helperName: "\u0420\u0430\u0431\u043E\u0447\u0430\u044F \u0442\u044F\u0433\u0430
     \u0438 \u0448\u0438\u0431\u0435\u0440"
+  _door: 0
   _buttonsPos: {fileID: 994540009177015650}
   _vertical: 0
 --- !u!4 &994540007385278449
@@ -73689,6 +74190,7 @@ MonoBehaviour:
   helperPos: {fileID: 994540008639143875}
   helperName: "\u041A\u043E\u0440\u043E\u0442\u043A\u0430\u044F \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044C\u043D\u0430\u044F
     \u0442\u044F\u0433\u0430 \u0441 \u0441\u0435\u0440\u044C\u0433\u043E\u0439"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!65 &994540007577515079
@@ -74052,6 +74554,7 @@ MonoBehaviour:
   - {fileID: 994540007929467841}
   helperPos: {fileID: 994540007638624297}
   helperName: "\u0411\u043B\u043E\u043A \u043A\u043E\u043D\u0442\u0430\u043A\u0442"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!114 &994540008204064338
@@ -74073,6 +74576,7 @@ MonoBehaviour:
   helperPos: {fileID: 994540007277168370}
   helperName: "\u0423\u0440\u0430\u0432\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F
     \u043C\u0443\u0444\u0442\u0430"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!114 &994540008204064339
@@ -74220,6 +74724,7 @@ MonoBehaviour:
   helperPos: {fileID: 994540007653791637}
   helperName: "\u0421\u0435\u0440\u044C\u0433\u0430 \u043C\u0435\u0436\u043E\u0441\u0442\u0440\u044F\u043A\u043E\u0432\u043E\u0439
     \u0442\u044F\u0433\u0438 \u0441\u043F\u0440\u0430\u0432\u0430"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!114 &994540008251115335
@@ -74277,6 +74782,7 @@ MonoBehaviour:
   helperName: "\u041A\u043E\u043D\u0442\u0440\u043E\u043B\u044C\u043D\u0430\u044F
     \u043B\u0438\u043D\u0435\u0439\u043A\u0430 \u0434\u043B\u0438\u043D\u043D\u043E\u0439
     \u0442\u044F\u0433\u0438"
+  _door: 0
   _buttonsPos: {fileID: 994540007145301652}
   _vertical: 0
 --- !u!114 &994540008257660987
@@ -74347,6 +74853,7 @@ MonoBehaviour:
   helperPos: {fileID: 994540009211630022}
   helperName: "\u0414\u043B\u0438\u043D\u043D\u0430\u044F \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044C\u043D\u0430\u044F
     \u0442\u044F\u0433\u0430 \u0441 \u0441\u0435\u0440\u044C\u0433\u043E\u0439"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!65 &994540008338727507
@@ -74436,6 +74943,7 @@ MonoBehaviour:
   - {fileID: 994540008358055357}
   helperPos: {fileID: 994540007501536532}
   helperName: "\u0416\u0435\u043B\u043E\u0431 \u043E\u0441\u0442\u0440\u044F\u043A\u0430"
+  _door: 0
   _buttonsPos: {fileID: 994540008208480854}
   _vertical: 0
 --- !u!4 &994540008358055355
@@ -74619,6 +75127,7 @@ MonoBehaviour:
   - {fileID: 994540007411421228}
   helperPos: {fileID: 994540007687628016}
   helperName: "\u0421\u0442\u0440\u0435\u043B\u043E\u0447\u043D\u044B\u0439 \u043F\u0435\u0440\u0435\u0432\u043E\u0434"
+  _door: 0
 --- !u!4 &994540008491237524
 Transform:
   m_ObjectHideFlags: 0
@@ -74699,6 +75208,7 @@ MonoBehaviour:
   helperPos: {fileID: 994540007485176920}
   helperName: "\u0421\u0435\u0440\u044C\u0433\u0430 \u0440\u0430\u0431\u043E\u0447\u0435\u0439
     \u0442\u044F\u0433\u0438"
+  _door: 0
   _buttonsPos: {fileID: 994540007606558665}
   _vertical: 0
 --- !u!114 &994540008595317015
@@ -74815,6 +75325,7 @@ MonoBehaviour:
   helperPos: {fileID: 994540007385278449}
   helperName: "\u0421\u0435\u0440\u044C\u0433\u0430 \u043C\u0435\u0436\u043E\u0441\u0442\u0440\u044F\u043A\u043E\u0432\u043E\u0439
     \u0442\u044F\u0433\u0438 \u0441\u043B\u0435\u0432\u0430"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!114 &994540008719755917
@@ -75077,6 +75588,7 @@ MonoBehaviour:
   helperPos: {fileID: 994540007566417808}
   helperName: "\u0424\u0440\u0438\u043A\u0446\u0438\u043E\u043D\u043D\u0430\u044F
     \u043C\u0443\u0444\u0442\u0430"
+  _door: 0
   _buttonsPos: {fileID: 994540007156586017}
   _vertical: 0
 --- !u!65 &994540009243579475
@@ -77207,6 +77719,7 @@ MonoBehaviour:
   helperPos: {fileID: 1496076303}
   helperName: "\u041A\u043B\u0435\u043C\u043C\u043D\u0430\u044F \u043A\u043E\u043B\u043E\u0434\u043A\u0430
     \u0410"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!114 &1472945341253578660
@@ -83852,6 +84365,7 @@ MonoBehaviour:
   helperPos: {fileID: 1856897138}
   helperName: "\u0421\u0442\u0430\u0442\u0438\u0432 14 \u043B\u0438\u0446\u0435\u0432\u0430
     \u0441\u0442\u043E\u0440\u043E\u043D\u0430"
+  _door: 0
 --- !u!114 &3065633012453966431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83880,6 +84394,7 @@ MonoBehaviour:
   helperPos: {fileID: 521896928}
   helperName: "\u0421\u0442\u0430\u0442\u0438\u0432 14 \u043C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F
     \u0441\u0442\u043E\u0440\u043E\u043D\u0430"
+  _door: 0
 --- !u!4 &3066520309189480865
 Transform:
   m_ObjectHideFlags: 0
@@ -87967,6 +88482,7 @@ MonoBehaviour:
   helperPos: {fileID: 148716194}
   helperName: "\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u0447\u0430\u0441\u0442\u044C
     \u043F\u0443\u043B\u044C\u0442-\u0442\u0430\u0431\u043B\u043E"
+  _door: 0
 --- !u!114 &4271106515367678472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88002,6 +88518,7 @@ MonoBehaviour:
   - {fileID: 4271106515367678474}
   helperPos: {fileID: 1054500188}
   helperName: "\u0421\u0442\u0440\u0435\u043B\u043E\u0447\u043D\u0430\u044F \u0440\u0443\u043A\u043E\u044F\u0442\u044C"
+  _door: 0
   _buttonsPos: {fileID: 1732729649}
   _vertical: 0
 --- !u!114 &4271106515367678474
@@ -91499,6 +92016,7 @@ MonoBehaviour:
   - {fileID: 5047008945581521136}
   helperPos: {fileID: 134197291}
   helperName: "\u041F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 1658160964}
   _vertical: 0
 --- !u!114 &5047008945581521138
@@ -101403,6 +101921,7 @@ GameObject:
   - component: {fileID: 9126539477158735717}
   - component: {fileID: 6285373255624525505}
   - component: {fileID: 4359152390083204102}
+  - component: {fileID: 7088239467348954759}
   m_Layer: 0
   m_Name: mufta
   m_TagString: Untagged
@@ -101410,6 +101929,487 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7088239467348954759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088239467348954758}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e1b4f6e9351f246a2aaced7723efb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineModeL: 1
+  outlineColor: {r: 0.20091248, g: 1, b: 0, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 1
+  bakeKeys:
+  - {fileID: -3423051127310024732, guid: 8e581fa11deb0cb49af3054964dd1831, type: 3}
+  bakeValues:
+  - data:
+    - {x: 0.48218006, y: -0.70710677, z: 0.5172063}
+    - {x: 0.59505016, y: -0.7071637, z: 0.38188314}
+    - {x: 0.5951315, y: 0.7070599, z: 0.38194874}
+    - {x: 0.48217678, y: 0.70710677, z: 0.5172095}
+    - {x: -0.033751357, y: -0.50352466, z: 0.8633213}
+    - {x: -0.033751357, y: 0.50352466, z: 0.8633213}
+    - {x: 0.59505016, y: -0.7071637, z: 0.38188314}
+    - {x: 0.48218006, y: -0.70710677, z: 0.5172063}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: -0.3395215, y: -0.47593, z: 0.81130505}
+    - {x: 0.3334202, y: -0.47596365, z: 0.8138118}
+    - {x: -0.81373054, y: -0.47599623, z: 0.33357185}
+    - {x: -0.7651374, y: -0.49463362, z: 0.41219234}
+    - {x: -0.033751357, y: -0.50352466, z: 0.8633213}
+    - {x: -0.12257866, y: -0.8916076, z: 0.43590173}
+    - {x: 0.811213, y: -0.4759649, z: 0.3396922}
+    - {x: 0.761996, y: -0.494607, z: 0.4180025}
+    - {x: 0.016710712, y: -0.50631857, z: 0.8621846}
+    - {x: -0.65171474, y: -0.4629995, z: 0.60074896}
+    - {x: -0.6362921, y: -0.70718706, z: 0.30825135}
+    - {x: -0.65171474, y: -0.4629995, z: 0.60074896}
+    - {x: 0.016710712, y: 0.50631857, z: 0.8621846}
+    - {x: -0.6517176, y: 0.4629853, z: 0.60075676}
+    - {x: 0.016710712, y: -0.50631857, z: 0.8621846}
+    - {x: -0.81373054, y: -0.47599623, z: 0.33357185}
+    - {x: -0.7651374, y: 0.49463362, z: 0.41219234}
+    - {x: -0.81373054, y: 0.47599623, z: 0.33357185}
+    - {x: -0.7651374, y: -0.49463362, z: 0.41219234}
+    - {x: -0.3395215, y: -0.47593, z: 0.81130505}
+    - {x: -0.81373054, y: 0.47599623, z: 0.33357185}
+    - {x: -0.3395215, y: 0.47593, z: 0.81130505}
+    - {x: -0.81373054, y: -0.47599623, z: 0.33357185}
+    - {x: 0.3334202, y: -0.47596365, z: 0.8138118}
+    - {x: -0.3395215, y: 0.47593, z: 0.81130505}
+    - {x: 0.3334202, y: 0.47596365, z: 0.8138118}
+    - {x: -0.3395215, y: -0.47593, z: 0.81130505}
+    - {x: 0.811213, y: -0.4759649, z: 0.3396922}
+    - {x: 0.3334202, y: 0.47596365, z: 0.8138118}
+    - {x: 0.811213, y: 0.4759649, z: 0.3396922}
+    - {x: 0.3334202, y: -0.47596365, z: 0.8138118}
+    - {x: 0.761996, y: -0.494607, z: 0.4180025}
+    - {x: 0.811213, y: 0.4759649, z: 0.3396922}
+    - {x: 0.761996, y: 0.494607, z: 0.4180025}
+    - {x: 0.811213, y: -0.4759649, z: 0.3396922}
+    - {x: -0.7651374, y: -0.49463362, z: 0.41219234}
+    - {x: -0.033751357, y: 0.50352466, z: 0.8633213}
+    - {x: -0.7651374, y: 0.49463362, z: 0.41219234}
+    - {x: -0.033751357, y: -0.50352466, z: 0.8633213}
+    - {x: -0.6362921, y: -0.70718706, z: 0.30825135}
+    - {x: -0.6517176, y: 0.4629853, z: 0.60075676}
+    - {x: -0.6364485, y: 0.7070132, z: 0.30832732}
+    - {x: -0.65171474, y: -0.4629995, z: 0.60074896}
+    - {x: 0.016710712, y: 0.50631857, z: 0.8621846}
+    - {x: 0.016710712, y: -0.50631857, z: 0.8621846}
+    - {x: 0.761996, y: 0.494607, z: 0.4180025}
+    - {x: 0.761996, y: -0.494607, z: 0.4180025}
+    - {x: 0, y: 1, z: 0}
+    - {x: -0.6364485, y: 0.7070132, z: 0.30832732}
+    - {x: -0.6517176, y: 0.4629853, z: 0.60075676}
+    - {x: 0.016710712, y: 0.50631857, z: 0.8621846}
+    - {x: 0.761996, y: 0.494607, z: 0.4180025}
+    - {x: 0.811213, y: 0.4759649, z: 0.3396922}
+    - {x: 0.3334202, y: 0.47596365, z: 0.8138118}
+    - {x: 0, y: 1, z: 0}
+    - {x: -0.3395215, y: 0.47593, z: 0.81130505}
+    - {x: 0, y: 1, z: 0}
+    - {x: -0.81373054, y: 0.47599623, z: 0.33357185}
+    - {x: -0.7651374, y: 0.49463362, z: 0.41219234}
+    - {x: -0.033751357, y: 0.50352466, z: 0.8633213}
+    - {x: 0.48217678, y: 0.70710677, z: 0.5172095}
+    - {x: 0.5951315, y: 0.7070599, z: 0.38194874}
+    - {x: -0.36789244, y: -0.7074111, z: 0.6035103}
+    - {x: -0.76457775, y: 0.3955668, z: 0.5088692}
+    - {x: -0.734875, y: -0.46325824, z: 0.4953288}
+    - {x: -0.44006568, y: 0.5644416, z: 0.69838953}
+    - {x: -0.12257866, y: -0.8916076, z: 0.43590173}
+    - {x: -0.22273582, y: 0.56509936, z: 0.79438746}
+    - {x: 0.020873962, y: 0.02673093, z: 0.9994247}
+    - {x: 0.00929323, y: 0.40291908, z: 0.91518843}
+    - {x: 0.022563357, y: -0.44723392, z: 0.8941324}
+    - {x: -0.69816697, y: -0.70736766, z: -0.11042615}
+    - {x: -0.7622723, y: 0.39238742, z: -0.5147554}
+    - {x: -0.73107135, y: -0.46318796, z: -0.5009906}
+    - {x: -0.7925696, y: 0.5973176, z: -0.12265877}
+    - {x: -0.69900525, y: -0.7073576, z: 0.10505693}
+    - {x: -0.7918753, y: 0.5991256, z: 0.11824523}
+    - {x: -0.734875, y: -0.46325824, z: 0.4953288}
+    - {x: -0.76457775, y: 0.3955668, z: 0.5088692}
+    - {x: -0.43472147, y: 0.5577338, z: -0.70707166}
+    - {x: -0.73107135, y: -0.46318796, z: -0.5009906}
+    - {x: -0.7622723, y: 0.39238742, z: -0.5147554}
+    - {x: -0.36422998, y: -0.7074111, z: -0.60572773}
+    - {x: -0.17059293, y: -0.68663055, z: -0.7067082}
+    - {x: -0.1904172, y: 0.5743974, z: -0.7961212}
+    - {x: 0.044056196, y: 0.032881405, z: -0.99848783}
+    - {x: 0.02742237, y: 0.4061667, z: -0.9133875}
+    - {x: 0.05116302, y: -0.44743702, z: -0.89285076}
+    - {x: 0.044056196, y: 0.032881405, z: -0.99848783}
+    - {x: 0.21289054, y: -0.7070633, z: -0.67434347}
+    - {x: 0.05116302, y: -0.44743702, z: -0.89285076}
+    - {x: 0.25653896, y: 0.5554094, z: -0.7910172}
+    - {x: 0.02742237, y: 0.4061667, z: -0.9133875}
+    - {x: 0.58506584, y: -0.000946321, z: -0.81098527}
+    - {x: 0.5450245, y: 0.3665304, z: -0.7540581}
+    - {x: 0.5177697, y: -0.4475657, z: -0.7291087}
+    - {x: 0.6835625, y: 0.5537222, z: -0.4755354}
+    - {x: 0.58506584, y: -0.000946321, z: -0.81098527}
+    - {x: 0.5450245, y: 0.3665304, z: -0.7540581}
+    - {x: 0.57757705, y: -0.70761186, z: -0.4070507}
+    - {x: 0.5177697, y: -0.4475657, z: -0.7291087}
+    - {x: 0.93781334, y: -0.0010599256, z: -0.34713838}
+    - {x: 0.77649283, y: 0.55823016, z: -0.29229772}
+    - {x: 0.6623311, y: -0.70747477, z: -0.24657036}
+    - {x: 0.82936114, y: 0.5498251, z: -0.09925998}
+    - {x: 0.70159185, y: -0.70754164, z: -0.084579766}
+    - {x: 0.8286393, y: 0.54986906, z: 0.10488493}
+    - {x: 0.7010521, y: -0.7075048, z: 0.08923466}
+    - {x: 0.935407, y: -0.0010788459, z: 0.35357115}
+    - {x: 0.6610182, y: -0.7074915, z: 0.2500216}
+    - {x: 0.774, y: 0.5583432, z: 0.29862508}
+    - {x: 0.7122232, y: -0.44869536, z: 0.5398245}
+    - {x: 0.74607575, y: 0.35817087, z: 0.56132394}
+    - {x: 0.22891039, y: -0.7066383, z: 0.66952395}
+    - {x: 0.020873962, y: 0.02673093, z: 0.9994247}
+    - {x: 0.022563357, y: -0.44723392, z: 0.8941324}
+    - {x: 0.27447173, y: 0.55479926, z: 0.7854063}
+    - {x: 0.00929323, y: 0.40291908, z: 0.91518843}
+    - {x: 0.5691022, y: 0.00059602706, z: 0.8222666}
+    - {x: 0.47358972, y: 0.56147623, z: 0.67857}
+    - {x: 0.39361078, y: -0.70618623, z: 0.5885334}
+    - {x: 0.74607575, y: 0.35817087, z: 0.56132394}
+    - {x: 0.7122232, y: -0.44869536, z: 0.5398245}
+    - {x: 0.48217988, y: -0.70710677, z: -0.5172065}
+    - {x: 0.59513485, y: 0.7070666, z: -0.38193113}
+    - {x: 0.59505874, y: -0.707157, z: -0.38188228}
+    - {x: 0.48217988, y: 0.70710677, z: -0.5172065}
+    - {x: -0.033778977, y: -0.5035329, z: -0.8633155}
+    - {x: -0.033778977, y: 0.5035329, z: -0.8633155}
+    - {x: 0.59505874, y: -0.707157, z: -0.38188228}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0.48217988, y: -0.70710677, z: -0.5172065}
+    - {x: 0, y: -1, z: 0}
+    - {x: -0.33952954, y: -0.47593153, z: -0.8113007}
+    - {x: 0.3334173, y: -0.47596318, z: -0.81381327}
+    - {x: -0.8137244, y: -0.47599384, z: -0.3335902}
+    - {x: -0.7651506, y: -0.49462375, z: -0.41217947}
+    - {x: -0.033778977, y: -0.5035329, z: -0.8633155}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0.81120926, y: -0.47596273, z: -0.33970445}
+    - {x: 0.7619832, y: -0.49460888, z: -0.41802356}
+    - {x: 0.016713135, y: -0.50631064, z: -0.8621892}
+    - {x: -0.651705, y: -0.4629995, z: -0.6007595}
+    - {x: -0.6362952, y: -0.70718366, z: -0.30825263}
+    - {x: -0.651705, y: -0.4629995, z: -0.6007595}
+    - {x: -0.65170795, y: 0.4629853, z: -0.6007673}
+    - {x: 0.016713135, y: 0.50631064, z: -0.8621892}
+    - {x: 0.016713135, y: -0.50631064, z: -0.8621892}
+    - {x: -0.8137244, y: -0.47599384, z: -0.3335902}
+    - {x: -0.8137244, y: 0.47599384, z: -0.3335902}
+    - {x: -0.7651506, y: 0.49462375, z: -0.41217947}
+    - {x: -0.7651506, y: -0.49462375, z: -0.41217947}
+    - {x: -0.33952954, y: -0.47593153, z: -0.8113007}
+    - {x: -0.33952954, y: 0.47593153, z: -0.8113007}
+    - {x: -0.8137244, y: 0.47599384, z: -0.3335902}
+    - {x: -0.8137244, y: -0.47599384, z: -0.3335902}
+    - {x: 0.3334173, y: -0.47596318, z: -0.81381327}
+    - {x: 0.3334173, y: 0.47596318, z: -0.81381327}
+    - {x: -0.33952954, y: 0.47593153, z: -0.8113007}
+    - {x: -0.33952954, y: -0.47593153, z: -0.8113007}
+    - {x: 0.81120926, y: -0.47596273, z: -0.33970445}
+    - {x: 0.81120926, y: 0.47596273, z: -0.33970445}
+    - {x: 0.3334173, y: 0.47596318, z: -0.81381327}
+    - {x: 0.3334173, y: -0.47596318, z: -0.81381327}
+    - {x: 0.7619832, y: -0.49460888, z: -0.41802356}
+    - {x: 0.7619832, y: 0.49460888, z: -0.41802356}
+    - {x: 0.81120926, y: 0.47596273, z: -0.33970445}
+    - {x: 0.81120926, y: -0.47596273, z: -0.33970445}
+    - {x: -0.033778977, y: 0.5035329, z: -0.8633155}
+    - {x: -0.7651506, y: -0.49462375, z: -0.41217947}
+    - {x: -0.7651506, y: 0.49462375, z: -0.41217947}
+    - {x: -0.033778977, y: -0.5035329, z: -0.8633155}
+    - {x: -0.65170795, y: 0.4629853, z: -0.6007673}
+    - {x: -0.6362952, y: -0.70718366, z: -0.30825263}
+    - {x: -0.6364404, y: 0.7070165, z: -0.30833632}
+    - {x: -0.651705, y: -0.4629995, z: -0.6007595}
+    - {x: 0.016713135, y: 0.50631064, z: -0.8621892}
+    - {x: 0.7619832, y: 0.49460888, z: -0.41802356}
+    - {x: 0.016713135, y: -0.50631064, z: -0.8621892}
+    - {x: 0.7619832, y: -0.49460888, z: -0.41802356}
+    - {x: 0, y: 1, z: 0}
+    - {x: -0.65170795, y: 0.4629853, z: -0.6007673}
+    - {x: -0.6364404, y: 0.7070165, z: -0.30833632}
+    - {x: 0.016713135, y: 0.50631064, z: -0.8621892}
+    - {x: 0.7619832, y: 0.49460888, z: -0.41802356}
+    - {x: 0.81120926, y: 0.47596273, z: -0.33970445}
+    - {x: 0.3334173, y: 0.47596318, z: -0.81381327}
+    - {x: 0, y: 1, z: 0}
+    - {x: -0.33952954, y: 0.47593153, z: -0.8113007}
+    - {x: 0, y: 1, z: 0}
+    - {x: -0.8137244, y: 0.47599384, z: -0.3335902}
+    - {x: -0.7651506, y: 0.49462375, z: -0.41217947}
+    - {x: -0.033778977, y: 0.5035329, z: -0.8633155}
+    - {x: 0.48217988, y: 0.70710677, z: -0.5172065}
+    - {x: 0.59513485, y: 0.7070666, z: -0.38193113}
+    - {x: -0.49532872, y: 0, z: 0.86870563}
+    - {x: -0.8660164, y: 0.4999941, z: 0.004647811}
+    - {x: -0.99998564, y: 0, z: 0.0053668087}
+    - {x: -0.4289644, y: 0.50000995, z: 0.7523162}
+    - {x: 0.5046585, y: 0, z: 0.8633191}
+    - {x: -0.4289644, y: 0.50000995, z: 0.7523162}
+    - {x: -0.49532872, y: 0, z: 0.86870563}
+    - {x: 0.43704984, y: 0.49999046, z: 0.747661}
+    - {x: 0.99998546, y: 0, z: -0.0053885756}
+    - {x: 0.43704984, y: 0.49999046, z: 0.747661}
+    - {x: 0.5046585, y: 0, z: 0.8633191}
+    - {x: 0.8660072, y: 0.5000098, z: -0.004666613}
+    - {x: 0.49532142, y: 0, z: -0.8687098}
+    - {x: 0.8660072, y: 0.5000098, z: -0.004666613}
+    - {x: 0.99998546, y: 0, z: -0.0053885756}
+    - {x: 0.42896324, y: 0.49999171, z: -0.7523289}
+    - {x: -0.5046476, y: 0, z: -0.8633254}
+    - {x: 0.42896324, y: 0.49999171, z: -0.7523289}
+    - {x: 0.49532142, y: 0, z: -0.8687098}
+    - {x: -0.43703645, y: 0.5000042, z: -0.7476597}
+    - {x: -0.99998564, y: 0, z: 0.0053668087}
+    - {x: -0.43703645, y: 0.5000042, z: -0.7476597}
+    - {x: -0.5046476, y: 0, z: -0.8633254}
+    - {x: -0.8660164, y: 0.4999941, z: 0.004647811}
+    - {x: -0.70712906, y: 0, z: 0.70708454}
+    - {x: -0.879475, y: 0.47594506, z: -0.00002994299}
+    - {x: -0.6218883, y: 0.4759816, z: 0.6218491}
+    - {x: -1, y: 0, z: -0.000034046436}
+    - {x: 1, y: 0, z: -0.00003798164}
+    - {x: 0.6218885, y: 0.4759816, z: 0.62184894}
+    - {x: 0.8794753, y: 0.47594452, z: -0.000033403914}
+    - {x: 0.7071293, y: 0, z: 0.7070843}
+    - {x: 0.000008597355, y: 0, z: -1}
+    - {x: 0.6219562, y: 0.4759556, z: -0.62180114}
+    - {x: 0.000007560945, y: 0.47599104, z: -0.8794501}
+    - {x: 0.7071949, y: 0, z: -0.7070186}
+    - {x: -1, y: 0, z: -0.000034046436}
+    - {x: -0.62195647, y: 0.47595567, z: -0.62180096}
+    - {x: -0.879475, y: 0.47594506, z: -0.00002994299}
+    - {x: -0.70719516, y: 0, z: -0.7070184}
+    - {x: 0.00000890287, y: 0, z: 1}
+    - {x: -0.6218883, y: 0.4759816, z: 0.6218491}
+    - {x: 0.000007829821, y: 0.47595143, z: 0.8794716}
+    - {x: -0.70712906, y: 0, z: 0.70708454}
+    - {x: 0.7071293, y: 0, z: 0.7070843}
+    - {x: 0.000007829821, y: 0.47595143, z: 0.8794716}
+    - {x: 0.6218885, y: 0.4759816, z: 0.62184894}
+    - {x: 0.00000890287, y: 0, z: 1}
+    - {x: 0.7071949, y: 0, z: -0.7070186}
+    - {x: 0.8794753, y: 0.47594452, z: -0.000033403914}
+    - {x: 0.6219562, y: 0.4759556, z: -0.62180114}
+    - {x: 1, y: 0, z: -0.00003798164}
+    - {x: -0.70719516, y: 0, z: -0.7070184}
+    - {x: 0.000007560945, y: 0.47599104, z: -0.8794501}
+    - {x: -0.62195647, y: 0.47595567, z: -0.62180096}
+    - {x: 0.000008597355, y: 0, z: -1}
+    - {x: -0.49532405, y: 0, z: 0.86870825}
+    - {x: -0.86601573, y: 0.4999951, z: 0.004651933}
+    - {x: -0.9999856, y: 0, z: 0.005371572}
+    - {x: -0.42895952, y: 0.50001293, z: 0.752317}
+    - {x: 0.50466776, y: 0, z: 0.8633137}
+    - {x: -0.42895952, y: 0.50001293, z: 0.752317}
+    - {x: -0.49532405, y: 0, z: 0.86870825}
+    - {x: 0.43705955, y: 0.49998456, z: 0.7476592}
+    - {x: 0.99998546, y: 0, z: -0.0053843977}
+    - {x: 0.43705955, y: 0.49998456, z: 0.7476592}
+    - {x: 0.50466776, y: 0, z: 0.8633137}
+    - {x: 0.86600566, y: 0.5000124, z: -0.004662987}
+    - {x: 0.49532142, y: 0, z: -0.8687098}
+    - {x: 0.86600566, y: 0.5000124, z: -0.004662987}
+    - {x: 0.99998546, y: 0, z: -0.0053843977}
+    - {x: 0.42896324, y: 0.49999171, z: -0.7523289}
+    - {x: -0.50464404, y: 0, z: -0.8633275}
+    - {x: 0.42896324, y: 0.49999171, z: -0.7523289}
+    - {x: 0.49532142, y: 0, z: -0.8687098}
+    - {x: -0.4370336, y: 0.5000033, z: -0.7476619}
+    - {x: -0.9999856, y: 0, z: 0.005371572}
+    - {x: -0.4370336, y: 0.5000033, z: -0.7476619}
+    - {x: -0.50464404, y: 0, z: -0.8633275}
+    - {x: -0.86601573, y: 0.4999951, z: 0.004651933}
+    - {x: -0.7071303, y: 0, z: 0.7070832}
+    - {x: -0.87947464, y: 0.4759457, z: -0.00002609909}
+    - {x: -0.6218896, y: 0.47598135, z: 0.62184817}
+    - {x: -1, y: 0, z: -0.000029675773}
+    - {x: 1, y: 0, z: -0.00002998221}
+    - {x: 0.62189573, y: 0.47598, z: 0.62184304}
+    - {x: 0.8794747, y: 0.47594577, z: -0.000026368594}
+    - {x: 0.70713675, y: 0, z: 0.70707685}
+    - {x: -0.0000089199575, y: 0, z: -1}
+    - {x: 0.62195987, y: 0.47595602, z: -0.62179714}
+    - {x: -0.000007844658, y: 0.47599104, z: -0.87945014}
+    - {x: 0.7071993, y: 0, z: -0.70701426}
+    - {x: -1, y: 0, z: -0.000029675773}
+    - {x: -0.6219601, y: 0.47595602, z: -0.62179697}
+    - {x: -0.87947464, y: 0.4759457, z: -0.00002609909}
+    - {x: -0.7071995, y: 0, z: -0.707014}
+    - {x: 0.00000012902755, y: 0, z: 1}
+    - {x: -0.6218896, y: 0.47598135, z: 0.62184817}
+    - {x: 0.00000011347598, y: 0.47595274, z: 0.8794709}
+    - {x: -0.7071303, y: 0, z: 0.7070832}
+    - {x: 0.70713675, y: 0, z: 0.70707685}
+    - {x: 0.00000011347598, y: 0.47595274, z: 0.8794709}
+    - {x: 0.62189573, y: 0.47598, z: 0.62184304}
+    - {x: 0.00000012902755, y: 0, z: 1}
+    - {x: 0.7071993, y: 0, z: -0.70701426}
+    - {x: 0.8794747, y: 0.47594577, z: -0.000026368594}
+    - {x: 0.62195987, y: 0.47595602, z: -0.62179714}
+    - {x: 1, y: 0, z: -0.00002998221}
+    - {x: -0.7071995, y: 0, z: -0.707014}
+    - {x: -0.000007844658, y: 0.47599104, z: -0.87945014}
+    - {x: -0.6219601, y: 0.47595602, z: -0.62179697}
+    - {x: -0.0000089199575, y: 0, z: -1}
+    - {x: -0.76457775, y: 0.3955668, z: 0.5088692}
+    - {x: -0.15152937, y: 0.9883674, z: 0.012991788}
+    - {x: -0.7918753, y: 0.5991256, z: 0.11824523}
+    - {x: -0.7925696, y: 0.5973176, z: -0.12265877}
+    - {x: -0.14749865, y: 0.98901236, z: -0.009935423}
+    - {x: -0.16536197, y: 0.9827864, z: 0.08237831}
+    - {x: 0.008024266, y: 0.9685259, z: 0.24878348}
+    - {x: -0.44006568, y: 0.5644416, z: 0.69838953}
+    - {x: -0.11945254, y: 0.97484, z: 0.18819675}
+    - {x: -0.22273582, y: 0.56509936, z: 0.79438746}
+    - {x: -0.06175104, y: 0.9754351, z: 0.21145499}
+    - {x: -0.15345912, y: 0.9865563, z: -0.056186996}
+    - {x: -0.7622723, y: 0.39238742, z: -0.5147554}
+    - {x: -0.13593584, y: 0.982948, z: -0.12383364}
+    - {x: 0.04761431, y: 0.95890737, z: -0.2796955}
+    - {x: 0.21653555, y: 0.9756203, z: 0.035739087}
+    - {x: 0.18744822, y: 0.96132153, z: 0.20180228}
+    - {x: 0.1887549, y: 0.97305965, z: -0.13238764}
+    - {x: 0.06674756, y: 0.9737222, z: 0.21773791}
+    - {x: 0.00929323, y: 0.40291908, z: 0.91518843}
+    - {x: 0.27447173, y: 0.55479926, z: 0.7854063}
+    - {x: -0.10467171, y: 0.97553366, z: -0.19333348}
+    - {x: -0.43472147, y: 0.5577338, z: -0.70707166}
+    - {x: -0.1904172, y: 0.5743974, z: -0.7961212}
+    - {x: -0.050093245, y: 0.9740484, z: -0.22072688}
+    - {x: 0.16627178, y: 0.9753931, z: 0.14478266}
+    - {x: 0.47358972, y: 0.56147623, z: 0.67857}
+    - {x: 0.74607575, y: 0.35817087, z: 0.56132394}
+    - {x: 0.22624393, y: 0.97035, z: 0.08505664}
+    - {x: 0.774, y: 0.5583432, z: 0.29862508}
+    - {x: 0.8286393, y: 0.54986906, z: 0.10488493}
+    - {x: 0.82936114, y: 0.5498251, z: -0.09925998}
+    - {x: 0.21642168, y: 0.9755338, z: -0.03867242}
+    - {x: 0.77649283, y: 0.55823016, z: -0.29229772}
+    - {x: 0.6835625, y: 0.5537222, z: -0.4755354}
+    - {x: 0.5450245, y: 0.3665304, z: -0.7540581}
+    - {x: 0.25653896, y: 0.5554094, z: -0.7910172}
+    - {x: 0.14261623, y: 0.9700392, z: -0.19668381}
+    - {x: 0.05902608, y: 0.97459996, z: -0.21603422}
+    - {x: 0.02742237, y: 0.4061667, z: -0.9133875}
+    - {x: -0.08487693, y: -0.9722888, z: 0.21783154}
+    - {x: 0.05116302, y: -0.44743702, z: -0.89285076}
+    - {x: 0.21289054, y: -0.7070633, z: -0.67434347}
+    - {x: 0.5177697, y: -0.4475657, z: -0.7291087}
+    - {x: -0.17059293, y: -0.68663055, z: -0.7067082}
+    - {x: 0.57757705, y: -0.70761186, z: -0.4070507}
+    - {x: 0.041652888, y: -0.9594574, z: 0.2787591}
+    - {x: 0.16267584, y: -0.9542356, z: 0.25094032}
+    - {x: -0.36422998, y: -0.7074111, z: -0.60572773}
+    - {x: 0.1961339, y: -0.97267467, z: 0.124239646}
+    - {x: -0.73107135, y: -0.46318796, z: -0.5009906}
+    - {x: 0.24284075, y: -0.96933883, z: 0.037555896}
+    - {x: -0.69816697, y: -0.70736766, z: -0.11042615}
+    - {x: 0.24310674, y: -0.969343, z: -0.035682596}
+    - {x: -0.69900525, y: -0.7073576, z: 0.10505693}
+    - {x: 0.290795, y: -0.9556158, z: 0.047292482}
+    - {x: 0.2650967, y: -0.9422122, z: 0.20484062}
+    - {x: 0.17493926, y: -0.93249327, z: -0.31599438}
+    - {x: 0.17293385, y: -0.93274194, z: 0.31636426}
+    - {x: 0.1970987, y: -0.9726731, z: -0.12271611}
+    - {x: -0.734875, y: -0.46325824, z: 0.4953288}
+    - {x: 0.29115424, y: -0.95561486, z: -0.045049977}
+    - {x: 0.16418934, y: -0.9543091, z: -0.24967185}
+    - {x: -0.36789244, y: -0.7074111, z: 0.6035103}
+    - {x: 0.26664734, y: -0.9422273, z: -0.2027487}
+    - {x: 0.04375353, y: -0.9591571, z: -0.2794695}
+    - {x: -0.12257866, y: -0.8916076, z: 0.43590173}
+    - {x: -0.082928024, y: -0.9723485, z: -0.21831474}
+    - {x: 0.022563357, y: -0.44723392, z: 0.8941324}
+    - {x: 0.22891039, y: -0.7066383, z: 0.66952395}
+    - {x: 0.39361078, y: -0.70618623, z: 0.5885334}
+    - {x: 0.7122232, y: -0.44869536, z: 0.5398245}
+    - {x: 0.08457469, y: -0.928583, z: -0.36135954}
+    - {x: -0.16907215, y: -0.977491, z: -0.12619835}
+    - {x: 0.6610182, y: -0.7074915, z: 0.2500216}
+    - {x: 0.7010521, y: -0.7075048, z: 0.08923466}
+    - {x: -0.089249276, y: -0.94142985, z: -0.3251837}
+    - {x: 0.08183034, y: -0.9286638, z: 0.36178362}
+    - {x: -0.092220426, y: -0.9415349, z: 0.32404858}
+    - {x: -0.23352882, y: -0.9531998, z: -0.19202709}
+    - {x: -0.23500648, y: -0.9531874, z: 0.19027796}
+    - {x: -0.2205665, y: -0.9745701, z: -0.039542936}
+    - {x: 0.70159185, y: -0.70754164, z: -0.084579766}
+    - {x: -0.17003688, y: -0.9774889, z: 0.12491127}
+    - {x: -0.27323472, y: -0.96045583, z: -0.053547334}
+    - {x: -0.22085108, y: -0.97457325, z: 0.03783992}
+    - {x: 0.6623311, y: -0.70747477, z: -0.24657036}
+    - {x: -0.27366757, y: -0.9604475, z: 0.051446345}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0.8794753, y: 0.47594452, z: -0.000033403914}
+    - {x: 0.6218885, y: 0.4759816, z: 0.62184894}
+    - {x: -0.8660164, y: 0.4999941, z: 0.004647811}
+    - {x: 0.6219562, y: 0.4759556, z: -0.62180114}
+    - {x: -0.43703645, y: 0.5000042, z: -0.7476597}
+    - {x: -0.4289644, y: 0.50000995, z: 0.7523162}
+    - {x: 0.000007829821, y: 0.47595143, z: 0.8794716}
+    - {x: 0.000007560945, y: 0.47599104, z: -0.8794501}
+    - {x: 0.42896324, y: 0.49999171, z: -0.7523289}
+    - {x: -0.6218883, y: 0.4759816, z: 0.6218491}
+    - {x: 0.8660072, y: 0.5000098, z: -0.004666613}
+    - {x: -0.879475, y: 0.47594506, z: -0.00002994299}
+    - {x: 0.43704984, y: 0.49999046, z: 0.747661}
+    - {x: -0.62195647, y: 0.47595567, z: -0.62180096}
+    - {x: 0.8794747, y: 0.47594577, z: -0.000026368594}
+    - {x: 0.62189573, y: 0.47598, z: 0.62184304}
+    - {x: -0.86601573, y: 0.4999951, z: 0.004651933}
+    - {x: 0.62195987, y: 0.47595602, z: -0.62179714}
+    - {x: -0.4370336, y: 0.5000033, z: -0.7476619}
+    - {x: -0.42895952, y: 0.50001293, z: 0.752317}
+    - {x: 0.00000011347598, y: 0.47595274, z: 0.8794709}
+    - {x: -0.000007844658, y: 0.47599104, z: -0.87945014}
+    - {x: 0.42896324, y: 0.49999171, z: -0.7523289}
+    - {x: -0.6218896, y: 0.47598135, z: 0.62184817}
+    - {x: 0.86600566, y: 0.5000124, z: -0.004662987}
+    - {x: -0.87947464, y: 0.4759457, z: -0.00002609909}
+    - {x: 0.43705955, y: 0.49998456, z: 0.7476592}
+    - {x: -0.6219601, y: 0.47595602, z: -0.62179697}
 --- !u!4 &7089404745201707177
 Transform:
   m_ObjectHideFlags: 0
@@ -102797,24 +103797,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7401682128337734799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7587960307328832513}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04e1b4f6e9351f246a2aaced7723efb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineModeL: 1
-  outlineColor: {r: 0.20091248, g: 1, b: 0, a: 1}
-  outlineWidth: 0
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &7401682128423474949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103424,6 +104406,7 @@ MonoBehaviour:
   helperPos: {fileID: 7401682128621563195}
   helperName: "\u041A\u043B\u0435\u043C\u043C\u043D\u0430\u044F \u043A\u043E\u043B\u043E\u0434\u043A\u0430
     \u0421"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!64 &7401682129200202095
@@ -103491,6 +104474,7 @@ MonoBehaviour:
   helperPos: {fileID: 7401682128603955830}
   helperName: "\u041A\u043B\u0435\u043C\u043C\u043D\u0430\u044F \u043A\u043E\u043B\u043E\u0434\u043A\u0430
     \u0412"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!114 &7401682129234363639
@@ -103560,6 +104544,7 @@ MonoBehaviour:
   - {fileID: 7401682129569020245}
   helperPos: {fileID: 7401682130131963260}
   helperName: "\u0411\u0412\u0421"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!65 &7401682129569020243
@@ -104408,7 +105393,6 @@ GameObject:
   - component: {fileID: 7063343094236253883}
   - component: {fileID: 6172696261895258398}
   - component: {fileID: 8236280810139219412}
-  - component: {fileID: 7401682128337734799}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -104651,6 +105635,7 @@ MonoBehaviour:
   - {fileID: 7614444721445952712}
   helperPos: {fileID: 2078017852}
   helperName: "\u043F\u0440\u043E\u0432\u043E\u0434\u0430"
+  _door: 0
   _buttonsPos: {fileID: 1149355510}
   _vertical: 0
 --- !u!65 &7614444721445952714
@@ -104893,6 +105878,7 @@ MonoBehaviour:
   outlineObjects: []
   helperPos: {fileID: 0}
   helperName: 
+  _door: 0
   CurrentState: 0
   _api: {fileID: 1183601007}
 --- !u!65 &7629318247822174804
@@ -105790,6 +106776,7 @@ MonoBehaviour:
   helperPos: {fileID: 0}
   helperName: "\u0410\u0432\u0442\u043E\u043F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0430\u0442\u0435\u043B\u044C
     \u043F\u043B\u044E\u0441\u043E\u0432\u044B\u0435 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
+  _door: 0
   _buttonsPos: {fileID: 0}
   _vertical: 0
 --- !u!23 &7752549656836639638

@@ -8,6 +8,7 @@ public class EnableImageButton : BaseButton
 {
     [SerializeField] private GameObject _object;
     [SerializeField] private BackButtonObject _backButtonObject;
+
     private void OnEnable()
     {
         _backButtonObject.BackButtonClickEvent += OnDisableMap;
@@ -21,12 +22,23 @@ public class EnableImageButton : BaseButton
         base.OnClicked(interactHand);
         if (_object.activeSelf)
         {
+      
+                SoundPlayer.Instance.PlayMapOpenSound();
             _object.SetActive(false);
         }
-        else _object.SetActive(true);
+        else
+        {
+            SoundPlayer.Instance.PlayMapCloseSound();
+            _object.SetActive(true);
+        }
     }
     private void OnDisableMap()
     {
-        _object.SetActive(false);
+        if (_object.activeSelf)
+        {
+            SoundPlayer.Instance.PlayMapCloseSound();
+            _object.SetActive(false);
+        }
+  
     }
 }

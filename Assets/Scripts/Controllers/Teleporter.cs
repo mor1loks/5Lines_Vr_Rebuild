@@ -18,10 +18,13 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private Transform _dspPosition;
     [SerializeField] private Transform _startPosition;
 
+    public UnityAction<string> OnTeleportEnd;
+
     private string _previousLocation;
 
     public void Teleport(string locationName)
     {
+        OnTeleportEnd(locationName);
         if (locationName == "start")
             TeleportPlayer(_startPosition);
 

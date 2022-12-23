@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class SoundPlayer : MonoBehaviour
 {
-    [SerializeField] private AudioClip _tapButtonSound, _mapOpenSound, _mapCloseSound, _radioSound, _stoneSound;
+    public static SoundPlayer Instance;
+    [SerializeField] private AudioClip _tapButtonSound, _mapOpenSound, _mapCloseSound, _radioSound, _stoneSound,_doorSound,_railNormalSound,_railNoSound,_railFriktSound;
 
     private AudioSource _audioSource;
+    private void Awake()
+    {
+        if(Instance==null)
+            Instance = this;
+    }
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -30,5 +36,21 @@ public class SoundPlayer : MonoBehaviour
     public void PlayStoneSound()
     {
         _audioSource.PlayOneShot(_stoneSound);
+    }
+    public void PlayDoorSound()
+    {
+        _audioSource.PlayOneShot(_doorSound);
+    }
+    public void PlayRailNormSound()
+    {
+        _audioSource.PlayOneShot(_railNormalSound);
+    }
+    public void PlayRailNoSound()
+    {
+        _audioSource.PlayOneShot(_railNoSound);
+    }
+    public void PlayRailFriktSound()
+    {
+        _audioSource.PlayOneShot(_railFriktSound);
     }
 }
