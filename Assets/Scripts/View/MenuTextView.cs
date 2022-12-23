@@ -12,14 +12,14 @@ public class MenuTextView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _warnText;
     public void SetMenuText(string headText, string commentText, string exitSureText)
     {
-        _infoHeaderText.text = headText;
-        _infoText.text = commentText;
-        _exitSureText.text = exitSureText;
+        _infoHeaderText.text = HtmlToText.Instance.HTMLToTextReplace(headText);
+        _infoText.text = HtmlToText.Instance.HTMLToTextReplace(commentText);
+        _exitSureText.text = HtmlToText.Instance.HTMLToTextReplace(exitSureText);
     }
 
    public void SetExitText(string exitText, string warntext)
     {
-        _exitText.text = exitText;
-        _warnText.text = warntext;
+        _exitText.text = HtmlToText.Instance.HTMLToTextReplace(exitText);
+        _warnText.text = HtmlToText.Instance.HTMLToTextReplace(warntext);
     }
 }
