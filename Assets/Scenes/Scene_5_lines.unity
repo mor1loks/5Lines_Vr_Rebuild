@@ -21852,7 +21852,7 @@ MonoBehaviour:
   _radioSound: {fileID: 8300000, guid: 4a2a1cc1bc7befb4bbc76a08519e336f, type: 3}
   _stoneSound: {fileID: 8300000, guid: f2b66e7351494954988de864544ac8f1, type: 3}
   _doorSound: {fileID: 8300000, guid: f508f652aeb960e49beb161264eea51a, type: 3}
-  _railNormalSound: {fileID: 8300000, guid: b48637a86c3dbb24c8464e7c6ae9751a, type: 3}
+  _railNormalSound: {fileID: 8300000, guid: c8471eeb7020ebf45a887b6b03cf2034, type: 3}
   _railNoSound: {fileID: 8300000, guid: c70e415dc022d2343b3c6432c03ea7eb, type: 3}
   _railFriktSound: {fileID: 8300000, guid: fcfe04ec77e510c4e89031fb1e577f32, type: 3}
   _railStoneSound: {fileID: 8300000, guid: bcccb390a69e37243ab0108c21652c51, type: 3}
@@ -46796,6 +46796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ObjectId>k__BackingField: stone
   _stone: {fileID: 306024970}
+  _soundPlayer: {fileID: 708189354}
 --- !u!1 &1474416172
 GameObject:
   m_ObjectHideFlags: 0
