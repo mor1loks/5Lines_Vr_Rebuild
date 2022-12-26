@@ -11944,7 +11944,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385832948}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 10.336, y: -0.333, z: 111.877}
+  m_LocalPosition: {x: 10.336, y: -0.238, z: 111.877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 641450046}
@@ -21855,7 +21855,7 @@ MonoBehaviour:
   _railNormalSound: {fileID: 8300000, guid: b48637a86c3dbb24c8464e7c6ae9751a, type: 3}
   _railNoSound: {fileID: 8300000, guid: c70e415dc022d2343b3c6432c03ea7eb, type: 3}
   _railFriktSound: {fileID: 8300000, guid: fcfe04ec77e510c4e89031fb1e577f32, type: 3}
-  _railStoneSound: {fileID: 0}
+  _railStoneSound: {fileID: 8300000, guid: bcccb390a69e37243ab0108c21652c51, type: 3}
 --- !u!4 &708189355
 Transform:
   m_ObjectHideFlags: 0
