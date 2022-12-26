@@ -26,6 +26,10 @@ public class StaticSoundsPlayerController : MonoBehaviour
         else if(soundName == "dsp")
             _staticSounds.StopSoundPlayer();
         else if(soundName == "relay_room")
+        {
             _staticSounds.StopSoundPlayer();
+            _staticSounds.PlayRelaySound();
+        }
+          
     }
 }

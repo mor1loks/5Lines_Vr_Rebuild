@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundPlayer : MonoBehaviour
 {
     public static SoundPlayer Instance;
-    [SerializeField] private AudioClip _tapButtonSound, _mapOpenSound, _mapCloseSound, _radioSound, _stoneSound,_doorSound,_railNormalSound,_railNoSound,_railFriktSound;
+    [SerializeField] private AudioClip _tapButtonSound, _mapOpenSound, _mapCloseSound, _radioSound, _stoneSound,_doorSound,_railNormalSound,_railNoSound,_railFriktSound, _railStoneSound;
 
     private AudioSource _audioSource;
     private void Awake()
@@ -52,5 +52,9 @@ public class SoundPlayer : MonoBehaviour
     public void PlayRailFriktSound()
     {
         _audioSource.PlayOneShot(_railFriktSound);
+    }
+    public void PlayRailStoneSound()
+    {
+        _audioSource.PlayOneShot(_railStoneSound);
     }
 }

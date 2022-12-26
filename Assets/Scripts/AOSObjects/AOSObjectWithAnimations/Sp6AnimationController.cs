@@ -117,6 +117,7 @@ public class Sp6AnimationController : AosObjectBase
     public void PlayRockEngineMinusAnim()
     {
         _anim.SetTrigger("otkazRockEngineMinus");
+        SoundPlayer.Instance.PlayRailStoneSound();
     }
     [AosAction(name: "Проиграть анимацию Камень двигатель плюс")]
     public void PlayRockEnginePlusAnim()
