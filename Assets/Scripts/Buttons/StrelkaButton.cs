@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class StrelkaButton : BaseButton
 {
     [SerializeField] private bool _side;
+    public UnityAction OnStrelkaButtonClicked;
     public override void OnClicked(InteractHand interactHand)
     {
         StrelkaAOS strelka = FindObjectOfType<StrelkaAOS>();
@@ -25,6 +26,7 @@ public class StrelkaButton : BaseButton
             AOSRadio button = radioButtonsContainer.GetButtonMinus(locationTextController.GetLocationName());
             button.InvokeOnClick();
         }
+        OnStrelkaButtonClicked?.Invoke();
     
     }
 }
