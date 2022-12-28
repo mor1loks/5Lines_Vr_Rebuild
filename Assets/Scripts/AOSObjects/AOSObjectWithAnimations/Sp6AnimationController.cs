@@ -116,12 +116,16 @@ public class Sp6AnimationController : AosObjectBase
     [AosAction(name: "Проиграть анимацию Камень двигатель минус")]
     public void PlayRockEngineMinusAnim()
     {
+        if (InSoundPlace(_locationController.GetLocationName()))
+            SoundPlayer.Instance.PlayRailStoneSound();
         _anim.SetTrigger("otkazRockEngineMinus");
-        SoundPlayer.Instance.PlayRailStoneSound();
+      
     }
     [AosAction(name: "Проиграть анимацию Камень двигатель плюс")]
     public void PlayRockEnginePlusAnim()
     {
+        if (InSoundPlace(_locationController.GetLocationName()))
+            SoundPlayer.Instance.PlayRailNormSound();
         _anim.SetTrigger("otkazRockEnginePlus");
     }
 
