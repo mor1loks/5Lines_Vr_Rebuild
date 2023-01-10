@@ -52295,7 +52295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b605d83a9c854114fb329641afecf0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: -0.02
+  _speed: -0.035
   _startPos: -395
   _resetPos: 475
 --- !u!4 &1582594274
@@ -52378,7 +52378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b605d83a9c854114fb329641afecf0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.02
+  _speed: 0.035
   _startPos: 395
   _resetPos: -475
 --- !u!4 &1584782228
