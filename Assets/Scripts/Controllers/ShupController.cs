@@ -83,6 +83,8 @@ public class ShupController : AosObjectBase
         _blackShup.transform.position = Vector3.zero;
         measureText = "";
         SetMeasureTextEvent?.Invoke("");
+        _measureController.SetRedText(null);
+        _measureController.SetBlackText(null);
         _firstMeasure = false;
     }
 }
