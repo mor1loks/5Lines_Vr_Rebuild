@@ -79,6 +79,7 @@ public class APIEventsInvoker : MonoBehaviour
     private void OnSetLocationToLocationController(string location)
     {
         _locationController.SetLocation(location);
+        _diet.EnableDietMeshByLocationName(location);
     }
     private void OnSetLocationAfterConnection()
     {

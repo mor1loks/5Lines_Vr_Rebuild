@@ -8,6 +8,18 @@ public class Diet : MonoBehaviour
     [SerializeField] private GameObject _buttonMinus;
     [SerializeField] private StrelkaButton _strelkaMinus;
     [SerializeField] private StrelkaButton _strelkaPlus;
+    [SerializeField] private GameObject[] _dietMeshParts;
+
+    public void EnableDietMeshByLocationName(string value)
+    {
+            foreach (var item in _dietMeshParts)
+            {
+                if (value == "board_front")
+                item.GetComponent<MeshRenderer>().enabled = false;
+                else
+                item.GetComponent<MeshRenderer>().enabled = true;
+        }
+    }
     public void EnableDiet(bool value, Transform position)
     {
         if (value)
