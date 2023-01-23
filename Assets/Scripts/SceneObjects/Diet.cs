@@ -14,7 +14,7 @@ public class Diet : MonoBehaviour
     {
             foreach (var item in _dietMeshParts)
             {
-                if (value == "board_front")
+                if (value == "board_front" || value== "dsp")
                 item.GetComponent<MeshRenderer>().enabled = false;
                 else
                 item.GetComponent<MeshRenderer>().enabled = true;

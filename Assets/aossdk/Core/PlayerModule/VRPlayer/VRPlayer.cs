@@ -64,6 +64,7 @@ namespace AosSdk.Core.PlayerModule.VRPlayer
         {
             var targetPosition = target.position;
             _xrOrigin.transform.rotation = target.rotation;
+            transform.rotation = target.rotation;
             TeleportTo(targetPosition.x, targetPosition.y, targetPosition.z);
         }
 
