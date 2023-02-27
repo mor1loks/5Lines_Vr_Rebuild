@@ -6,6 +6,7 @@ public class StaticSoundsPlayerController : MonoBehaviour
 {
     [SerializeField] private StaticSoundsPlayer _staticSounds;
     [SerializeField] private Teleporter _teleporter;
+    private string _currentSound;
     private void OnEnable()
     {
         _teleporter.OnTeleportEnd += OnPlayStaticSond;
@@ -16,21 +17,26 @@ public class StaticSoundsPlayerController : MonoBehaviour
     }
     private void OnPlayStaticSond(string soundName)
     {
-        if (soundName == "start" || soundName == "field")
+        if(soundName=="start"|| soundName == "field" || soundName == "dsp" || soundName == "relay_room"||soundName == "hall")
         {
-            _staticSounds.StopSoundPlayer();
-            _staticSounds.PlayFieldSound();
+            if (soundName == _currentSound)
+                return;
+            if (soundName == "start" || soundName == "field")
+            {
+                _staticSounds.StopSoundPlayer();
+                _staticSounds.PlayFieldSound();
+            }
+            else if (soundName == "hall")
+                _staticSounds.StopSoundPlayer();
+            else if (soundName == "dsp")
+                _staticSounds.StopSoundPlayer();
+            else if (soundName == "relay_room")
+            {
+                _staticSounds.StopSoundPlayer();
+                _staticSounds.PlayRelaySound();
+            }
+            _currentSound = soundName;
         }
-       else if(soundName == "hall")
-            _staticSounds.StopSoundPlayer();
-        else if(soundName == "dsp")
-            _staticSounds.StopSoundPlayer();
-        else if(soundName == "relay_room")
-        {
-            _staticSounds.StopSoundPlayer();
-            _staticSounds.PlayRelaySound();
-        }
-        Debug.Log(soundName + "Sound Play Finish");
-
     }
+       
 }
