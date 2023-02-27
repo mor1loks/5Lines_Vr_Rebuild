@@ -30,6 +30,7 @@ public class StaticSoundsPlayerController : MonoBehaviour
             _staticSounds.StopSoundPlayer();
             _staticSounds.PlayRelaySound();
         }
-          
+        Debug.Log(soundName + "Sound Play Finish");
+
     }
 }

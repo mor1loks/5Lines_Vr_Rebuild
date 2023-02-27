@@ -9,6 +9,7 @@ public class BackTriggerObject : BaseObject
 {
     private BackButtonObject _tempBackButton;
     private InteractHand _hand;
+    
 
     public override void OnClicked(InteractHand interactHand)
     {
