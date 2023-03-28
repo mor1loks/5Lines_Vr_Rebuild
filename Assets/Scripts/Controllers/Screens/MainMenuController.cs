@@ -47,6 +47,16 @@ public class MainMenuController : MonoBehaviour
             _mainMenu.SetActive(true);
         }
     }
+    public void TeleporterTimeResult()
+    {
+        _api.MenuTeleport = false;
+        _currentPlayerPosition = new Vector3(_modeController.GetPlayerTransform().position.x, 0.1500001f, _modeController.GetPlayerTransform().position.z);
+        Player.Instance.TeleportTo(_menuPosition);
+        _descPlayer.transform.rotation = _menuPosition.rotation;
+        _vrPlayer.transform.rotation = _menuPosition.rotation;
+        _cameraFlash.CameraFlashStart();
+
+    }
     public void AllowTeleport(bool value)
     {
         _canTeleport = value;

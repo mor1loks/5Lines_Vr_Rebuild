@@ -15,6 +15,7 @@ public class APIEventsInvoker : MonoBehaviour
     [SerializeField] private MenuTextView _menutext;
     [SerializeField] private StartScreenController _startScreenController;
     [SerializeField] private MeasureController _measureController;
+    [SerializeField] private MainMenuController _mainmenu;
 
     private void OnEnable()
     {
@@ -112,6 +113,8 @@ public class APIEventsInvoker : MonoBehaviour
     private void OnSetResultScreenText(string headertext, string commentText, string evalText)
     {
         _lastScreenController.ShowLastScteen(headertext, commentText,evalText);
+        _mainmenu.TeleporterTimeResult();
+
     }
     private void OnSetExitText(string exitText, string warntext)
     {
