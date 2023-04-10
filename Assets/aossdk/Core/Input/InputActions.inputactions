@@ -1197,6 +1197,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Screen360",
+                    "type": "Button",
+                    "id": "f0884721-fc3d-48c4-b923-7dd5858774a1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1384,6 +1393,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Esc",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "280bbf31-23fd-414f-9739-5b807cc65f34",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Screen360",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
