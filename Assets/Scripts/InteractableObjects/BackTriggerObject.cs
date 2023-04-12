@@ -9,8 +9,13 @@ public class BackTriggerObject : BaseObject
 {
     private BackButtonObject _tempBackButton;
     private InteractHand _hand;
-    
 
+    protected override void Start()
+    {
+        base.Start();
+        IsHoverable = false;
+        IsClickable = false;
+    }
     public override void OnClicked(InteractHand interactHand)
     {
         return;
@@ -23,6 +28,7 @@ public class BackTriggerObject : BaseObject
     {
         return;
     }
+
 
     private void OnTriggerEnter(Collider col)
     {
