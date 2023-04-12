@@ -11,18 +11,13 @@ public class TriggerObject : BaseObject
     [SerializeField] private SceneAosObject _exitObject;
     [SerializeField] private bool _field;
 
-    public override void OnClicked(InteractHand interactHand)
+    protected override void Start()
     {
-        return;
+        base.Start();
+        IsHoverable = false;
+        IsClickable = false;
     }
-    public override void OnHoverIn(InteractHand interactHand)
-    {
-        return;
-    }
-    public override void OnHoverOut(InteractHand interactHand)
-    {
-        return;
-    }
+    
 
         private void OnTriggerEnter(Collider col)
         {
