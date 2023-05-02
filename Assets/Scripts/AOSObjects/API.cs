@@ -212,10 +212,12 @@ public class API : AosObjectBase
     [AosAction(name: "Показать точки измерения")]
     public void showMeasureResult(JObject result, JObject nav)
     {
+        Debug.Log("in showFaultInfo Measure Result");
         if(result.SelectToken("result")!=null)
         {
             float measureValue = float.Parse(result.SelectToken("result").ToString());
             OnSetMeasureValue?.Invoke(measureValue);
+            Debug.Log("in showFaultInfo Measure Result "+ measureValue);
         }
     }
     [AosAction(name: "Показать меню")]
