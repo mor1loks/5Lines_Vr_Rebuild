@@ -29,14 +29,14 @@ public class AmperRotator : MonoBehaviour
             _rotator += 15;
             CheckRotatorDegree();
             GetVoltage(_rotator);
-            _lid.transform.localRotation = Quaternion.Euler(0, _rotator, 0);
+            _lid.transform.localRotation = Quaternion.Euler(-90, _rotator, 0);
         }
         else
         {
             _rotator -= 15;
             CheckRotatorDegree();
             GetVoltage(_rotator);
-            _lid.transform.localRotation = Quaternion.Euler(0, _rotator, 0);
+            _lid.transform.localRotation = Quaternion.Euler(-90, _rotator, 0);
         }
     }
     private void CheckRotatorDegree()

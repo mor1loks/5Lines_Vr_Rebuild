@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PointerDevice : MonoBehaviour
 {
     [SerializeField] private float minValue;
     [SerializeField] private float maxValue;
-    [Space] [SerializeField] private float divisionValue;
+    [Space][SerializeField] private float divisionValue;
     [SerializeField] private Transform arrowTransform;
     [SerializeField] private ArrowRotationAxis arrowRotationAxis;
 
@@ -34,23 +35,23 @@ public class PointerDevice : MonoBehaviour
         if (value < 0)
         {
             if (value > -1 * maxValue)
-                targetRotation *= divisionValue * -0.02f;
+                targetRotation *= divisionValue * -0.01f;
             else
-                targetRotation *= divisionValue * -0.04f;
+                targetRotation *= divisionValue * -0.015f;
             retVal = "NEGOVERBOUND";
         }
         else if (value > maxValue)
         {
             if (value >= 2 * maxValue)
-                targetRotation *= divisionValue * maxValue * 1.04f;
+                targetRotation *= divisionValue * maxValue * 0.80f;
             else
-                targetRotation *= divisionValue * maxValue * 1.02f;
+                targetRotation *= divisionValue * maxValue * 0.78f;
             retVal = "POSOVERBOUND";
         }
         else
-            targetRotation *= divisionValue * value;
-    
-        targetRotation += new Vector3(0, -55, 0);
+            targetRotation *= divisionValue * value *0.76f;
+
+        targetRotation += new Vector3(-90, 0, -41);
         Debug.Log(targetRotation + "Rotation     " + value + " value        " + divisionValue + " Division");
 
         arrowTransform.localRotation = Quaternion.Euler(targetRotation);
@@ -67,11 +68,10 @@ public class PointerDevice : MonoBehaviour
     }
     private void SetDivisionValue()
     {
-        divisionValue = 108/ maxValue;
+        divisionValue = 108 / maxValue;
     }
     public float GetMaxValue()
     {
         return maxValue;
     }
-
 }

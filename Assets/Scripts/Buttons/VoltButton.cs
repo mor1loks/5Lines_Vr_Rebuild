@@ -42,7 +42,7 @@ public class VoltButton : BaseButton
             GetComponent<SpriteRenderer>().enabled = false;
             ButtonDownEvent?.Invoke(_index);
        
-            while(_buttonBox.transform.localPosition.y>=0.059f)
+            while(_buttonBox.transform.localPosition.y>=0.058f)
             {
                 _buttonBox.transform.localPosition -= new Vector3(0, 0.001f, 0);
                 yield return new WaitForSeconds(0.005f);
@@ -51,7 +51,7 @@ public class VoltButton : BaseButton
         else
         {
             yield return new WaitForSeconds(0.05f);
-            while (_buttonBox.transform.localPosition.y <= 0.065f)
+            while (_buttonBox.transform.localPosition.y <= 0.0605f)
             {
                 _buttonBox.transform.localPosition += new Vector3(0, 0.001f, 0);
                 yield return new WaitForSeconds(0.005f);
