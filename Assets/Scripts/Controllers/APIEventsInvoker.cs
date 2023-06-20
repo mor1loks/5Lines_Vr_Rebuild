@@ -102,9 +102,10 @@ public class APIEventsInvoker : MonoBehaviour
     {
         MeasureButtonsActivator.Instance.AddButtonToList(buttonName);
     }
-    private void OnActivateSceneObjectByName(string id, string name)
+    private void OnActivateSceneObjectByName(string id, string name, string time)
     {
-        AOSColliderActivator.Instance.ActivateColliders(id, name);
+        
+        AOSColliderActivator.Instance.ActivateColliders(id, name,time);
     }
     private void OnSetLastScreenText(string headertext, string commentText)
     {

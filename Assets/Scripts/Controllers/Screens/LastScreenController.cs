@@ -13,6 +13,7 @@ public class LastScreenController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _commentText;
     [SerializeField] private GameObject _exitButton;
     [SerializeField] private GameObject _backButton;
+    [SerializeField] private GameObject _locationName;
     public void ShowMessageScreen(string headText, string commentText)
     {
         ShowMessageScreen();
@@ -21,6 +22,7 @@ public class LastScreenController : MonoBehaviour
     public void ShowLastScteen(string headText, string commentText, string evaltext)
     {
         ShowLastScreen();
+        _locationName.SetActive(false);
         SetText(headText, commentText,evaltext);
     }
     private void SetText(string headText, string commentText)

@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Progress;
 
 [AosSdk.Core.Utils.AosObject(name: "АПИ")]
 public class API : AosObjectBase
@@ -26,7 +27,7 @@ public class API : AosObjectBase
     public UnityAction<string> OnAddMeasureButton;
     public UnityAction<string> OnReaction;
     public UnityAction<string, string> OnEnableMovingButton;
-    public UnityAction<string, string> OnActivateByName;
+    public UnityAction<string, string, string> OnActivateByName;
     public UnityAction<string, string> OnSetMessageText;
     public UnityAction<string, string,string> OnSetResultText;
     public UnityAction<string, string> OnShowExitText;
@@ -89,16 +90,33 @@ public class API : AosObjectBase
         foreach (JObject item in data)
         {
             var temp = item.SelectToken("apiId");
+            var id = "";
+            var name = "";
+            var time = "";
             if (temp != null)
             {
-                OnActivateByName?.Invoke(temp.ToString(), item.SelectToken("name").ToString());
+                id = temp.ToString();
+                name = item.SelectToken("name").ToString();
             }
-        }
+            var timeText = item.SelectToken("result");
+            if (timeText != null)
+            {
+                var timeToShow = timeText.SelectToken("tm");
+                if (timeToShow != null)
+                {
+                    time = timeText.SelectToken("tm").ToString(); 
+            
+                }
+            }
+            OnActivateByName?.Invoke(id,name,time);
+        }      
+
         if (nav.SelectToken("back")!= null && nav.SelectToken("back").SelectToken("action")!=null && nav.SelectToken("back").SelectToken("action").ToString() != String.Empty)
         {
             OnActivateBackButton?.Invoke(nav.SelectToken("back").SelectToken("action").ToString());
         }
         OnSetLocationForFieldColliders?.Invoke(location);
+        
     }
     [AosAction(name: "Обновить место")]
     public void updatePlace(JArray data)

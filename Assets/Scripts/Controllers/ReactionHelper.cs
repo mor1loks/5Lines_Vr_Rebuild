@@ -14,17 +14,20 @@ public class ReactionHelper : MonoBehaviour
         _api.OnReaction += OnShowReactionText;
         _api.OnShowPlace += OnHideReactionText;
         _api.OnEnableMovingButton += OnHideReactionText;
+        
     }
     private void OnDisable()
     {
         _api.OnReaction -= OnShowReactionText;
         _api.OnShowPlace -= OnHideReactionText;
         _api.OnEnableMovingButton -= OnHideReactionText;
+        
     }
     private void OnShowReactionText(string text)
     {
         _reactionHelperObject.SetActive(true);
         _reactionText.text = HtmlToText.Instance.HTMLToTextReplace(text);
+        
     }
     private void OnHideReactionText()
     {
@@ -41,4 +44,5 @@ public class ReactionHelper : MonoBehaviour
     {
         transform.position = newPos.position;
     }
+    
 }

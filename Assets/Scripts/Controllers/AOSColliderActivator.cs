@@ -10,6 +10,9 @@ public class AOSColliderActivator : MonoBehaviour
     private List<BaseObject> _aosSceneObjects = new List<BaseObject>();
     public bool CanTouch { get; set; } = true;
     private AOSColliderActivator(){}
+    
+
+   
 
     private void Awake()
     {
@@ -20,15 +23,26 @@ public class AOSColliderActivator : MonoBehaviour
     {
         _aosSceneObjects.Add(obj);
     }
-
-    public void ActivateColliders(string objectName, string text)
+    
+    public void ActivateColliders(string objectName,string name, string timeText)
     {
+
+        if (timeText == "") // || timeText == "0";
+        {
+            timeText = name;
+        }
+        else
+        {
+            timeText = $"{name} \nВремя перехода:{timeText}";
+        }
+        
         foreach (var item in _aosSceneObjects)
         {
            if(item.GetAOSName()==objectName)
             {
                 item.EnableObject(true);
-                item.SetHelperName(text);
+
+                item.SetHelperName(timeText);
             }
         
         }
