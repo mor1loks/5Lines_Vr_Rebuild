@@ -27,7 +27,7 @@ public class AOSColliderActivator : MonoBehaviour
     public void ActivateColliders(string objectName,string name, string timeText)
     {
 
-        if (timeText == "") // || timeText == "0";
+        if (timeText == ""|| timeText == "0")
         {
             timeText = name;
         }
