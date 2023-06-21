@@ -80,6 +80,7 @@ public class API : AosObjectBase
     [AosAction(name: "Показать место")]
     public void showPlace(JObject place, JArray data, JObject nav)
     {
+       
         string location = place.SelectToken("apiId").ToString();
         OnSetLocation?.Invoke(location);
         if (place.SelectToken("name") != null)
@@ -109,6 +110,7 @@ public class API : AosObjectBase
                 }
             }
             OnActivateByName?.Invoke(id,name,time);
+            Debug.Log(time.ToString());
         }      
 
         if (nav.SelectToken("back")!= null && nav.SelectToken("back").SelectToken("action")!=null && nav.SelectToken("back").SelectToken("action").ToString() != String.Empty)
