@@ -13,7 +13,7 @@ public class ExitMenuButton : BaseButton
         base.OnClicked(interactHand);
         _escButton.ChangeShowValue(false);
         _menuButton.ChangeShowValue(false);
-        _mainController.TeleportToPreviousLocation();
+        _mainController.TeleportToGame();
 
     }
 }

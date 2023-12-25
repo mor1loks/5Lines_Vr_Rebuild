@@ -26,7 +26,7 @@ public class Zoom : MonoBehaviour
     } 
     public void ResetZoomCamera()
     {
-            _playerCamera.fieldOfView = 60;
+            _playerCamera.fieldOfView = 75;
     }
      private void OnMouseWheel(InputAction.CallbackContext obj)
     {
@@ -43,8 +43,8 @@ public class Zoom : MonoBehaviour
         else
         {
             _zoomValue += 15;
-            if (_zoomValue > 60)
-                _zoomValue = 60;
+            if (_zoomValue > 75)
+                _zoomValue = 75;
         }
        
         _playerCamera.fieldOfView = _zoomValue;

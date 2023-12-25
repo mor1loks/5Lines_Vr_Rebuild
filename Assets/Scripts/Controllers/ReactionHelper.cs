@@ -27,7 +27,6 @@ public class ReactionHelper : MonoBehaviour
     {
         _reactionHelperObject.SetActive(true);
         _reactionText.text = HtmlToText.Instance.HTMLToTextReplace(text);
-        
     }
     private void OnHideReactionText()
     {
@@ -40,9 +39,6 @@ public class ReactionHelper : MonoBehaviour
         _reactionText.text = "";
     }
 
-    public void ChangeReactionHelperPosition(Transform newPos)
-    {
-        transform.position = newPos.position;
-    }
+
     
 }

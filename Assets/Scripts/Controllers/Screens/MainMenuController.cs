@@ -6,56 +6,46 @@ using AosSdk.Core.PlayerModule;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private GameObject _descPlayer;
-    [SerializeField] private GameObject _vrPlayer;
-    [Space]
-    [SerializeField] private CameraFlash _cameraFlash;
-    [Space]
-    [SerializeField] private ModeController _modeController;
-    [SerializeField] private Transform _menuPosition;
-    [SerializeField] private GameObject[] _menuButtons;
     [SerializeField] private GameObject _mainMenu;
+    [SerializeField] private GameObject _menu;
+    [SerializeField] private CameraFlash _cameraFlash;
+    [SerializeField] private CursorManager _cursorManager;
+    [SerializeField] private GameObject _interacthelpers;
+
     [SerializeField] private API _api;
     private bool _canTeleport = true;
 
-    private Vector3 _currentPlayerPosition = new Vector3();
-
-    public void TeleportToMainMenuLocation()
+    public void TeleportToMenu()
     {
         if(_canTeleport)
         {
-            _api.MenuTeleport = false;
-            _currentPlayerPosition = new Vector3(_modeController.GetPlayerTransform().position.x, 0.1500001f, _modeController.GetPlayerTransform().position.z);
-            Player.Instance.TeleportTo(_menuPosition);
-            _descPlayer.transform.rotation = _menuPosition.rotation;
-            _vrPlayer.transform.rotation = _menuPosition.rotation;
+            _api.OnMenuInvoke();
             _cameraFlash.CameraFlashStart();
+            _cursorManager.EnableCursor(true);
+            _mainMenu.SetActive(true);
+            _menu.SetActive(true);
+            _interacthelpers.SetActive(false);
         }
-  
     }
-    public void TeleportToPreviousLocation()
+    public void TeleportToGame()
     {
         if (_canTeleport)
         {
             _api.MenuTeleport = true;
+            _cursorManager.EnableCursor(false);
             _cameraFlash.CameraFlashStart();
-            Player.Instance.TeleportTo(_currentPlayerPosition);
-            foreach (var item in _menuButtons)
-            {
-                item.SetActive(false);
-            }
-            _mainMenu.SetActive(true);
+            _mainMenu.SetActive(false);
+            _menu.SetActive(false);
+            _interacthelpers.SetActive(true);
         }
     }
     public void TeleporterTimeResult()
     {
         _api.MenuTeleport = false;
-        _currentPlayerPosition = new Vector3(_modeController.GetPlayerTransform().position.x, 0.1500001f, _modeController.GetPlayerTransform().position.z);
-        Player.Instance.TeleportTo(_menuPosition);
-        _descPlayer.transform.rotation = _menuPosition.rotation;
-        _vrPlayer.transform.rotation = _menuPosition.rotation;
+        _cursorManager.EnableCursor(true);
+        _mainMenu.SetActive(true);
+        _menu.SetActive(true);
         _cameraFlash.CameraFlashStart();
-
     }
     public void AllowTeleport(bool value)
     {

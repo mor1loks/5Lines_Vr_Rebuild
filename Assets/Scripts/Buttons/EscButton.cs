@@ -8,6 +8,7 @@ public class EscButton : MonoBehaviour
     [SerializeField] private MainMenuController _menuController;
     [SerializeField] private API _api;
     private bool _show = false;
+    public bool Show { get; set; } = false;
     private void OnEnable()
     {
         _menuAction.action.performed += OnShowMenu;
@@ -18,16 +19,18 @@ public class EscButton : MonoBehaviour
     }
     private void OnShowMenu(InputAction.CallbackContext c)
     {
+        if (!Show)
+            return;
         if(!_show)
         {
-            _menuController.TeleportToMainMenuLocation();
+            _menuController.TeleportToMenu();
             _show = true;
             _api.OnMenuInvoke();
         }
         else
         {
             _show = false;
-            _menuController.TeleportToPreviousLocation();
+            _menuController.TeleportToGame();
         }
     }
     public void ChangeShowValue(bool value)

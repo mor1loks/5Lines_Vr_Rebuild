@@ -109,6 +109,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnSetLastScreenText(string headertext, string commentText)
     {
+
         _lastScreenController.ShowMessageScreen(headertext, commentText);
     }
     private void OnSetResultScreenText(string headertext, string commentText, string evalText)
@@ -119,10 +120,12 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnSetExitText(string exitText, string warntext)
     {
+        Debug.Log("On set exit text");
         _menutext.SetExitText(exitText, warntext);
     }
     private void OnSetMenuText(string headText, string commentText, string exitSureText)
     {
+        Debug.Log("On set menu text");
         _menutext.SetMenuText(headText, commentText, exitSureText);
     }
     private void OnSetStartText(string headerText, string commentText, string buttonText, NextButtonState state)

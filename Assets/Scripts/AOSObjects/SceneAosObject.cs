@@ -21,12 +21,6 @@ public class SceneAosObject : AosObjectBase
         }
             
             OnClickObject?.Invoke(ObjectId);
-        if (_place&& _reactionPos!=null)
-        {
-            ReactionHelper reactionHelper = FindObjectOfType<ReactionHelper>();
-            if (reactionHelper != null)
-                reactionHelper.ChangeReactionHelperPosition(_reactionPos);
-        }
     }
 
     public void ActionWithObject(string actionName)

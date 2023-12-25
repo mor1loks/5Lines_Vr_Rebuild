@@ -12,12 +12,12 @@ public class MenuButton : BaseButton
         MainMenuController menuController = FindObjectOfType<MainMenuController>();
         if(!_show)
         {
-            menuController.TeleportToMainMenuLocation();
+            menuController.TeleportToMenu();
             _show = true;
         }
         else
         {
-            menuController.TeleportToPreviousLocation();
+            menuController.TeleportToGame();
             _show =false;
         }
 

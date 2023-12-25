@@ -1206,6 +1206,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "InfoImage",
+                    "type": "Button",
+                    "id": "c05ac682-676e-40ca-bf50-6c294b9627a9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1404,6 +1413,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Screen360",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "703c24d3-a533-41f9-82a2-cccf61ca2bd8",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InfoImage",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

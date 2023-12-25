@@ -1,8 +1,5 @@
 using AosSdk.Core.PlayerModule;
 using AosSdk.Core.PlayerModule.Pointer;
-using Newtonsoft.Json.Linq;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,19 +12,24 @@ public class NextButton : BaseButton
 {
     public UnityAction<string> OnNextButtonPressed;
     [HideInInspector] public NextButtonState CurrentState;
-    [SerializeField] private API _api;
+    protected API API;
+    protected override void Start()
+    {
+        base.Start();
+        API = FindObjectOfType<API>();
+    }
     public override void OnClicked(InteractHand interactHand)
     {
         if (CurrentState == NextButtonState.Start)
         {
-            _api.OnInvokeNavAction("next");
+            API.OnInvokeNavAction("next");
             OnNextButtonPressed?.Invoke("next");
             Player.Instance.CanMove = false;
         }
      
         else if (CurrentState == NextButtonState.Fault)
         {
-            _api.OnInvokeNavAction("start");
+            API.OnInvokeNavAction("start");
             OnNextButtonPressed?.Invoke("start");
             Player.Instance.CanMove = true;
         }
