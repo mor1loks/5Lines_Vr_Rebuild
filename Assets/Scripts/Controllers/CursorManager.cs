@@ -10,7 +10,6 @@ public class CursorManager : MonoBehaviour
     private void Awake()
     {
         _pointer = _knob.GetComponent<DesktopPointer>();
-        Cursor.lockState = CursorLockMode.Locked;
     }
     public void EnableCursor(bool value)
     {
@@ -22,6 +21,7 @@ public class CursorManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Confined;
         }
+        Cursor.visible = value;
         Player.Instance.CanMove = !value;
         _knob.enabled = !value;
         _pointer.enabled = !value;

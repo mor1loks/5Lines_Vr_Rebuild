@@ -1,11 +1,9 @@
-using System.Collections;
-using AosSdk.Core.Interaction.Interfaces;
-using AosSdk.Core.Utils;
 using AosSdk.Core.PlayerModule.Pointer;
 using UnityEngine;
-using UnityEngine.Events;
+using System;
 public class EnableImageButton : BaseButton
 {
+    public static Action MapButtonClickEvent;
     [SerializeField] private GameObject _object;
     [SerializeField] private BackButtonObject _backButtonObject;
 
@@ -19,18 +17,7 @@ public class EnableImageButton : BaseButton
     }
     public override void OnClicked(InteractHand interactHand)
     {
-        base.OnClicked(interactHand);
-        if (_object.activeSelf)
-        {
-      
-                SoundPlayer.Instance.PlayMapOpenSound();
-            _object.SetActive(false);
-        }
-        else
-        {
-            SoundPlayer.Instance.PlayMapCloseSound();
-            _object.SetActive(true);
-        }
+        MapButtonClickEvent?.Invoke();
     }
     private void OnDisableMap()
     {

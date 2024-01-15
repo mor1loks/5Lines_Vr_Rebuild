@@ -9,6 +9,9 @@ public class Zoom : MonoBehaviour
     [SerializeField] private Camera _playerCamera;
     private float _zoomValue;
 
+    private float _maxZoomValue = 15;
+    private float _minZoomValue = 75;
+
     public bool CanZoom = true;
 
     private float _zoom;
@@ -26,25 +29,25 @@ public class Zoom : MonoBehaviour
     } 
     public void ResetZoomCamera()
     {
-            _playerCamera.fieldOfView = 75;
+      _playerCamera.fieldOfView = 75;
     }
      private void OnMouseWheel(InputAction.CallbackContext obj)
     {
-        if (!CanZoom)
+        if (!CanZoom || _zoomValue< _maxZoomValue || _zoomValue > _minZoomValue)
             return;
             _zoom = obj.ReadValue<float>();
             if (_zoom > 0)
         {
             _zoomValue -= 15;
-            if (_zoomValue < 15)
-                _zoomValue = 15;
+            if (_zoomValue < _maxZoomValue)
+                _zoomValue = _maxZoomValue;
         }
 
         else
         {
             _zoomValue += 15;
-            if (_zoomValue > 75)
-                _zoomValue = 75;
+            if (_zoomValue > _minZoomValue)
+                _zoomValue = _minZoomValue;
         }
        
         _playerCamera.fieldOfView = _zoomValue;

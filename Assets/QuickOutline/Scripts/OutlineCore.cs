@@ -47,8 +47,7 @@ public class OutlineCore : MonoBehaviour {
       needsUpdate = true;
     }
   }
-
-  [Serializable]
+    [Serializable]
   private class ListVector3 {
     public List<Vector3> data;
   }
@@ -97,7 +96,6 @@ public class OutlineCore : MonoBehaviour {
 
     // Apply material properties immediately
     needsUpdate = true;
- 
   }
 
     void OnEnable() {

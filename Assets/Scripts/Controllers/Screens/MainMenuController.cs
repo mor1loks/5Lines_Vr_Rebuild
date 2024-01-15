@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using AosSdk.Core.PlayerModule;
-
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] private GameObject _mainMenu;
@@ -11,6 +8,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private CameraFlash _cameraFlash;
     [SerializeField] private CursorManager _cursorManager;
     [SerializeField] private GameObject _interacthelpers;
+    [SerializeField] private DesktopCanvasHolder _desktopCanvasHolder;
 
     [SerializeField] private API _api;
     private bool _canTeleport = true;
@@ -25,6 +23,9 @@ public class MainMenuController : MonoBehaviour
             _mainMenu.SetActive(true);
             _menu.SetActive(true);
             _interacthelpers.SetActive(false);
+            _desktopCanvasHolder.DisableAllCanvases();
+            _desktopCanvasHolder.EnableCanvasByState(CanvasState.MainMenu);
+            _desktopCanvasHolder.EnableCanvasByState(CanvasState.Menu);
         }
     }
     public void TeleportToGame()

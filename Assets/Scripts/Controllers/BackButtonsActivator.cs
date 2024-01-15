@@ -9,11 +9,11 @@ public class BackButtonsActivator : MonoBehaviour
     private BackButtonObject _currentBackButton;
     private void OnEnable()
     {
-        _api.OnActivateBackButton += OnActivaBackButton;
+        _api.ActivateBackButtonEvent += OnActivaBackButton;
     }
     private void OnDisable()
     {
-        _api.OnActivateBackButton -= OnActivaBackButton;
+        _api.ActivateBackButtonEvent -= OnActivaBackButton;
     }
     private void OnActivaBackButton(string text)
     {

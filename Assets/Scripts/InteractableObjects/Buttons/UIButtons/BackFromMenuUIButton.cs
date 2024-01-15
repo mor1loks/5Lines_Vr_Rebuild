@@ -7,11 +7,15 @@ public class BackFromMenuUIButton : BaseUIButton
     [SerializeField] private bool _event;
     protected override void Click()
     {
-        if(_event)
+        if (_event)
         {
-        API.OnInvokeNavAction("back");
+            API.OnInvokeNavAction("back");
         }
 
         BackButtonClickEvent?.Invoke();
+        var menuController = FindObjectOfType<MainMenuController>();
+        var escButton = FindObjectOfType<EscButton>();
+        menuController.TeleportToGame();
+        escButton.ChangeShowValue(false);
     }
 }

@@ -8,7 +8,6 @@ public class LocationController : MonoBehaviour
 {
     [SerializeField] private API _api;
     [SerializeField] private LocationText _locationText;
-    [SerializeField] private ConnectionChecker _connectionChecker;
     private string _currentLocation = "field";
     public void SetLocationtext(string text)
     {

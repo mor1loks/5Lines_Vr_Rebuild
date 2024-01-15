@@ -1,18 +1,12 @@
-using AosSdk.Core.PlayerModule;
 using AosSdk.Core.PlayerModule.Pointer;
-using UnityEngine;
-using UnityEngine.Events;
-
-public enum NextButtonState
+public class NextButton : BaseButton, INextButton
 {
-    Start,
-    Fault
-}
-public class NextButton : BaseButton
-{
-    public UnityAction<string> OnNextButtonPressed;
-    [HideInInspector] public NextButtonState CurrentState;
     protected API API;
+
+    public event NextButtonPressed NextButtonPressedEvent;
+
+    public NextButtonState CurrentState { get ; set; }
+
     protected override void Start()
     {
         base.Start();
@@ -20,18 +14,20 @@ public class NextButton : BaseButton
     }
     public override void OnClicked(InteractHand interactHand)
     {
+        ClickNextButton();
+    }
+    public void ClickNextButton()
+    {
         if (CurrentState == NextButtonState.Start)
         {
             API.OnInvokeNavAction("next");
-            OnNextButtonPressed?.Invoke("next");
-            Player.Instance.CanMove = false;
+            NextButtonPressedEvent?.Invoke("next");
         }
-     
+
         else if (CurrentState == NextButtonState.Fault)
         {
             API.OnInvokeNavAction("start");
-            OnNextButtonPressed?.Invoke("start");
-            Player.Instance.CanMove = true;
+            NextButtonPressedEvent?.Invoke("start");
         }
     }
 }

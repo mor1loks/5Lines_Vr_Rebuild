@@ -1,9 +1,11 @@
 using AosSdk.Core.Utils;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 public class EscButton : MonoBehaviour
 {
+    public Action EscButtonClickEvent;
     [SerializeField] private InputActionProperty _menuAction;
     [SerializeField] private MainMenuController _menuController;
     [SerializeField] private API _api;
@@ -19,6 +21,7 @@ public class EscButton : MonoBehaviour
     }
     private void OnShowMenu(InputAction.CallbackContext c)
     {
+        EscButtonClickEvent?.Invoke();
         if (!Show)
             return;
         if(!_show)

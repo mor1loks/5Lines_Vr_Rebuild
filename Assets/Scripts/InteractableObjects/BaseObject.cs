@@ -18,10 +18,11 @@ public class BaseObject : MonoBehaviour, IClickAble, IHoverAble
 
     [SerializeField] protected bool _buttonInPlace;
 
-    [SerializeField] protected OutlineCore[] outlineObjects;
+    [SerializeField] protected GameObject[] Visuals;
     [SerializeField] protected Transform helperPos;
     [SerializeField] protected string helperName;
     [SerializeField] private bool _door;
+    private float _emmisionValue = 0.5f;
 
     protected virtual void Start()
     {
@@ -55,12 +56,7 @@ public class BaseObject : MonoBehaviour, IClickAble, IHoverAble
         {
             if (helperPos != null)
                 canvasHelper.ShowTextHelper(helperName, helperPos);
-            if (outlineObjects != null)
-                foreach (var obj in outlineObjects)
-                {
-                    obj.enabled = true;
-                    obj.OutlineWidth = 3;
-                }
+            EnableHighlight(true);
         }
     }
     public virtual void OnHoverOut(InteractHand interactHand)
@@ -69,12 +65,25 @@ public class BaseObject : MonoBehaviour, IClickAble, IHoverAble
         {
             if (helperPos != null)
                 canvasHelper.HidetextHelper();
-            if (outlineObjects != null)
-                foreach (var obj in outlineObjects)
+            EnableHighlight(false);
+        }
+    }
+    protected void EnableHighlight(bool value)
+    {
+        foreach (var visual in Visuals)
+        {
+            foreach (var mesh in visual.GetComponentsInChildren<Renderer>())
+            {
+                if (mesh == null)
+                    return;
+                if (value)
                 {
-                    obj.enabled = false;
-                    obj.OutlineWidth = 0;
+                    mesh.material.EnableKeyword("_EMISSION");
+                    mesh.material.SetColor("_EmissionColor", new Color(_emmisionValue, _emmisionValue, _emmisionValue));
                 }
+                else
+                    mesh.material.SetColor("_EmissionColor", Color.black);
+            }
         }
     }
     public void SetHelperName(string value)

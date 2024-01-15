@@ -1,27 +1,28 @@
 using AosSdk.Core.PlayerModule;
+using System.Diagnostics;
 using UnityEngine.UI;
 
-public class NextUIButton : NextButton
+public class NextUIButton : BaseUIButton, INextButton
 {
-    private Button _button;
-    private void Awake()
+    public NextButtonState CurrentState { get; set; }
+
+    public event NextButtonPressed NextButtonPressedEvent;
+
+    protected override void Click()
     {
-        _button = GetComponent<Button>();
-        _button.onClick.AddListener(() => OnClick());
+        ClickNextButton();
     }
-    public void OnClick()
+    public void ClickNextButton()
     {
         if (CurrentState == NextButtonState.Start)
         {
             API.OnInvokeNavAction("next");
-            OnNextButtonPressed?.Invoke("next");
-            Player.Instance.CanMove = false;
+            NextButtonPressedEvent?.Invoke("next");
         }
         else if (CurrentState == NextButtonState.Fault)
         {
             API.OnInvokeNavAction("start");
-            OnNextButtonPressed?.Invoke("start");
-            Player.Instance.CanMove = true;
+            NextButtonPressedEvent?.Invoke("start");
         }
     }
 }

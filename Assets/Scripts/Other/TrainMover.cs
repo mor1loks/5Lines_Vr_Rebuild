@@ -10,7 +10,7 @@ public class TrainMover : MonoBehaviour
     [SerializeField] private float _resetPos;
     private void Update()
     {
-        transform.position -= new Vector3(_speed, 0, 0);
+        transform.position -= new Vector3(0, 0,- _speed);
         CheckPosition();
     }
     private void CheckPosition()

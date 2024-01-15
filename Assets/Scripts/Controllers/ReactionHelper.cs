@@ -11,16 +11,16 @@ public class ReactionHelper : MonoBehaviour
     [SerializeField] private API _api;
     private void OnEnable()
     {
-        _api.OnReaction += OnShowReactionText;
-        _api.OnShowPlace += OnHideReactionText;
-        _api.OnEnableMovingButton += OnHideReactionText;
+        _api.ReactionEvent += OnShowReactionText;
+        _api.ShowPlaceEvent += OnHideReactionText;
+        _api.EnableMovingButtonEvent += OnHideReactionText;
         
     }
     private void OnDisable()
     {
-        _api.OnReaction -= OnShowReactionText;
-        _api.OnShowPlace -= OnHideReactionText;
-        _api.OnEnableMovingButton -= OnHideReactionText;
+        _api.ReactionEvent -= OnShowReactionText;
+        _api.ShowPlaceEvent -= OnHideReactionText;
+        _api.EnableMovingButtonEvent -= OnHideReactionText;
         
     }
     private void OnShowReactionText(string text)

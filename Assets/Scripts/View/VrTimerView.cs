@@ -10,11 +10,7 @@ public class VrTimerView : MonoBehaviour
     [SerializeField] private GameObject _hand;
     private void Start()
     {
-        ModeController mode = FindObjectOfType<ModeController>();
-        if (mode.VrMode())
-            transform.parent = _hand.transform;
-        else
-             gameObject.SetActive(false);
+
     }
     public void SetTextOnCanvas(string text)
     {
