@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrainMover : MonoBehaviour
 {
-
     [SerializeField] private float _speed;
     [SerializeField] private float _startPos;
     [SerializeField] private float _resetPos;
@@ -25,6 +22,5 @@ public class TrainMover : MonoBehaviour
             if (transform.position.x > _resetPos)
                 transform.position = new Vector3(_startPos, transform.position.y, transform.position.z);
         }
-
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectWithButton : BaseObject
+public class ObjectWithButton : SceneObject
 {
 
     [SerializeField] private Transform _buttonsPos;
@@ -19,7 +19,7 @@ public class ObjectWithButton : BaseObject
             MovingButtonsController.Instance.SetMovingButtonsPosition(transform.position + new Vector3(0.09f, 0.05f, 0));
         else
             MovingButtonsController.Instance.SetMovingButtonsPosition(_buttonsPos.position);
-        MovingButtonsController.Instance.ObjectHelperName = helperName;
+        MovingButtonsController.Instance.ObjectHelperName = HelperName;
 
 
         SceneAosObject obj = GetComponent<SceneAosObject>();

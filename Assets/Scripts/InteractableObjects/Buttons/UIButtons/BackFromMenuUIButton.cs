@@ -14,8 +14,6 @@ public class BackFromMenuUIButton : BaseUIButton
 
         BackButtonClickEvent?.Invoke();
         var menuController = FindObjectOfType<MainMenuController>();
-        var escButton = FindObjectOfType<EscButton>();
         menuController.TeleportToGame();
-        escButton.ChangeShowValue(false);
     }
 }

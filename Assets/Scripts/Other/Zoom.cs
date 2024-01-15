@@ -49,7 +49,6 @@ public class Zoom : MonoBehaviour
             if (_zoomValue > _minZoomValue)
                 _zoomValue = _minZoomValue;
         }
-       
         _playerCamera.fieldOfView = _zoomValue;
     }
 }

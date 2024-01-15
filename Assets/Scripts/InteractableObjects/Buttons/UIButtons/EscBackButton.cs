@@ -11,6 +11,5 @@ public class EscBackButton : BaseUIButton
         _menuController = FindObjectOfType<MainMenuController>();
         _escButton = FindObjectOfType<EscButton>();
         _menuController.TeleportToGame();
-        _escButton.ChangeShowValue(false);
     }
 }

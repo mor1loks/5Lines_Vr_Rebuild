@@ -15,6 +15,10 @@ public class ShupController : AosObjectBase
 
     private bool _firstMeasure = false;
     public string measureText;
+    private void Start()
+    {
+        BackButton.BackButtonClickedEvent += OnResetShupPosition;
+    }
 
     [AosAction(name: "Измерение точки")]
     public string SetShupPosition([AosParameter("Позиция щупа и название точки измерения")]Transform newPos, string text)
@@ -77,7 +81,7 @@ public class ShupController : AosObjectBase
         return measureText;
     }
 
-  public void ResetShupPosition()
+  public void OnResetShupPosition()
     {
         _redShup.transform.position = Vector3.zero;
         _blackShup.transform.position = Vector3.zero;

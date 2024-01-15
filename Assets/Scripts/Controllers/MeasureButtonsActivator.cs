@@ -6,7 +6,7 @@ using UnityEngine;
 public class MeasureButtonsActivator : MonoBehaviour
 {
     public static MeasureButtonsActivator Instance;
-    [SerializeField] private MeasureAosButton[] _measureButtons;
+
     private List<string> _currentButtonsNames = new List<string>();
     private void Awake()
     {
@@ -15,16 +15,11 @@ public class MeasureButtonsActivator : MonoBehaviour
     }
     public void ActivateMeasureButton(string name)
     {
-        MeasureAosButton tempButton = _measureButtons.FirstOrDefault(n => n.ObjectId == name);
-        if (tempButton != null)
-            tempButton.ActivateMeasureButton(true);
+
     }
     public void DeactivateAllButtons()
     {
-        foreach (var item in _measureButtons)
-        {
-            item.ActivateMeasureButton(false);
-        }
+
     }
     public void ActivateButtonsWithList()
     {

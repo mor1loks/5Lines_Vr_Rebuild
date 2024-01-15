@@ -1,17 +1,12 @@
-using System.Collections;
-using AosSdk.Core.Interaction.Interfaces;
-using AosSdk.Core.Utils;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 public class LocationController : MonoBehaviour
 {
     [SerializeField] private API _api;
-    [SerializeField] private LocationText _locationText;
+    [SerializeField] private BaseTextObject _locationText;
     private string _currentLocation = "field";
     public void SetLocationtext(string text)
     {
-        _locationText.SetLocationText(text);
+        _locationText.SetText(text);
     }
     public void ConnectionEstablished()
     {

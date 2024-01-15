@@ -14,13 +14,10 @@ public class CursorManager : MonoBehaviour
     public void EnableCursor(bool value)
     {
         if (!value)
-        {
             Cursor.lockState = CursorLockMode.Locked;
-        }
         else
-        {
             Cursor.lockState = CursorLockMode.Confined;
-        }
+
         Cursor.visible = value;
         Player.Instance.CanMove = !value;
         _knob.enabled = !value;

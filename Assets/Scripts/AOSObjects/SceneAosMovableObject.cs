@@ -22,7 +22,5 @@ public class SceneAosMovableObject : SceneAosObject
         {
             _movebleObj.RepairObject();
         }
-
     }
-
 }

@@ -23,7 +23,7 @@ public abstract class BaseStartScreenView : MonoBehaviour
         }
         NextButton.NextButtonPressedEvent += OnHideStartScreen;
     }
-    public virtual void EnableStartScreen(string headerText, string commentText, string buttonText, NextButtonState state)
+    public virtual void SetStartScreenText(string headerText, string commentText, string buttonText, NextButtonState state)
     {
         NextButtonText.gameObject.SetActive(true);
         NextButtonGameObject.SetActive(true);
@@ -41,7 +41,6 @@ public abstract class BaseStartScreenView : MonoBehaviour
             DisableStartScreen();
             Interacthelpers.SetActive(true);
             var esc = FindObjectOfType<EscButton>();
-            esc.Show = true;
             Timer.SetActive(true);
             Location.SetActive(true);
         }

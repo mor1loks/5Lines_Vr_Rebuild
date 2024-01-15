@@ -12,7 +12,7 @@ public class APIEventsInvoker : MonoBehaviour
     [SerializeField] private Diet _diet;
     [SerializeField] private TimerView _timerView;
     [SerializeField] private LastScreenController _lastScreenController;
-    [SerializeField] private MenuTextView _menutext;
+    [SerializeField] private DesktopMenuScreen _menutext;
     [SerializeField] private ModeController _modeController;
     [SerializeField] private MeasureController _measureController;
     [SerializeField] private MainMenuController _mainmenu;
@@ -96,7 +96,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnSetTimerText(string timerText)
     {
-        _timerView.ShowTimerText(timerText);
+        _timerView.SetText(timerText);
     }
     private void OnAddButtonToMeasureButtonsList(string buttonName)
     {
@@ -130,7 +130,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnSetStartText(string headerText, string commentText, string buttonText, NextButtonState state)
     {
-        _modeController.CurrentStartScreen.EnableStartScreen(headerText, HtmlToText.Instance.HTMLToTextReplace(commentText), buttonText, state);
+        _modeController.CurrentStartScreen.SetStartScreenText(headerText, HtmlToText.Instance.HTMLToTextReplace(commentText), buttonText, state);
     }
     private void OnSetMeasureValue(float value)
     {

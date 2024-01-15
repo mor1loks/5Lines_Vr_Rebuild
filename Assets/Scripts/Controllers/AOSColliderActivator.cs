@@ -7,19 +7,16 @@ public class AOSColliderActivator : MonoBehaviour
 {
     public static AOSColliderActivator Instance;
 
-    private List<BaseObject> _aosSceneObjects = new List<BaseObject>();
+    private List<SceneObject> _aosSceneObjects = new List<SceneObject>();
     public bool CanTouch { get; set; } = true;
     private AOSColliderActivator(){}
     
-
-   
-
     private void Awake()
     {
         if(Instance == null)
         Instance = this;
     }
-    public void AddBaseObject(BaseObject obj)
+    public void AddSceneObject(SceneObject obj)
     {
         _aosSceneObjects.Add(obj);
     }

@@ -16,9 +16,7 @@ public class MovebleFpm : MovebleObject
     private IEnumerator Move()
     {
         int x = 0;
-canMove = false;
-
-
+        canMove = false;
         while (x <= 32)
         {
             if (!_yPoz)
@@ -28,9 +26,9 @@ canMove = false;
             yield return new WaitForSeconds(0.02f);
             x++;
         }
-               _fpmObject.SetActive(false); 
-            yield return new WaitForSeconds(0.5f);
-            _fpmObject.SetActive(true);
+        _fpmObject.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        _fpmObject.SetActive(true);
         while (x > 0)
         {
             if (!_yPoz)
@@ -40,8 +38,6 @@ canMove = false;
             yield return new WaitForSeconds(0.02f);
             x--;
         }
-
         canMove = true;
     }
-
 }

@@ -11,9 +11,9 @@ public class DesktopStartScreenView : BaseStartScreenView
     {
        _menuObject.SetActive(false);
     }
-    public override void EnableStartScreen(string headerText, string commentText, string buttonText, NextButtonState state)
+    public override void SetStartScreenText(string headerText, string commentText, string buttonText, NextButtonState state)
     {
-        base.EnableStartScreen(headerText, commentText, buttonText, state);
+        base.SetStartScreenText(headerText, commentText, buttonText, state);
         _cursorManager.EnableCursor(true);
     }
     protected override void OnHideStartScreen(string value)

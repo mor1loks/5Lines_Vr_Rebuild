@@ -14,7 +14,7 @@ public class MapCanvas : MonoBehaviour
     {
         EnableImageButton.MapButtonClickEvent += OnMapButtonClickEvent;
         _closeCanvasButton.BackButtonClickEvent += OnCloseButtonClickEvent;
-        _escButton.EscButtonClickEvent += OnEscButtonClickEvent;
+        _escButton.EscButtonEvent += OnEscButtonClickEvent;
     }
 
     private void OnMapButtonClickEvent()
