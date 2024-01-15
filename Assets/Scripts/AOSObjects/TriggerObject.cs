@@ -7,9 +7,7 @@ using UnityEngine;
 
 public class TriggerObject : BaseObject
 {
-    [SerializeField] private string _locationName;
     [SerializeField] private SceneAosObject _exitObject;
-    [SerializeField] private bool _field;
 
     protected override void Start()
     {
@@ -24,19 +22,10 @@ public class TriggerObject : BaseObject
             var aosObject = col.GetComponentInParent<AosObjectBase>();
             if (!aosObject)
                 return;
-        //LocationTextController location = FindObjectOfType<LocationTextController>();
-        //location.SetLocation(_locationName);
         sceneAosObject = GetComponent<SceneAosObject>();
-        if (sceneAosObject != null && !_field)
+        if (sceneAosObject != null)
         {
             sceneAosObject.InvokeOnClick();
-        }
-        else if (sceneAosObject != null && _field)
-        {
-            API api = FindObjectOfType<API>();
- 
-            api.Teleport("field");
-            Debug.Log("TriggerEnter " + sceneAosObject.ObjectId);
         }
      
     }
@@ -53,7 +42,7 @@ public class TriggerObject : BaseObject
             else
                 api.Teleport("field");
         }
+        if(_exitObject!=null)
         Debug.Log("TriggerExit " + _exitObject.ObjectId);
-
     }
 }
