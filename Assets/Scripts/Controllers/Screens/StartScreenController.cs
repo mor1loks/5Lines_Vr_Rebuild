@@ -13,11 +13,11 @@ public class StartScreenController : MonoBehaviour
     [SerializeField] private NextButton _nextButton;
     private void OnEnable()
     {
-        _nextButton.OnNextButtonPressed += OnHideStartScreen;
+        _nextButton.NextButtonPressedEvent += OnHideStartScreen;
     }
     private void OnDisable()
     {
-        _nextButton.OnNextButtonPressed -= OnHideStartScreen;
+        _nextButton.NextButtonPressedEvent -= OnHideStartScreen;
     }
     public void EnableStartScreen(string headerText, string commentText, string buttonText,NextButtonState state)
     {
