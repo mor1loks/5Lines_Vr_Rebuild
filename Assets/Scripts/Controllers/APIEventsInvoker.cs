@@ -10,9 +10,6 @@ public class APIEventsInvoker : MonoBehaviour
     [SerializeField] private Teleporter _teleporter;
     [SerializeField] private LocationController _locationController;
     [SerializeField] private Diet _diet;
-    [SerializeField] private TimerView _timerView;
-    [SerializeField] private LastScreenController _lastScreenController;
-    [SerializeField] private DesktopMenuScreen _menutext;
     [SerializeField] private ModeController _modeController;
     [SerializeField] private MeasureController _measureController;
     [SerializeField] private MainMenuController _mainmenu;
@@ -21,8 +18,8 @@ public class APIEventsInvoker : MonoBehaviour
     {
         _connection.ConnectionReadyEvent += OnSetLocationAfterConnection;
         _api.ShowPlaceEvent += OnDeactivateCollidersInStart;
-        _api.ResetMeasureButtonsEvent += OnResetMesaureButtons;
-        _api.SetTeleportLocationEvent += OnSetLoationToTeleport;
+        _api.ResetMeasureButtonsEvent += OnResetMeasureButtons;
+        _api.SetTeleportLocationEvent += OnSetLocationToTeleport;
         _api.SetNewLocationTextEvent += OnSetLocationTextToLocationController;
         _api.SetLocationEvent += OnSetLocationToLocationController;
         _api.SetLocationForFieldCollidersEvent += OnActivateStreetColliders;
@@ -43,8 +40,8 @@ public class APIEventsInvoker : MonoBehaviour
     {
         _connection.ConnectionReadyEvent -= OnSetLocationAfterConnection;
         _api.ShowPlaceEvent -= OnDeactivateCollidersInStart;
-        _api.ResetMeasureButtonsEvent -= OnResetMesaureButtons;
-        _api.SetTeleportLocationEvent -= OnSetLoationToTeleport;
+        _api.ResetMeasureButtonsEvent -= OnResetMeasureButtons;
+        _api.SetTeleportLocationEvent -= OnSetLocationToTeleport;
         _api.SetNewLocationTextEvent -= OnSetLocationTextToLocationController;
         _api.SetLocationEvent -= OnSetLocationToLocationController;
         _api.SetLocationForFieldCollidersEvent -= OnActivateStreetColliders;
@@ -65,17 +62,17 @@ public class APIEventsInvoker : MonoBehaviour
     {
         SceneObjectsHolder.Instance.DeactivateAllColliders();
     }
-    private void OnResetMesaureButtons()
+    private void OnResetMeasureButtons()
     {
         _measureButtonsActivator.ResetCurrentButtonsList();
     }
-    private void OnSetLoationToTeleport(string location)
+    private void OnSetLocationToTeleport(string location)
     {
         _teleporter.Teleport(location);
     }
     private void OnSetLocationTextToLocationController(string location)
     {
-        _locationController.SetLocationtext(location);
+        _modeController.CurrentInteractScreen.SetLocationText(location);
     }
     private void OnSetLocationToLocationController(string location)
     {
@@ -96,7 +93,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnSetTimerText(string timerText)
     {
-        _timerView.SetText(timerText);
+      _modeController.CurrentInteractScreen.SetTimerText(timerText);
     }
     private void OnAddButtonToMeasureButtonsList(string buttonName)
     {
@@ -107,26 +104,25 @@ public class APIEventsInvoker : MonoBehaviour
         
         SceneObjectsHolder.Instance.ActivateColliders(id, name,time);
     }
-    private void OnSetLastScreenText(string headertext, string commentText)
+    private void OnSetLastScreenText(string headerText, string commentText)
     {
-
-        _lastScreenController.ShowMessageScreen(headertext, commentText);
+        _modeController.CurrentMenuScreen.ShowMessageScreen(headerText, commentText);
     }
-    private void OnSetResultScreenText(string headertext, string commentText, string evalText)
+    private void OnSetResultScreenText(string headerText, string commentText, string evalText)
     {
-        _lastScreenController.ShowLastScteen(headertext, commentText,evalText);
+        _modeController.CurrentMenuScreen.ShowLastScreen(headerText, commentText, evalText);
         _mainmenu.TeleporterTimeResult();
 
     }
-    private void OnSetExitText(string exitText, string warntext)
+    private void OnSetExitText(string exitText, string warnText)
     {
         Debug.Log("On set exit text");
-        _menutext.SetExitText(exitText, warntext);
+      _modeController.CurrentMenuScreen.SetExitText(exitText, warnText);
     }
     private void OnSetMenuText(string headText, string commentText, string exitSureText)
     {
         Debug.Log("On set menu text");
-        _menutext.SetMenuText(headText, commentText, exitSureText);
+        _modeController.CurrentMenuScreen.SetMenuText(headText, commentText, exitSureText);
     }
     private void OnSetStartText(string headerText, string commentText, string buttonText, NextButtonState state)
     {
@@ -140,5 +136,4 @@ public class APIEventsInvoker : MonoBehaviour
     {
         StreetCollidersActivator.Instance.ActivateColliders(locationName);
     }
-
 }

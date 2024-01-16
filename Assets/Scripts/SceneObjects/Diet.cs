@@ -9,6 +9,7 @@ public class Diet : MonoBehaviour
     [SerializeField] private StrelkaButton _strelkaMinus;
     [SerializeField] private StrelkaButton _strelkaPlus;
     [SerializeField] private GameObject[] _dietMeshParts;
+    private DietButtonNames _dietButtonNames= new DietButtonNames();
 
     public void EnableDietMeshByLocationName(string value)
     {
@@ -62,39 +63,13 @@ public class Diet : MonoBehaviour
             _diet.SetActive(false);
         }
     }
-    public void EnablePlusOrMinus(string button)
+    public void EnablePlusOrMinus(string buttonName)
     {
-
-        if (button == "d_clutch_radio_c2" ||
-           button == "d_e_drive_radio_c2" ||
-            button == "d_apron_radio_c2" ||
-             button == "d_rod_radio_c2" ||
-              button == "d_hollow_left_radio_c2" ||
-               button == "d_hollow_right_radio_c2" ||
-                button == "d_board_front_radio_c2" ||
-                 button == "d_board_back_radio_c2" ||
-                  button == "d_stativ_front_radio_c2" ||
-                   button == "d_stativ_back_radio_c2")
-        {
-
+        if (_dietButtonNames.HasPlusButton(buttonName)) 
             _buttonPlus.SetActive(true);
-        }
-        if (button == "d_clutch_radio_c1" ||
-          button == "d_e_drive_radio_c1" ||
-           button == "d_apron_radio_c1" ||
-            button == "d_rod_radio_c1" ||
-             button == "d_hollow_left_radio_c1" ||
-              button == "d_hollow_right_radio_c1" ||
-               button == "d_board_front_radio_c1" ||
-                button == "d_board_back_radio_c1" ||
-                 button == "d_stativ_front_radio_c1" ||
-                  button == "d_stativ_back_radio_c1"
-           )
-        {
-
+        if (_dietButtonNames.HasMinusButton(buttonName))
             _buttonMinus.SetActive(true);
-        }
-        else if (button == null)
+        else if (buttonName == null)
         {
             _buttonMinus.SetActive(false);
             _buttonPlus.SetActive(false);

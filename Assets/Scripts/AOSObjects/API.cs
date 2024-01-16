@@ -42,7 +42,7 @@ public class API : AosObjectBase
     [AosEvent(name: "Открыть меню")]
     public event AosEventHandler OnMenu;
 
-    public bool MenuTeleport = true;
+    public bool MenuTeleport { get; set; } = true;
 
     public void Teleport([AosParameter("Задать локацию для перемещения")] string location)
     {
