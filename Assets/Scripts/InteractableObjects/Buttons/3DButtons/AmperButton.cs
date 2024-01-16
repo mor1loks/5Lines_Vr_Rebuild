@@ -33,7 +33,7 @@ public class AmperButton : BaseButton
             MeasureButtonsActivator.Instance.DeactivateAllButtons();
             PointerDevice device = FindObjectOfType<PointerDevice>();
             device.SetValue(1);
-            AOSColliderActivator.Instance.CanTouch = true;
+            SceneObjectsHolder.Instance.CanTouch = true;
         }
         _ampermetr.EnableAmper(_amper, _amperPosition);
     }
@@ -51,7 +51,7 @@ public class AmperButton : BaseButton
         if (_amper)
         {
             MeasureButtonsActivator.Instance.ActivateButtonsWithList();
-            AOSColliderActivator.Instance.CanTouch = false;
+            SceneObjectsHolder.Instance.CanTouch = false;
         }
     }
 }

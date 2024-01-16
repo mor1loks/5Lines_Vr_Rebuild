@@ -63,7 +63,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnDeactivateCollidersInStart()
     {
-        AOSColliderActivator.Instance.DeactivateAllColliders();
+        SceneObjectsHolder.Instance.DeactivateAllColliders();
     }
     private void OnResetMesaureButtons()
     {
@@ -105,7 +105,7 @@ public class APIEventsInvoker : MonoBehaviour
     private void OnActivateSceneObjectByName(string id, string name, string time)
     {
         
-        AOSColliderActivator.Instance.ActivateColliders(id, name,time);
+        SceneObjectsHolder.Instance.ActivateColliders(id, name,time);
     }
     private void OnSetLastScreenText(string headertext, string commentText)
     {

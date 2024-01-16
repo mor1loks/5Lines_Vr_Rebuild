@@ -12,7 +12,7 @@ public class BackButton : BaseButton
         BackButtonClickedEvent?.Invoke();
         API api = FindObjectOfType<API>();
         api.OnInvokeNavAction(ACTION_NAME);
-        AOSColliderActivator.Instance.CanTouch = true;
+        SceneObjectsHolder.Instance.CanTouch = true;
         _backTriggerObj.EnableObject(false);
     }
     public override void EnableObject(bool value)

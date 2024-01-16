@@ -1,4 +1,5 @@
 using AosSdk.Core.PlayerModule.Pointer;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,27 +11,25 @@ public class SceneObject : BaseObject
 
     [SerializeField] protected Transform HelperPos;
     [SerializeField] private GameObject[] _highlights;
-
+    public Action<string> HelperTextEvent;
     protected string HelperName;
-    private float _emmisionValue = 0.5f;
+    private float _emissionValue = 0.5f;
     protected virtual void Start()
     {
         if (!NonAOS)
         {
             EnableObject(false);
-            AOSColliderActivator.Instance.AddSceneObject(this);
+            SceneObjectsHolder.Instance.AddSceneObject(this);
         }
     }
     public override void OnHoverIn(InteractHand interactHand)
     {
-            //if (HelperPos != null)
-                //InstanceHandler.Instance.HelpTextController.ShowHelperText(HelperPos, HelperName);
+        HelperTextEvent?.Invoke(HelperName);
             EnableHighlight(true);
     }
     public override void OnHoverOut(InteractHand interactHand)
     {
-            //if (HelperPos != null)
-            //    CanvasHelper.HidetextHelper();
+        HelperTextEvent?.Invoke(null);
             EnableHighlight(false);
     }
     public override void EnableObject(bool value)
@@ -54,7 +53,7 @@ public class SceneObject : BaseObject
                 if (value)
                 {
                     mesh.material.EnableKeyword("_EMISSION");
-                    mesh.material.SetColor("_EmissionColor", new Color(_emmisionValue, _emmisionValue, _emmisionValue));
+                    mesh.material.SetColor("_EmissionColor", new Color(_emissionValue, _emissionValue, _emissionValue));
                 }
                 else
                     mesh.material.SetColor("_EmissionColor", Color.black);
