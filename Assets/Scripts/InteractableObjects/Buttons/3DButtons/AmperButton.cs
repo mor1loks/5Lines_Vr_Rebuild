@@ -30,7 +30,7 @@ public class AmperButton : BaseButton
             _amper = false;
             ShupController shup = FindObjectOfType<ShupController>();
             shup.OnResetShupPosition();
-            MeasureButtonsActivator.Instance.DeactivateAllButtons();
+            SceneObjectsHolder.Instance.ResetCurrentMeasureButtonsList();
             PointerDevice device = FindObjectOfType<PointerDevice>();
             device.SetValue(1);
             SceneObjectsHolder.Instance.CanTouch = true;
@@ -41,7 +41,7 @@ public class AmperButton : BaseButton
     {
         _amper = false;
         _ampermetr.EnableAmper(_amper, _amperPosition);
-        MeasureButtonsActivator.Instance.DeactivateAllButtons();
+        SceneObjectsHolder.Instance.ResetCurrentMeasureButtonsList();
         PointerDevice device = FindObjectOfType<PointerDevice>();
         device.SetValue(1);
     }
@@ -50,7 +50,7 @@ public class AmperButton : BaseButton
         yield return new WaitForSeconds(0.2f);
         if (_amper)
         {
-            MeasureButtonsActivator.Instance.ActivateButtonsWithList();
+            SceneObjectsHolder.Instance.ActivateMeasureButtonsByCurrentList();
             SceneObjectsHolder.Instance.CanTouch = false;
         }
     }

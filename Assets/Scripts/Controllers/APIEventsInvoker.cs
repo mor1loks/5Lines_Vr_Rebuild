@@ -6,7 +6,6 @@ public class APIEventsInvoker : MonoBehaviour
 {
     [SerializeField] private API _api;
     [SerializeField] private ConnectionToClient _connection;
-    [SerializeField] private MeasureButtonsActivator _measureButtonsActivator;
     [SerializeField] private Teleporter _teleporter;
     [SerializeField] private LocationController _locationController;
     [SerializeField] private Diet _diet;
@@ -60,11 +59,11 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnDeactivateCollidersInStart()
     {
-        SceneObjectsHolder.Instance.DeactivateAllColliders();
+        SceneObjectsHolder.Instance.DeactivateAllSceneObjects();
     }
     private void OnResetMeasureButtons()
     {
-        _measureButtonsActivator.ResetCurrentButtonsList();
+        SceneObjectsHolder.Instance.ResetCurrentMeasureButtonsList();
     }
     private void OnSetLocationToTeleport(string location)
     {
@@ -77,7 +76,6 @@ public class APIEventsInvoker : MonoBehaviour
     private void OnSetLocationToLocationController(string location)
     {
         _locationController.SetLocation(location);
-        _diet.EnableDietMeshByLocationName(location);
     }
     private void OnSetLocationAfterConnection()
     {
@@ -97,12 +95,11 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnAddButtonToMeasureButtonsList(string buttonName)
     {
-        MeasureButtonsActivator.Instance.AddButtonToList(buttonName);
+        SceneObjectsHolder.Instance.AddmeasureButtonToList(buttonName);
     }
     private void OnActivateSceneObjectByName(string id, string name, string time)
     {
-        
-        SceneObjectsHolder.Instance.ActivateColliders(id, name,time);
+        SceneObjectsHolder.Instance.ActivateSceneObjects(id, name,time);
     }
     private void OnSetLastScreenText(string headerText, string commentText)
     {
@@ -112,7 +109,6 @@ public class APIEventsInvoker : MonoBehaviour
     {
         _modeController.CurrentMenuScreen.ShowLastScreen(headerText, commentText, evalText);
         _mainmenu.TeleporterTimeResult();
-
     }
     private void OnSetExitText(string exitText, string warnText)
     {

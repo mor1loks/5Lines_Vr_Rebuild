@@ -11,16 +11,6 @@ public class Diet : MonoBehaviour
     [SerializeField] private GameObject[] _dietMeshParts;
     private DietButtonNames _dietButtonNames= new DietButtonNames();
 
-    public void EnableDietMeshByLocationName(string value)
-    {
-            foreach (var item in _dietMeshParts)
-            {
-                if (value == "board_front" || value== "dsp")
-                item.GetComponent<MeshRenderer>().enabled = false;
-                else
-                item.GetComponent<MeshRenderer>().enabled = true;
-        }
-    }
     public void EnableDiet(bool value, Transform position)
     {
         if (value)

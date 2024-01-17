@@ -1,9 +1,5 @@
-using System.Collections;
-using AosSdk.Core.Interaction.Interfaces;
-using AosSdk.Core.Utils;
 using AosSdk.Core.PlayerModule.Pointer;
 using UnityEngine;
-using UnityEngine.Events;
 public class RadioButton : BaseButton
 {
     [SerializeField] private Diet _diet;

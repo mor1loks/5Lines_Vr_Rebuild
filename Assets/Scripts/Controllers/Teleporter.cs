@@ -1,11 +1,6 @@
-﻿using System.Collections;
-using AosSdk.Core.Interaction.Interfaces;
-using AosSdk.Core.Utils;
-using UnityEngine;
+﻿using UnityEngine;
 using AosSdk.Core.PlayerModule;
-using AosSdk.Core.PlayerModule.Pointer;
 using UnityEngine.Events;
-
 
 public class Teleporter : MonoBehaviour
 {
@@ -24,7 +19,7 @@ public class Teleporter : MonoBehaviour
 
     public void Teleport(string locationName)
     {
-        OnTeleportEnd(locationName);
+        OnTeleportEnd?.Invoke(locationName);
         if (locationName == "start")
             TeleportPlayer(_startPosition);
 

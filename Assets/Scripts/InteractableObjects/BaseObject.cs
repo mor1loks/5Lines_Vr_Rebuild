@@ -9,7 +9,7 @@ public abstract class BaseObject : MonoBehaviour, IClickAble, IHoverAble
     public bool IsHoverable { get; set; } = true;
     public bool IsClickable { get; set; } = true;
 
-    protected SceneAosObject SceneAOSObject;
+    public SceneAosObject SceneAOSObject { get; private set; }
     protected virtual void Awake() => SceneAOSObject = GetComponent<SceneAosObject>();
 
     public virtual void OnClicked(InteractHand interactHand)
