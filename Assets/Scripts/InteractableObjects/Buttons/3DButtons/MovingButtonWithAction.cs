@@ -12,23 +12,23 @@ public class MovingButtonWithAction : MovingButton
     {
         if (_currentAction == ButtonActionName.Hand)
         {
-            CurrentAOSObject.Instance.SceneAosObject.ActionWithObject("hand");
+            SceneObjectsHolder.Instance.SceneAosObject.ActionWithObject("hand");
             //MovingButtonsController.Instance.PlayPushAnimation();
             ButtonNumberEvent?.Invoke(1);
         }
         else if (_currentAction == ButtonActionName.Eye)
         {
-            CurrentAOSObject.Instance.SceneAosObject.ActionWithObject("eye");
+            SceneObjectsHolder.Instance.SceneAosObject.ActionWithObject("eye");
         }
 
         else if (_currentAction == ButtonActionName.Tool)
         {
-            CurrentAOSObject.Instance.SceneAosObject.ActionWithObject("tool");
+            SceneObjectsHolder.Instance.SceneAosObject.ActionWithObject("tool");
             //MovingButtonsController.Instance.PlayToolAnimation();
         }
         else if (_currentAction == ButtonActionName.Pen)
         {
-            CurrentAOSObject.Instance.SceneAosObject.ActionWithObject("pen");
+            SceneObjectsHolder.Instance.SceneAosObject.ActionWithObject("pen");
         }
 
     }

@@ -21,11 +21,11 @@ public class TriggerObject : BaseObject
     }
     private void OnTriggerExit(Collider col)
     {
-        API api = FindObjectOfType<API>();
-        if (api.MenuTeleport)
-        {
-            if (_exitObject != null)
-                _exitObject.InvokeOnClick();
-        }
+        //API api = FindObjectOfType<API>();
+        //if (api.MenuTeleport)
+        //{
+        //    if (_exitObject != null)
+        //        _exitObject.InvokeOnClick(); было для VR необходимо переписать
+        //}
     }
 }

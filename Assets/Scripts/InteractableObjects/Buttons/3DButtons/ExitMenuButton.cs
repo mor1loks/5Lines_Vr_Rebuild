@@ -7,7 +7,7 @@ public class ExitMenuButton : BaseButton
 {
     [SerializeField] private EscButton _escButton;
     [SerializeField] private MenuButton _menuButton;
-    [SerializeField] private MainMenuController _mainController;
+    [SerializeField] private DesktopMenuController _mainController;
     public override void OnClicked(InteractHand interactHand)
     {
         base.OnClicked(interactHand);

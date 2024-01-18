@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 public class SceneObjectsHolder : MonoBehaviour
@@ -10,12 +8,21 @@ public class SceneObjectsHolder : MonoBehaviour
 
     [SerializeField] private MovingButtonsController _movingButtonsController;
     [SerializeField] private ShupController _shupController;
+    [SerializeField] private StrelkaAOS _strelkaAOS;
+    [SerializeField] private RadioButtonsContainer _radioButtonsContainer;
+    [SerializeField] private LocationController _locationTextController;
+    [SerializeField] private SceneActionButtonsHandler _sceneButtonsHandler;
+    public StrelkaAOS StrelkaAOS => _strelkaAOS;
+    public RadioButtonsContainer RadioButtonsContainer => _radioButtonsContainer;
+    public LocationController LocationTextController => _locationTextController;
 
     private List<SceneObject> _sceneObjects = new List<SceneObject>();
     private List<MeasureButton> _allMeasureButtons = new List<MeasureButton>();
     private List<SceneActionButton> _sceneActionButtons = new List<SceneActionButton>();
     private List<string> _currentMeasureButtonsNames = new List<string>();
     public bool CanTouch { get; set; } = true;
+    public bool CanAction { get; set; } = true;
+    public SceneAosObject SceneAosObject { get; set; }
     private SceneObjectsHolder() { }
 
     private void Awake()
@@ -35,7 +42,7 @@ public class SceneObjectsHolder : MonoBehaviour
             var buttonObject = (SceneObjectWithButton)obj;
             buttonObject.SetButtonsTransformEvent += OnSetMovingButtonsPos;
         }
-        else if(obj is MeasureButton)
+        else if (obj is MeasureButton)
         {
             var measureButton = (MeasureButton)obj;
             measureButton.MeasurePositionEvent += OnSetShupPosition;
@@ -47,7 +54,7 @@ public class SceneObjectsHolder : MonoBehaviour
     public void AddSceneActionButton(SceneActionButton sceneActionButton)
     {
         _sceneActionButtons.Add(sceneActionButton);
-        sceneActionButton.SceneActionButtonEvent += OnAddSceneActionButton;
+        sceneActionButton.SceneActionButtonEvent += OnActivateSceneAction;
     }
 
     public void ActivateSceneObjects(string objectName, string name, string timeText)
@@ -84,18 +91,18 @@ public class SceneObjectsHolder : MonoBehaviour
             item.EnableObject(false);
         }
     }
-    public void ActivateMeasureButtonsByCurrentList()
+    public void ActivateMeasureButtonsCurrentList()
     {
         foreach (var item in _currentMeasureButtonsNames)
         {
             ActivateMeasureButton(item);
         }
     }
-    public void ResetCurrentMeasureButtonsList()
+    public void ResetMeasureButtonsCurrentList()
     {
         _currentMeasureButtonsNames = new List<string>();
     }
-    public void AddmeasureButtonToList(string buttonName)
+    public void AddMeasureButtonToList(string buttonName)
     {
         _currentMeasureButtonsNames.Add(buttonName);
     }
@@ -114,8 +121,8 @@ public class SceneObjectsHolder : MonoBehaviour
     {
         _shupController.SetShupPosition(pos, name);
     }
-    private void OnAddSceneActionButton(SceneActionState state)
+    private void OnActivateSceneAction(SceneActionState state)
     {
-
+        _sceneButtonsHandler.EnableActionByState(state);
     }
 }

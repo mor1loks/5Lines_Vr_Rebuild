@@ -13,9 +13,8 @@ public class DesktopMenuScreen : BaseMenuScreen
     [SerializeField] private TextMeshProUGUI _commentText;
     [Space]
     [SerializeField] private DesktopCanvasHolder _desktopCanvasHolder;
-    [SerializeField] private MainMenuController _mainMenuController;
     [SerializeField] private GameObject[] _allScreens;
-    [SerializeField] private GameObject _lastScreen;
+    [SerializeField] private GameObject _menu;
     [SerializeField] private GameObject _exitButton;
     [SerializeField] private GameObject _backButton;
 
@@ -40,7 +39,11 @@ public class DesktopMenuScreen : BaseMenuScreen
     }
     public override void ShowLastScreen(string headText, string commentText, string evalText)
     {
-        ShowLastScreen();
+        _desktopCanvasHolder.DisableAllCanvases();
+        _desktopCanvasHolder.EnableCanvasByState(CanvasState.MainMenu);
+        _desktopCanvasHolder.EnableCanvasByState(CanvasState.Last);
+        _backButton.SetActive(false);
+        _exitButton.SetActive(true);
         SetText(headText, commentText, evalText);
     }
     private void SetText(string headText, string commentText)
@@ -56,16 +59,17 @@ public class DesktopMenuScreen : BaseMenuScreen
     }
     private void ShowMessageScreen()
     {
-        _lastScreen.SetActive(true);
+        _desktopCanvasHolder.EnableCanvasByState(CanvasState.Last);
     }
-    public void ShowLastScreen()
+
+    public override void ShowMenuScreen(bool active)
     {
-        _mainMenuController.AllowTeleport(false);
-        foreach (var screen in _allScreens)
+        _desktopCanvasHolder.DisableAllCanvases();
+        _menu.SetActive(active);
+        if (active)
         {
-            screen.SetActive(false);
+            _desktopCanvasHolder.EnableCanvasByState(CanvasState.MainMenu);
+            _desktopCanvasHolder.EnableCanvasByState(CanvasState.Menu);
         }
-        _lastScreen.SetActive(true);
-        _exitButton.SetActive(true);
     }
 }

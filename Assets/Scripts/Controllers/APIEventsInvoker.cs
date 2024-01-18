@@ -11,7 +11,7 @@ public class APIEventsInvoker : MonoBehaviour
     [SerializeField] private Diet _diet;
     [SerializeField] private ModeController _modeController;
     [SerializeField] private MeasureController _measureController;
-    [SerializeField] private MainMenuController _mainmenu;
+    [SerializeField] private DesktopMenuController _mainmenu;
 
     private void OnEnable()
     {
@@ -63,7 +63,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnResetMeasureButtons()
     {
-        SceneObjectsHolder.Instance.ResetCurrentMeasureButtonsList();
+        SceneObjectsHolder.Instance.ResetMeasureButtonsCurrentList();
     }
     private void OnSetLocationToTeleport(string location)
     {
@@ -95,7 +95,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnAddButtonToMeasureButtonsList(string buttonName)
     {
-        SceneObjectsHolder.Instance.AddmeasureButtonToList(buttonName);
+        SceneObjectsHolder.Instance.AddMeasureButtonToList(buttonName);
     }
     private void OnActivateSceneObjectByName(string id, string name, string time)
     {
@@ -108,16 +108,14 @@ public class APIEventsInvoker : MonoBehaviour
     private void OnSetResultScreenText(string headerText, string commentText, string evalText)
     {
         _modeController.CurrentMenuScreen.ShowLastScreen(headerText, commentText, evalText);
-        _mainmenu.TeleporterTimeResult();
+        _mainmenu.TeleportByGameTimer();
     }
     private void OnSetExitText(string exitText, string warnText)
     {
-        Debug.Log("On set exit text");
       _modeController.CurrentMenuScreen.SetExitText(exitText, warnText);
     }
     private void OnSetMenuText(string headText, string commentText, string exitSureText)
     {
-        Debug.Log("On set menu text");
         _modeController.CurrentMenuScreen.SetMenuText(headText, commentText, exitSureText);
     }
     private void OnSetStartText(string headerText, string commentText, string buttonText, NextButtonState state)

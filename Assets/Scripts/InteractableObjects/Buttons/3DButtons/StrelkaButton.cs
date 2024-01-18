@@ -1,32 +1,26 @@
-using System.Collections;
-using AosSdk.Core.Interaction.Interfaces;
-using AosSdk.Core.Utils;
 using AosSdk.Core.PlayerModule.Pointer;
 using UnityEngine;
 using UnityEngine.Events;
 public class StrelkaButton : BaseButton
 {
     [SerializeField] private bool _side;
-    public UnityAction OnStrelkaButtonClicked;
     public override void OnClicked(InteractHand interactHand)
     {
-        StrelkaAOS strelka = FindObjectOfType<StrelkaAOS>();
-        RadioButtonsContainer radioButtonsContainer = FindObjectOfType<RadioButtonsContainer>();
-        LocationController locationTextController = FindObjectOfType<LocationController>();
+        var strelka = SceneObjectsHolder.Instance.StrelkaAOS;
+        var radioContainer = SceneObjectsHolder.Instance.RadioButtonsContainer;
+        var location = SceneObjectsHolder.Instance.LocationTextController;
         if (_side)
         {
             strelka.TrySwitchStrelkaPlus();
-            AOSRadio  button = radioButtonsContainer.GetButtonPlus(locationTextController.GetLocationName());
+            AOSRadio button = radioContainer.GetButtonPlus(location.GetLocationName());
             button.InvokeOnClick();
         }
-          
         else
         {
             strelka.TrySwitchStrelkaMinus();
-            AOSRadio button = radioButtonsContainer.GetButtonMinus(locationTextController.GetLocationName());
+            AOSRadio button = radioContainer.GetButtonMinus(location.GetLocationName());
             button.InvokeOnClick();
         }
-        OnStrelkaButtonClicked?.Invoke();
-    
+        StrelkaAOS.StrelkaChangedEvent?.Invoke();
     }
 }

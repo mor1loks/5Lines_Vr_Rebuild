@@ -9,7 +9,7 @@ public class MenuButton : BaseButton
     public override void OnClicked(InteractHand interactHand)
     {
         base.OnClicked(interactHand);
-        MainMenuController menuController = FindObjectOfType<MainMenuController>();
+        DesktopMenuController menuController = FindObjectOfType<DesktopMenuController>();
         if(!_show)
         {
             menuController.TeleportToMenu();

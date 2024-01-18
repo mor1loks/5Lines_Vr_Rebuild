@@ -3,11 +3,9 @@ using UnityEngine;
 
 public abstract class BaseStartScreenView : MonoBehaviour
 {
+    [SerializeField] protected ModeController ModeController;
     [SerializeField] protected GameObject NextButtonGameObject;
-    [SerializeField] protected GameObject Interacthelpers;
-    [SerializeField] protected GameObject Timer;
-    [SerializeField] protected GameObject Location;
-
+    [Space]
     [SerializeField] protected TextMeshProUGUI HeaderText;
     [SerializeField] protected TextMeshProUGUI CommentText;
     [SerializeField] protected TextMeshProUGUI NextButtonText;
@@ -25,24 +23,19 @@ public abstract class BaseStartScreenView : MonoBehaviour
     }
     public virtual void SetStartScreenText(string headerText, string commentText, string buttonText, NextButtonState state)
     {
-        NextButtonText.gameObject.SetActive(true);
         NextButtonGameObject.SetActive(true);
         HeaderText.text = headerText;
         CommentText.text = commentText;
         NextButtonText.text = buttonText;
         NextButton.CurrentState = state;
-        Interacthelpers.SetActive(false);
-
     }
-    protected virtual void OnHideStartScreen(string value)
+    protected virtual void OnHideStartScreen(string text)
     {
-        if (value == "start")
+        if (text == "start")
         {
             DisableStartScreen();
-            Interacthelpers.SetActive(true);
-            var esc = FindObjectOfType<EscButton>();
-            Timer.SetActive(true);
-            Location.SetActive(true);
+            ModeController.CurrentInteractScreen.EnableAllHelperObjects(true);
+            ModeController.CurrentMenuController.CanTeleport = true;
         }
     }
     protected abstract void DisableStartScreen();

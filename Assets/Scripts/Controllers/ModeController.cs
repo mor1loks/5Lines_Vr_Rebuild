@@ -9,15 +9,30 @@ public class ModeController : MonoBehaviour
     [Space]
     [SerializeField] private BaseStartScreenView _desktopStartScreenView;
     [SerializeField] private BaseStartScreenView _vrStartScreenView;
+    [Space]
     [SerializeField] private BaseMenuScreen _deskMenuScreen;
     [SerializeField] private BaseMenuScreen _vrMenuScreen;
     [Space]
     [SerializeField] private BaseInteractScreen _desktopInteractScreen;
     [SerializeField] private BaseInteractScreen _vrInteractScreen;
+    [Space]
+    [SerializeField] private BaseActionObject _desktopRadioActionObject;
+    [SerializeField] private BaseActionObject _vrRadioActionObject;
+    [Space]
+    [SerializeField] private BaseActionObject _desktopSchemeActionObject;
+    [SerializeField] private BaseActionObject _vrSchemeActionObject;
+    [Space]
+    [SerializeField] private BaseMenuController _desktopMenuController;
+    [SerializeField] private BaseMenuController _vrMenuController;
+    [Space]
+    [SerializeField] private EscButton _escButton;
 
     public BaseStartScreenView CurrentStartScreen { get; private set; }
     public BaseInteractScreen CurrentInteractScreen { get; private set; }
     public BaseMenuScreen CurrentMenuScreen { get; private set; }
+    public BaseActionObject CurrentRadioObject { get; private set; }
+    public BaseActionObject CurrentSchemeObject { get; private set; }
+    public BaseMenuController CurrentMenuController { get; private set; }
 
     private LaunchMode _currentMode;
     public bool DesktopMode => _currentMode == LaunchMode.Desktop;
@@ -25,6 +40,7 @@ public class ModeController : MonoBehaviour
     {
         _currentMode = _aosSettings.launchMode;
         EnableObjectsByMode();
+        _escButton.EscButtonEvent += OnEscButtonAction;
     }
     public Transform GetPlayerTransform()
     {
@@ -41,12 +57,25 @@ public class ModeController : MonoBehaviour
             CurrentStartScreen = _desktopStartScreenView;
             CurrentInteractScreen = _desktopInteractScreen;
             CurrentMenuScreen = _deskMenuScreen;
+            CurrentRadioObject = _desktopRadioActionObject;
+            CurrentSchemeObject = _desktopSchemeActionObject;
+            CurrentMenuController = _desktopMenuController;
         }
         else
         {
             CurrentStartScreen = _vrStartScreenView;
             CurrentInteractScreen = _vrInteractScreen;
             CurrentMenuScreen = _vrMenuScreen;
+            CurrentRadioObject = _vrRadioActionObject;
+            CurrentSchemeObject = _vrSchemeActionObject;
+            CurrentMenuController = _vrMenuController;
         }
+    }
+    private void OnEscButtonAction()
+    {
+       if(CurrentMenuController.InMenu)
+            CurrentMenuController.TeleportToGame();
+       else
+            CurrentMenuController.TeleportToMenu();
     }
 }

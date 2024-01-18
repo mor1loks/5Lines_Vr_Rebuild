@@ -4,6 +4,36 @@ using UnityEngine;
 
 public class VrInteractScreen : BaseInteractScreen
 {
+    public override void EnableActionIcons(bool active)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void EnableHelperObject(bool active)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void EnableInteractIcons(bool active)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void EnableLocationObject(bool active)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void EnableReactionObject(bool active)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void EnableTimerObject(bool active)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void SetHelperText(string helperText)
     {
         throw new System.NotImplementedException();

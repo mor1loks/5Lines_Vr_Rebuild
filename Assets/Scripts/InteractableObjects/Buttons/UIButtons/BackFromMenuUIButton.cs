@@ -13,7 +13,7 @@ public class BackFromMenuUIButton : BaseUIButton
         }
 
         BackButtonClickEvent?.Invoke();
-        var menuController = FindObjectOfType<MainMenuController>();
+        var menuController = FindObjectOfType<DesktopMenuController>();
         menuController.TeleportToGame();
     }
 }
