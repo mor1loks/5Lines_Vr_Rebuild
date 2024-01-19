@@ -11,7 +11,6 @@ public class APIEventsInvoker : MonoBehaviour
     [SerializeField] private Diet _diet;
     [SerializeField] private ModeController _modeController;
     [SerializeField] private MeasureController _measureController;
-    [SerializeField] private DesktopMenuController _mainmenu;
 
     private void OnEnable()
     {
@@ -83,6 +82,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnEnableDietButton(string buttonName)
     {
+        Debug.Log(buttonName + "Radio");
         _diet.EnablePlusOrMinus(buttonName);
     }
     private void OnEnableMovingButton(string button,string buttonName)
@@ -108,7 +108,7 @@ public class APIEventsInvoker : MonoBehaviour
     private void OnSetResultScreenText(string headerText, string commentText, string evalText)
     {
         _modeController.CurrentMenuScreen.ShowLastScreen(headerText, commentText, evalText);
-        _mainmenu.TeleportByGameTimer();
+        _modeController.CurrentMenuController.TeleportByGameTimer();
     }
     private void OnSetExitText(string exitText, string warnText)
     {

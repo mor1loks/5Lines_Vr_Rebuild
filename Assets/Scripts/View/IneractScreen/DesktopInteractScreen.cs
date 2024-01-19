@@ -33,6 +33,7 @@ public class DesktopInteractScreen : BaseInteractScreen
     }
     private void EnableTextObject(string text, TextMeshProUGUI textObject, GameObject obj)
     {
+        Debug.Log(text + " EnableTextObject");
         if (text == null)
         {
             obj.SetActive(false);

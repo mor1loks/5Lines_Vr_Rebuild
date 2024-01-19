@@ -12,6 +12,7 @@ public class SceneObjectsHolder : MonoBehaviour
     [SerializeField] private RadioButtonsContainer _radioButtonsContainer;
     [SerializeField] private LocationController _locationTextController;
     [SerializeField] private SceneActionButtonsHandler _sceneButtonsHandler;
+    [SerializeField] private ModeController _modeController;
     public StrelkaAOS StrelkaAOS => _strelkaAOS;
     public RadioButtonsContainer RadioButtonsContainer => _radioButtonsContainer;
     public LocationController LocationTextController => _locationTextController;
@@ -116,6 +117,7 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void OnShowHelperText(string text)
     {
+        _modeController.CurrentInteractScreen.SetHelperText(text);
     }
     private void OnSetShupPosition(Transform pos, string objectId)
     {

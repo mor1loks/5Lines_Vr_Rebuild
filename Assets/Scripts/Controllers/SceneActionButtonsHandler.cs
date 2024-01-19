@@ -18,15 +18,22 @@ public class SceneActionButtonsHandler : MonoBehaviour
         {
             case SceneActionState.Radio:
                 _actionObject = _modeController.CurrentRadioObject;
-                _actionObject.Activate();
+                ActivateObject(_actionObject);
                     break;
             case SceneActionState.Scheme:
                 _actionObject = _modeController.CurrentSchemeObject;
-                _actionObject.Activate();
+                ActivateObject(_actionObject);
                 break;
             case SceneActionState.Measure:
                 break;
         }    
+    }
+    private void ActivateObject(BaseActionObject obj)
+    {
+        if(!obj.Active)
+        _actionObject.Activate();
+        else
+        DisableAction();
     }
     public void DisableAction()
     {
