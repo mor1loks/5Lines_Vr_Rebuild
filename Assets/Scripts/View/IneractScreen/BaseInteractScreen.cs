@@ -13,6 +13,7 @@ public abstract class BaseInteractScreen : MonoBehaviour
     public abstract void EnableTimerObject(bool active);
     public abstract void EnableActionIcons(bool active);
     public abstract void EnableInteractIcons(bool active);
+    public abstract void EnableBackButton(bool active);
     public void EnableAllHelperObjects(bool active)
     {
         EnableLocationObject(active);

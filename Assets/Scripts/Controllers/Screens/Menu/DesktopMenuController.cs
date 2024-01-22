@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 public class DesktopMenuController : BaseMenuController
 {
@@ -12,11 +9,17 @@ public class DesktopMenuController : BaseMenuController
         base.TeleportToMenu();
         _cameraFlash.CameraFlashStart();
         _cursorManager.EnableCursor(true);
+        if(SceneObjectsHolder.Instance.CurrentState == PlayerState.Look)
+            SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableBackButton(false);
     }
     public override void TeleportToGame()
     {
         base.TeleportToGame();
+
+        if(SceneObjectsHolder.Instance.CurrentState == PlayerState.Walk)
         _cursorManager.EnableCursor(false);
+        else
+            SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableBackButton(true);
         _cameraFlash.CameraFlashStart();
     }
     public override void TeleportByGameTimer()

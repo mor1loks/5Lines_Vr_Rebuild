@@ -12,5 +12,7 @@ public class LocationController : MonoBehaviour
         _currentLocation = location;
         StreetCollidersActivator.Instance.ActivateColliders(location);
     }
-    public string GetLocationName() => _currentLocation;
+    public string CurrentLocation() => _currentLocation;
+    public string BackLocation { get; set; }
 }
+

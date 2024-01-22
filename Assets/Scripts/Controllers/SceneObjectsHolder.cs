@@ -1,6 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+public enum PlayerState
+{
+    Walk,
+    Look
+}
 
 public class SceneObjectsHolder : MonoBehaviour
 {
@@ -10,17 +16,22 @@ public class SceneObjectsHolder : MonoBehaviour
     [SerializeField] private ShupController _shupController;
     [SerializeField] private StrelkaAOS _strelkaAOS;
     [SerializeField] private RadioButtonsContainer _radioButtonsContainer;
-    [SerializeField] private LocationController _locationTextController;
+    [SerializeField] private LocationController _locationController;
     [SerializeField] private SceneActionButtonsHandler _sceneButtonsHandler;
     [SerializeField] private ModeController _modeController;
+    [SerializeField] private CanvasParentChanger _canvasParentChanger;
+    [SerializeField] private API _api;
+    public PlayerState CurrentState { get; set; }
     public StrelkaAOS StrelkaAOS => _strelkaAOS;
     public RadioButtonsContainer RadioButtonsContainer => _radioButtonsContainer;
-    public LocationController LocationTextController => _locationTextController;
+    public LocationController LocationTextController => _locationController;
+    public ModeController ModeController => _modeController;  
 
     private List<SceneObject> _sceneObjects = new List<SceneObject>();
     private List<MeasureButton> _allMeasureButtons = new List<MeasureButton>();
     private List<SceneActionButton> _sceneActionButtons = new List<SceneActionButton>();
     private List<string> _currentMeasureButtonsNames = new List<string>();
+    private List<ObjectWithAnimation> _objectsWithAnimations = new List<ObjectWithAnimation>();
     public bool CanTouch { get; set; } = true;
     public bool CanAction { get; set; } = true;
     public SceneAosObject SceneAosObject { get; set; }
@@ -31,12 +42,18 @@ public class SceneObjectsHolder : MonoBehaviour
         if (Instance == null)
             Instance = this;
     }
+    private void Start()
+    {
+        BackFromPlaceUIButton.ClickBackFromPlaceUiButtonEvent += OnBackUiButtonClick;
+    }
     public void AddSceneObject(SceneObject obj)
     {
         if (obj is PlaceObject)
         {
             var placeObject = (PlaceObject)obj;
-            placeObject.SetReactionTransformEvent += OnSetReactionPos;
+            placeObject.CameraChangedEvent += OnChangeCanvasPerent;
+            placeObject.AddAnimationObjectEvent += OnAddAnimationObject;
+            placeObject.SetBackLocationNameEvent += OnSetBackLocation;
         }
         else if (obj is SceneObjectWithButton)
         {
@@ -107,10 +124,6 @@ public class SceneObjectsHolder : MonoBehaviour
     {
         _currentMeasureButtonsNames.Add(buttonName);
     }
-    private void OnSetReactionPos(Transform reactionPos)
-    {
-
-    }
     private void OnSetMovingButtonsPos(Transform buttonsPos)
     {
         _movingButtonsController.SetMovingButtonsPosition(buttonsPos.position);
@@ -126,5 +139,31 @@ public class SceneObjectsHolder : MonoBehaviour
     private void OnActivateSceneAction(SceneActionState state)
     {
         _sceneButtonsHandler.EnableActionByState(state);
+    }
+    private void OnChangeCanvasPerent(Camera camera)
+    {
+        _canvasParentChanger.ChangeCameraParent(camera);
+    }
+    private void OnBackUiButtonClick()
+    {
+        _canvasParentChanger.RevertCamera();
+        _api.InvokeEndTween(_locationController.BackLocation);
+        ResetAllAnimationObjects();
+    }
+    private void OnAddAnimationObject(ObjectWithAnimation objectWithAnimation)
+    {
+        _objectsWithAnimations.Add(objectWithAnimation);
+    }
+    private void ResetAllAnimationObjects()
+    {
+        foreach (var animObject in _objectsWithAnimations)
+        {
+            animObject.PlayScriptableAnimationClose();
+        }
+        _objectsWithAnimations = new List<ObjectWithAnimation>();
+    }
+    private void OnSetBackLocation(string location)
+    {
+       _locationController.BackLocation = location;
     }
 }

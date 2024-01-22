@@ -37,7 +37,7 @@ public class SceneActionButtonsHandler : MonoBehaviour
     }
     public void DisableAction()
     {
-        if (_modeController.DesktopMode)
+        if (_modeController.DesktopMode && SceneObjectsHolder.Instance.CurrentState == PlayerState.Walk)
             _cursorManager.EnableCursor(false);
         _actionObject.Deactivate();
     }

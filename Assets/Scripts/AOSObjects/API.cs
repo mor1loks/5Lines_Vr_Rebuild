@@ -260,4 +260,8 @@ public class API : AosObjectBase
     {
         OnMenu?.Invoke();
     }
+    public void InvokeEndTween(string location)
+    {
+        EndTween?.Invoke(location);
+    }
 }

@@ -13,13 +13,13 @@ public class StrelkaUiButton : BaseUIButton
         if (_side)
         {
             strelka.TrySwitchStrelkaPlus();
-            AOSRadio button = radioContainer.GetButtonPlus(location.GetLocationName());
+            AOSRadio button = radioContainer.GetButtonPlus(location.CurrentLocation());
             button.InvokeOnClick();
         }
         else
         {
             strelka.TrySwitchStrelkaMinus();
-            AOSRadio button = radioContainer.GetButtonMinus(location.GetLocationName());
+            AOSRadio button = radioContainer.GetButtonMinus(location.CurrentLocation());
             button.InvokeOnClick();
         }
         StrelkaAOS.StrelkaChangedEvent?.Invoke();

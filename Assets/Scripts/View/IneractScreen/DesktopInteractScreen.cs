@@ -10,6 +10,7 @@ public class DesktopInteractScreen : BaseInteractScreen
     [SerializeField] private GameObject _location;
     [SerializeField] private GameObject _actionIcons;
     [SerializeField] private GameObject _interactIcons;
+    [SerializeField] private BackFromPlaceUIButton _backUIButton;
 
     [SerializeField] private TextMeshProUGUI _helperText;
     [SerializeField] private TextMeshProUGUI _reactionText;
@@ -44,5 +45,10 @@ public class DesktopInteractScreen : BaseInteractScreen
             textObject.text = text;
             obj.SetActive(true);
         }
+    }
+
+    public override void EnableBackButton(bool active)
+    {
+        _backUIButton.gameObject.SetActive(active);
     }
 }

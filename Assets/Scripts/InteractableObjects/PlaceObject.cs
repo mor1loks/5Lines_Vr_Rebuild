@@ -8,21 +8,28 @@ public class PlaceObject : SceneObject
 {
     [SerializeField] private BackButton _backButton;
     [SerializeField] private Transform _reactionPos;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private string _backLocationName;
 
     private ObjectWithAnimation _objectWithAnimation;
-    public Action<Transform> SetReactionTransformEvent;
     public Action<ObjectWithAnimation> AddAnimationObjectEvent;
+    public Action<Camera> CameraChangedEvent;
+    public Action<string> SetBackLocationNameEvent;
     public override void OnClicked(InteractHand interactHand)
     {
         base.OnClicked(interactHand);
-        if (_reactionPos != null)
-            SetReactionTransformEvent?.Invoke(_reactionPos);
-           _objectWithAnimation = GetComponent<ObjectWithAnimation>();
+        _objectWithAnimation = GetComponent<ObjectWithAnimation>();
         if (_objectWithAnimation != null)
         {
             _objectWithAnimation.PlayScriptableAnimationOpen();
             AddAnimationObjectEvent?.Invoke(_objectWithAnimation);
         }
-       // InstanceHandler.Instance.BackTriggersHolder.EnableCurrentTrigger(true);
+        SetBackLocationNameEvent?.Invoke(_backLocationName);
+        if (_camera == null || !SceneObjectsHolder.Instance.ModeController.DesktopMode)
+            return;
+        CameraChangedEvent?.Invoke(_camera);
+        EnableHighlight(false);
+
+        // InstanceHandler.Instance.BackTriggersHolder.EnableCurrentTrigger(true);
     }
 }
