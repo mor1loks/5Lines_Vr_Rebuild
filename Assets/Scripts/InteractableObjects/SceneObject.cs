@@ -32,6 +32,7 @@ public class SceneObject : BaseObject
     }
     public override void EnableObject(bool value)
     {
+        EnableHighlight(false);
         if (GetComponent<Collider>() != null)
             GetComponent<Collider>().enabled = value;
         if (GetComponent<SpriteRenderer>() != null)

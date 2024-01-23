@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class PlaceObject : SceneObject
 {
-    [SerializeField] private BackButton _backButton;
     [SerializeField] private Transform _reactionPos;
     [SerializeField] private Camera _camera;
     [SerializeField] private string _backLocationName;

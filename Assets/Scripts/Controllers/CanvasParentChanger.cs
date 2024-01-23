@@ -7,11 +7,13 @@ public class CanvasParentChanger : MonoBehaviour
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private CursorManager _cursorManager;
+    [SerializeField] private MouseRayCastHandler _mouseRayCastHandler;
     private Camera _camera;
     public void ChangeCameraParent(Camera camera)
     {
         _mainCamera.enabled = false;
         _camera = camera;
+        _mouseRayCastHandler.SetActionCamera(_camera);
         _camera.enabled = true;
         _canvas.transform.SetParent(_camera.transform);
         _cursorManager.EnableCursor(true);
@@ -20,6 +22,7 @@ public class CanvasParentChanger : MonoBehaviour
     }
     public void RevertCamera()
     {
+        _mouseRayCastHandler.SetActionCamera(null);
         _camera.enabled = false;
         _camera=null;
         _mainCamera.enabled=true;
