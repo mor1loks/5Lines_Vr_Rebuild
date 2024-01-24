@@ -10,12 +10,19 @@ public class PlaceObject : SceneObject
     [SerializeField] private string _backLocationName;
 
     private ObjectWithAnimation _objectWithAnimation;
+    private BaseSideMovingObject _sideMovingObject;
     public Action<ObjectWithAnimation> AddAnimationObjectEvent;
     public Action<Camera> CameraChangedEvent;
+    public Action<BaseSideMovingObject> SetSideMovingObjectEvent;
     public Action<string> SetBackLocationNameEvent;
     public override void OnClicked(InteractHand interactHand)
     {
         base.OnClicked(interactHand);
+        EnableHighlight(false);
+        InvokePlaceEvents();
+    }
+    private void InvokePlaceEvents()
+    {
         _objectWithAnimation = GetComponent<ObjectWithAnimation>();
         if (_objectWithAnimation != null)
         {
@@ -23,11 +30,11 @@ public class PlaceObject : SceneObject
             AddAnimationObjectEvent?.Invoke(_objectWithAnimation);
         }
         SetBackLocationNameEvent?.Invoke(_backLocationName);
+        _sideMovingObject = GetComponent<BaseSideMovingObject>();
+        if (_sideMovingObject != null)
+            SetSideMovingObjectEvent?.Invoke(_sideMovingObject);
         if (_camera == null || !SceneObjectsHolder.Instance.ModeController.DesktopMode)
             return;
         CameraChangedEvent?.Invoke(_camera);
-        EnableHighlight(false);
-
-        // InstanceHandler.Instance.BackTriggersHolder.EnableCurrentTrigger(true);
     }
 }

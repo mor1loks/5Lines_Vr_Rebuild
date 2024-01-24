@@ -21,6 +21,7 @@ public class SceneObjectsHolder : MonoBehaviour
     [SerializeField] private ModeController _modeController;
     [SerializeField] private CanvasParentChanger _canvasParentChanger;
     [SerializeField] private API _api;
+    [SerializeField] private MoveUiButtonsHolder _moveUiButtonsHolder;
     public PlayerState CurrentState { get; set; }
     public StrelkaAOS StrelkaAOS => _strelkaAOS;
     public RadioButtonsContainer RadioButtonsContainer => _radioButtonsContainer;
@@ -54,6 +55,8 @@ public class SceneObjectsHolder : MonoBehaviour
             placeObject.CameraChangedEvent += OnChangeCanvasPerent;
             placeObject.AddAnimationObjectEvent += OnAddAnimationObject;
             placeObject.SetBackLocationNameEvent += OnSetBackLocation;
+            placeObject.SetSideMovingObjectEvent += OnSetSideMovingObject;
+
         }
         else if (obj is SceneObjectWithButton)
         {
@@ -69,6 +72,9 @@ public class SceneObjectsHolder : MonoBehaviour
         obj.HelperTextEvent += OnShowHelperText;
         _sceneObjects.Add(obj);
     }
+
+
+
     public void AddSceneActionButton(SceneActionButton sceneActionButton)
     {
         _sceneActionButtons.Add(sceneActionButton);
@@ -149,6 +155,7 @@ public class SceneObjectsHolder : MonoBehaviour
         _canvasParentChanger.RevertCamera();
         _api.InvokeEndTween(_locationController.BackLocation);
         ResetAllAnimationObjects();
+        _moveUiButtonsHolder.SetSideMovingObject(null);
     }
     private void OnAddAnimationObject(ObjectWithAnimation objectWithAnimation)
     {
@@ -165,5 +172,9 @@ public class SceneObjectsHolder : MonoBehaviour
     private void OnSetBackLocation(string location)
     {
        _locationController.BackLocation = location;
+    }
+    private void OnSetSideMovingObject(BaseSideMovingObject obj)
+    {
+       _moveUiButtonsHolder.SetSideMovingObject(obj);
     }
 }
