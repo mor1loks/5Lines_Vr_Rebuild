@@ -7,7 +7,6 @@ public class SceneObject : BaseObject
 {
     public bool NonAOS;
 
-    [SerializeField] protected Transform HelperPos;
     [SerializeField] private GameObject[] _highlights;
     public Action<string> HelperTextEvent;
     protected string HelperName;

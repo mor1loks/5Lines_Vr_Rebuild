@@ -18,7 +18,7 @@ public enum ButtonActionName
 public class MovingButton : BaseButton
 {
     public Action<ButtonActionName> ButtonClickEvent;
-    public Action<Transform, string> ButtonHoverEvent;
+    public Action<string> ButtonHoverEvent;
 
     [SerializeField] protected ButtonActionName CurrentAction;
     [SerializeField] private string _actionText;
@@ -27,12 +27,12 @@ public class MovingButton : BaseButton
     public override void OnHoverIn(InteractHand interactHand)
     {
         base.OnHoverIn(interactHand);
-            ButtonHoverEvent?.Invoke(HelperPos, _actionText);
+            ButtonHoverEvent?.Invoke(_actionText);
     }
     public override void OnHoverOut(InteractHand interactHand)
     {
         base.OnHoverOut(interactHand);
-            ButtonHoverEvent?.Invoke(null, null);
+            ButtonHoverEvent?.Invoke(null);
     }
     public override void OnClicked(InteractHand interactHand) => ButtonClickEvent?.Invoke(CurrentAction);
  
