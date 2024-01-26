@@ -22,6 +22,7 @@ public class SceneObject : BaseObject
     public override void OnHoverIn(InteractHand interactHand)
     {
         HelperTextEvent?.Invoke(HelperName);
+        Debug.Log("Helper text event");
             EnableHighlight(true);
     }
     public override void OnHoverOut(InteractHand interactHand)

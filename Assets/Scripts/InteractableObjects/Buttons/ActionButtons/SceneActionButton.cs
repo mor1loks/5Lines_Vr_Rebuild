@@ -7,7 +7,6 @@ public enum SceneActionState
     Scheme,
     Measure
 }
-
 public class SceneActionButton : BaseActionButton
 {
     [SerializeField] private SceneActionState _currentState;
@@ -17,4 +16,6 @@ public class SceneActionButton : BaseActionButton
     {
         SceneObjectsHolder.Instance.AddSceneActionButton(this);
     }
+    public void InvokeActionEvent() => SceneActionButtonEvent?.Invoke(_currentState);
+  
 }

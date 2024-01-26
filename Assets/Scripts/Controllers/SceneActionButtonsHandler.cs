@@ -6,6 +6,7 @@ public class SceneActionButtonsHandler : MonoBehaviour
 {
     [SerializeField] private CursorManager _cursorManager;
     [SerializeField] private ModeController _modeController;
+    [SerializeField] private BaseActionObject[] _allActionObjects;
 
     private BaseActionObject _actionObject;
     public void EnableActionByState(SceneActionState state)
@@ -41,4 +42,9 @@ public class SceneActionButtonsHandler : MonoBehaviour
             _cursorManager.EnableCursor(false);
         _actionObject.Deactivate();
     }
+    public void DisableAllObjects()
+    {
+        foreach (var actionObject in _allActionObjects)
+            actionObject.Deactivate();
+    }        
 }

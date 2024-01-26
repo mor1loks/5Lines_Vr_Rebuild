@@ -99,7 +99,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnActivateSceneObjectByName(string id, string name, string time)
     {
-        SceneObjectsHolder.Instance.ActivateSceneObjects(id, name,time);
+        SceneObjectsHolder.Instance.ActivateBaseObjects(id, name,time);
     }
     private void OnSetLastScreenText(string headerText, string commentText)
     {

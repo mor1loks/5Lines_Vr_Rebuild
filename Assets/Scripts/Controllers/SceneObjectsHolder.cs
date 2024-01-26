@@ -26,9 +26,9 @@ public class SceneObjectsHolder : MonoBehaviour
     public StrelkaAOS StrelkaAOS => _strelkaAOS;
     public RadioButtonsContainer RadioButtonsContainer => _radioButtonsContainer;
     public LocationController LocationTextController => _locationController;
-    public ModeController ModeController => _modeController;  
+    public ModeController ModeController => _modeController;
 
-    private List<SceneObject> _sceneObjects = new List<SceneObject>();
+    private List<BaseObject> _baseObjects = new List<BaseObject>();
     private List<MeasureButton> _allMeasureButtons = new List<MeasureButton>();
     private List<SceneActionButton> _sceneActionButtons = new List<SceneActionButton>();
     private List<string> _currentMeasureButtonsNames = new List<string>();
@@ -47,7 +47,7 @@ public class SceneObjectsHolder : MonoBehaviour
     {
         BackFromPlaceUIButton.ClickBackFromPlaceUiButtonEvent += OnBackUiButtonClick;
     }
-    public void AddSceneObject(SceneObject obj)
+    public void AddSceneObject(BaseObject obj)
     {
         if (obj is PlaceObject)
         {
@@ -69,11 +69,15 @@ public class SceneObjectsHolder : MonoBehaviour
             measureButton.MeasurePositionEvent += OnSetShupPosition;
             _allMeasureButtons.Add(measureButton);
         }
-        obj.HelperTextEvent += OnShowHelperText;
-        _sceneObjects.Add(obj);
+         if(obj is SceneObject)
+        {
+            var sceneObject = (SceneObject)obj;
+            Debug.Log(sceneObject.name + "SCENE OBJ NAME");
+            sceneObject.HelperTextEvent += OnShowHelperText;
+        }
+   
+        _baseObjects.Add(obj);
     }
-
-
 
     public void AddSceneActionButton(SceneActionButton sceneActionButton)
     {
@@ -81,24 +85,28 @@ public class SceneObjectsHolder : MonoBehaviour
         sceneActionButton.SceneActionButtonEvent += OnActivateSceneAction;
     }
 
-    public void ActivateSceneObjects(string objectName, string name, string timeText)
+    public void ActivateBaseObjects(string objectName, string name, string timeText)
     {
         if (timeText == "" || timeText == "0")
             timeText = name;
         else
             timeText = $"{name} \nВремя перехода:{timeText}";
-        foreach (var item in _sceneObjects)
+        foreach (var item in _baseObjects)
         {
             if (item.GetAOSName() == objectName)
             {
                 item.EnableObject(true);
-                item.SetHelperName(timeText);
+                if (item is SceneObject)
+                {
+                    var sceneObject = (SceneObject)item;
+                    sceneObject.SetHelperName(timeText);
+                }
             }
         }
     }
     public void DeactivateAllSceneObjects()
     {
-        foreach (var sceneObj in _sceneObjects)
+        foreach (var sceneObj in _baseObjects)
             sceneObj.EnableObject(false);
     }
 
@@ -136,6 +144,7 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void OnShowHelperText(string text)
     {
+        Debug.Log("Help text " + text);
         _modeController.CurrentInteractScreen.SetHelperText(text);
     }
     private void OnSetShupPosition(Transform pos, string objectId)
@@ -155,6 +164,7 @@ public class SceneObjectsHolder : MonoBehaviour
         _canvasParentChanger.RevertCamera();
         _api.InvokeEndTween(_locationController.BackLocation);
         ResetAllAnimationObjects();
+        _sceneButtonsHandler.DisableAllObjects();
         _moveUiButtonsHolder.SetSideMovingObject(null);
     }
     private void OnAddAnimationObject(ObjectWithAnimation objectWithAnimation)
@@ -171,10 +181,10 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void OnSetBackLocation(string location)
     {
-       _locationController.BackLocation = location;
+        _locationController.BackLocation = location;
     }
     private void OnSetSideMovingObject(BaseSideMovingObject obj)
     {
-       _moveUiButtonsHolder.SetSideMovingObject(obj);
+        _moveUiButtonsHolder.SetSideMovingObject(obj);
     }
 }

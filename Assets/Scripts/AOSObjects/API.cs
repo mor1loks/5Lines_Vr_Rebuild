@@ -74,7 +74,6 @@ public class API : AosObjectBase
     [AosAction(name: "Показать место")]
     public void showPlace(JObject place, JArray data, JObject nav)
     {
-
         string location = place.SelectToken("apiId").ToString();
         SetLocationEvent?.Invoke(location);
         if (place.SelectToken("name") != null)
