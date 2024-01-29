@@ -2,6 +2,6 @@ using UnityEngine;
 
 public abstract class BaseSideMovingObject : MonoBehaviour
 {
-    public abstract void SetMoveSide(Vector3 moveVector);
+    public abstract void SetMoveSide(MoveState state);
     protected abstract void TryMove();
 }

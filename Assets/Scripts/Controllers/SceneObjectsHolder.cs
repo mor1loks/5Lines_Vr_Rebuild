@@ -186,5 +186,6 @@ public class SceneObjectsHolder : MonoBehaviour
     private void OnSetSideMovingObject(BaseSideMovingObject obj)
     {
         _moveUiButtonsHolder.SetSideMovingObject(obj);
+        Debug.Log("Side moving object added "+ obj.name);
     }
 }
