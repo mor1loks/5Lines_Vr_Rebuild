@@ -16,7 +16,14 @@ public class DesktopInteractScreen : BaseInteractScreen
     [SerializeField] private TextMeshProUGUI _reactionText;
     [SerializeField] private TextMeshProUGUI _locationText;
     [SerializeField] private TextMeshProUGUI _timerText;
+    private Vector3 _helperStartPos;
+    private Vector3 _reactionStartPos;
     private Timer _time = new Timer();
+    private void Start()
+    {
+        _helperStartPos = _helper.transform.position;
+        _reactionStartPos = _reaction.transform.position;
+    }
     public override void SetHelperText(string helperText) => EnableTextObject(helperText, _helperText, _helper);
     public override void SetReactionText(string reactionText) => EnableTextObject(reactionText, _reactionText, _reaction);
     public override void SetLocationText(string locationText) => _locationText.text = locationText;
@@ -26,6 +33,21 @@ public class DesktopInteractScreen : BaseInteractScreen
     public override void EnableTimerObject(bool active) => _timer.SetActive(active);
     public override void EnableActionIcons(bool active) => _actionIcons.SetActive(active);
     public override void EnableInteractIcons(bool active) => _interactIcons.SetActive(active);
+    public override void SetHelperTextPosition(VectorHolder newPos)
+    {
+        if (newPos != null)
+            _helper.transform.position = newPos.Position;
+        else
+            _helper.transform.position = _helperStartPos;
+    }
+    public override void SetReactionTextPosition(VectorHolder newPos)
+    {
+        if (newPos != null)
+            _reaction.transform.position = newPos.Position;
+        else
+            _reaction.transform.position = _reactionStartPos;
+    }
+
     public override void SetTimerText(string timerText)
     {
         double.TryParse(timerText, out double time);
@@ -34,7 +56,6 @@ public class DesktopInteractScreen : BaseInteractScreen
     }
     private void EnableTextObject(string text, TextMeshProUGUI textObject, GameObject obj)
     {
-        Debug.Log(text + " EnableTextObject");
         if (text == null)
         {
             obj.SetActive(false);
@@ -51,4 +72,6 @@ public class DesktopInteractScreen : BaseInteractScreen
     {
         _backUIButton.gameObject.SetActive(active);
     }
+
+
 }

@@ -22,6 +22,7 @@ public class SceneObjectsHolder : MonoBehaviour
     [SerializeField] private CanvasParentChanger _canvasParentChanger;
     [SerializeField] private API _api;
     [SerializeField] private MoveUiButtonsHolder _moveUiButtonsHolder;
+    [SerializeField] private MouseRayCastHandler _mouseRayCastHandler;
     public PlayerState CurrentState { get; set; }
     public StrelkaAOS StrelkaAOS => _strelkaAOS;
     public RadioButtonsContainer RadioButtonsContainer => _radioButtonsContainer;
@@ -46,7 +47,15 @@ public class SceneObjectsHolder : MonoBehaviour
     private void Start()
     {
         BackFromPlaceUIButton.ClickBackFromPlaceUiButtonEvent += OnBackUiButtonClick;
+        if(_modeController.DesktopMode)
+        _mouseRayCastHandler.MousePosEvent += OnChangeHelperEvent;
     }
+
+    private void OnChangeHelperEvent(VectorHolder holder)
+    {
+        _modeController.CurrentInteractScreen.SetHelperTextPosition(holder);
+    }
+
     public void AddSceneObject(BaseObject obj)
     {
         if (obj is PlaceObject)
@@ -144,7 +153,6 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void OnShowHelperText(string text)
     {
-        Debug.Log("Help text " + text);
         _modeController.CurrentInteractScreen.SetHelperText(text);
     }
     private void OnSetShupPosition(Transform pos, string objectId)

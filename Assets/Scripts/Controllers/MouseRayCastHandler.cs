@@ -1,11 +1,18 @@
 using AosSdk.Core.Interaction.Interfaces;
 using AosSdk.Core.PlayerModule.Pointer;
+using System;
 using UnityEngine;
 public class MouseRayCastHandler : MonoBehaviour
 {
     private InteractHand _interactHand;
     private Camera _currentCamera;
     private IHoverAble _currentHoverable;
+    public Action<VectorHolder> MousePosEvent;
+    private VectorHolder _mousePosHolder;
+    private void Start()
+    {
+        _mousePosHolder = new VectorHolder();
+    }
     private void Update()
     {
         if (_currentCamera == null)
@@ -31,7 +38,6 @@ public class MouseRayCastHandler : MonoBehaviour
         {
             return hit;
         }
-
         return hit;
     }
     private void CheckCollisionClick(RaycastHit hit)
@@ -39,7 +45,6 @@ public class MouseRayCastHandler : MonoBehaviour
         if (hit.collider.gameObject.TryGetComponent(out IClickAble obj))
         {
             obj.OnClicked(_interactHand);
-            Debug.Log("Clicked");
         }
     }
     private void CheckCollisionHover(RaycastHit hit)
@@ -49,11 +54,13 @@ public class MouseRayCastHandler : MonoBehaviour
             ResetHoverableObject();
             _currentHoverable = obj;
             _currentHoverable.OnHoverIn(_interactHand);
-            Debug.Log("HOVERED");
+            _mousePosHolder.Position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            MousePosEvent?.Invoke(_mousePosHolder);
         }
         else
         {
             ResetHoverableObject();
+            MousePosEvent?.Invoke(null);
             return;
         }
     }
@@ -62,6 +69,7 @@ public class MouseRayCastHandler : MonoBehaviour
         if (_currentHoverable != null)
         {
             _currentHoverable.OnHoverOut(_interactHand);
+
             _currentHoverable = null;
         }
     }

@@ -44,12 +44,22 @@ public class VrInteractScreen : BaseInteractScreen
         throw new System.NotImplementedException();
     }
 
+    public override void SetHelperTextPosition(VectorHolder newPos)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void SetLocationText(string locationText)
     {
         throw new System.NotImplementedException();
     }
 
     public override void SetReactionText(string reactionText)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void SetReactionTextPosition(VectorHolder newPos)
     {
         throw new System.NotImplementedException();
     }
