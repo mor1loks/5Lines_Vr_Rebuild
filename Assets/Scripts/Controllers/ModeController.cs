@@ -25,6 +25,9 @@ public class ModeController : MonoBehaviour
     [SerializeField] private BaseMenuController _desktopMenuController;
     [SerializeField] private BaseMenuController _vrMenuController;
     [Space]
+    [SerializeField] private BaseReactionButtonsHandler _desktopReactionButtonsHandler;
+    [SerializeField] private BaseReactionButtonsHandler _vrReactionButtonsHandler;
+    [Space]
     [SerializeField] private EscButton _escButton;
 
     public BaseStartScreenView CurrentStartScreen { get; private set; }
@@ -33,6 +36,7 @@ public class ModeController : MonoBehaviour
     public BaseActionObject CurrentRadioObject { get; private set; }
     public BaseActionObject CurrentSchemeObject { get; private set; }
     public BaseMenuController CurrentMenuController { get; private set; }
+    public BaseReactionButtonsHandler BaseReactionButtonsHandler { get; private set; }
 
     private LaunchMode _currentMode;
     public bool DesktopMode => _currentMode == LaunchMode.Desktop;
@@ -52,7 +56,7 @@ public class ModeController : MonoBehaviour
     }
     private void EnableObjectsByMode()
     {
-       if(DesktopMode)
+        if (DesktopMode)
         {
             CurrentStartScreen = _desktopStartScreenView;
             CurrentInteractScreen = _desktopInteractScreen;
@@ -60,6 +64,7 @@ public class ModeController : MonoBehaviour
             CurrentRadioObject = _desktopRadioActionObject;
             CurrentSchemeObject = _desktopSchemeActionObject;
             CurrentMenuController = _desktopMenuController;
+            BaseReactionButtonsHandler = _desktopReactionButtonsHandler;
         }
         else
         {
@@ -69,13 +74,14 @@ public class ModeController : MonoBehaviour
             CurrentRadioObject = _vrRadioActionObject;
             CurrentSchemeObject = _vrSchemeActionObject;
             CurrentMenuController = _vrMenuController;
+            BaseReactionButtonsHandler = _vrReactionButtonsHandler;
         }
     }
     private void OnEscButtonAction()
     {
-       if(CurrentMenuController.InMenu)
+        if (CurrentMenuController.InMenu)
             CurrentMenuController.TeleportToGame();
-       else
+        else
             CurrentMenuController.TeleportToMenu();
     }
 }

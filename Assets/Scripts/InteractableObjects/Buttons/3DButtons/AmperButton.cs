@@ -19,7 +19,6 @@ public class AmperButton : BaseButton
     }
     public override void OnClicked(InteractHand interactHand)
     {
-        MovingButtonsController.Instance.HideAllButtons();
         if (!_amper)
         {
             _amper = true;

@@ -12,7 +12,6 @@ public class SceneObjectsHolder : MonoBehaviour
 {
     public static SceneObjectsHolder Instance;
 
-    [SerializeField] private MovingButtonsController _movingButtonsController;
     [SerializeField] private ShupController _shupController;
     [SerializeField] private StrelkaAOS _strelkaAOS;
     [SerializeField] private RadioButtonsContainer _radioButtonsContainer;
@@ -48,10 +47,18 @@ public class SceneObjectsHolder : MonoBehaviour
     {
         BackFromPlaceUIButton.ClickBackFromPlaceUiButtonEvent += OnBackUiButtonClick;
         if(_modeController.DesktopMode)
-        _mouseRayCastHandler.MousePosEvent += OnChangeHelperEvent;
+        _mouseRayCastHandler.MousePosHoverEvent += OnChangeHelperOnHoverEvent;
+        _mouseRayCastHandler.MousePosClickEvent += OnChangeReactionPositionEvent;
+    }
+    private void OnChangeReactionPositionEvent(VectorHolder holder)
+    {
+        if (holder == null)
+            _modeController.BaseReactionButtonsHandler.HideAllReactions();
+       else
+       _modeController.BaseReactionButtonsHandler.SetButtonSpawnPos(holder.Position);
     }
 
-    private void OnChangeHelperEvent(VectorHolder holder)
+    private void OnChangeHelperOnHoverEvent(VectorHolder holder)
     {
         _modeController.CurrentInteractScreen.SetHelperTextPosition(holder);
     }
@@ -81,7 +88,6 @@ public class SceneObjectsHolder : MonoBehaviour
          if(obj is SceneObject)
         {
             var sceneObject = (SceneObject)obj;
-            Debug.Log(sceneObject.name + "SCENE OBJ NAME");
             sceneObject.HelperTextEvent += OnShowHelperText;
         }
    
@@ -149,7 +155,7 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void OnSetMovingButtonsPos(Transform buttonsPos)
     {
-        _movingButtonsController.SetMovingButtonsPosition(buttonsPos.position);
+        //_movingButtonsController.SetMovingButtonsPosition(buttonsPos.position);
     }
     private void OnShowHelperText(string text)
     {

@@ -7,7 +7,8 @@ public class MouseRayCastHandler : MonoBehaviour
     private InteractHand _interactHand;
     private Camera _currentCamera;
     private IHoverAble _currentHoverable;
-    public Action<VectorHolder> MousePosEvent;
+    public Action<VectorHolder> MousePosHoverEvent;
+    public Action<VectorHolder> MousePosClickEvent;
     private VectorHolder _mousePosHolder;
     private void Start()
     {
@@ -45,7 +46,11 @@ public class MouseRayCastHandler : MonoBehaviour
         if (hit.collider.gameObject.TryGetComponent(out IClickAble obj))
         {
             obj.OnClicked(_interactHand);
+            _mousePosHolder.Position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            MousePosClickEvent?.Invoke(_mousePosHolder);
         }
+        else
+            MousePosClickEvent?.Invoke(null);
     }
     private void CheckCollisionHover(RaycastHit hit)
     {
@@ -55,12 +60,12 @@ public class MouseRayCastHandler : MonoBehaviour
             _currentHoverable = obj;
             _currentHoverable.OnHoverIn(_interactHand);
             _mousePosHolder.Position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            MousePosEvent?.Invoke(_mousePosHolder);
+            MousePosHoverEvent?.Invoke(_mousePosHolder);
         }
         else
         {
             ResetHoverableObject();
-            MousePosEvent?.Invoke(null);
+            MousePosHoverEvent?.Invoke(null);
             return;
         }
     }

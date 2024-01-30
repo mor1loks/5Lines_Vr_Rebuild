@@ -1,19 +1,6 @@
 using AosSdk.Core.PlayerModule.Pointer;
 using System;
 using UnityEngine;
-public enum ButtonActionName
-{
-    Hand,
-    Hand_1,
-    Hand_2,
-    Hand_3,
-    Hand_4,
-    Eye,
-    Tool,
-    Tool_1,
-    Pen,
-    Pen_1
-}
 
 public class MovingButton : BaseButton
 {

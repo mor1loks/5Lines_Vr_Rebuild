@@ -29,11 +29,6 @@ public class VrInteractScreen : BaseInteractScreen
         throw new System.NotImplementedException();
     }
 
-    public override void EnableReactionObject(bool active)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void EnableTimerObject(bool active)
     {
         throw new System.NotImplementedException();
@@ -50,16 +45,6 @@ public class VrInteractScreen : BaseInteractScreen
     }
 
     public override void SetLocationText(string locationText)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void SetReactionText(string reactionText)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void SetReactionTextPosition(VectorHolder newPos)
     {
         throw new System.NotImplementedException();
     }

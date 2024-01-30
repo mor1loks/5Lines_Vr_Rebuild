@@ -20,9 +20,8 @@ public class APIEventsInvoker : MonoBehaviour
         _api.SetTeleportLocationEvent += OnSetLocationToTeleport;
         _api.SetNewLocationTextEvent += OnSetLocationTextToLocationController;
         _api.SetLocationEvent += OnSetLocationToLocationController;
-        _api.SetLocationForFieldCollidersEvent += OnActivateStreetColliders;
         _api.EnableDietButtonsEvent += OnEnableDietButton;
-        _api.EnableMovingButtonEvent += OnEnableMovingButton;
+        _api.EnableRactionButtonEvent += OnEnableReactionButton;
         _api.SetTimerTextEvent+= OnSetTimerText;
         _api.AddMeasureButtonEvent += OnAddButtonToMeasureButtonsList;
         _api.ActivateByNameEvent += OnActivateSceneObjectByName;
@@ -42,9 +41,8 @@ public class APIEventsInvoker : MonoBehaviour
         _api.SetTeleportLocationEvent -= OnSetLocationToTeleport;
         _api.SetNewLocationTextEvent -= OnSetLocationTextToLocationController;
         _api.SetLocationEvent -= OnSetLocationToLocationController;
-        _api.SetLocationForFieldCollidersEvent -= OnActivateStreetColliders;
         _api.EnableDietButtonsEvent -= OnEnableDietButton;
-        _api.EnableMovingButtonEvent -= OnEnableMovingButton;
+        _api.EnableRactionButtonEvent -= OnEnableReactionButton;
         _api.SetTimerTextEvent -= OnSetTimerText;
         _api.AddMeasureButtonEvent -= OnAddButtonToMeasureButtonsList;
         _api.ActivateByNameEvent -= OnActivateSceneObjectByName;
@@ -85,9 +83,9 @@ public class APIEventsInvoker : MonoBehaviour
         Debug.Log(buttonName + "Radio");
         _diet.EnablePlusOrMinus(buttonName);
     }
-    private void OnEnableMovingButton(string button,string buttonName)
+    private void OnEnableReactionButton(string button,string buttonName)
     {
-        MovingButtonsController.Instance.ShowButton(button, buttonName);
+        _modeController.BaseReactionButtonsHandler.ShowReactionButtonByName(button, buttonName);
     }
     private void OnSetTimerText(string timerText)
     {
@@ -126,8 +124,5 @@ public class APIEventsInvoker : MonoBehaviour
     {
         _measureController.SetDeviceValue(value);
     }
-    private void OnActivateStreetColliders(string locationName)
-    {
-        StreetCollidersActivator.Instance.ActivateColliders(locationName);
-    }
+
 }

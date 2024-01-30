@@ -23,7 +23,7 @@ public class API : AosObjectBase
     public Action<string> SetTimerTextEvent;
     public Action<string> AddMeasureButtonEvent;
     public Action<string> ReactionEvent;
-    public Action<string, string> EnableMovingButtonEvent;
+    public Action<string, string> EnableRactionButtonEvent;
     public Action<string, string, string> ActivateByNameEvent;
     public Action<string, string> SetMessageTextEvent;
     public Action<string, string, string> SetResultTextEvent;
@@ -75,7 +75,8 @@ public class API : AosObjectBase
     public void showPlace(JObject place, JArray data, JObject nav)
     {
         string location = place.SelectToken("apiId").ToString();
-        SetLocationEvent?.Invoke(location);
+        if (location != null)
+            SetLocationEvent?.Invoke(location);
         if (place.SelectToken("name") != null)
         {
             SetNewLocationTextEvent?.Invoke(place.SelectToken("name").ToString());
@@ -99,7 +100,6 @@ public class API : AosObjectBase
                 if (timeToShow != null)
                 {
                     time = timeText.SelectToken("tm").ToString();
-
                 }
             }
             ActivateByNameEvent?.Invoke(id, name, time);
@@ -110,8 +110,6 @@ public class API : AosObjectBase
         {
             ActivateBackButtonEvent?.Invoke(nav.SelectToken("back").SelectToken("action").ToString());
         }
-        SetLocationForFieldCollidersEvent?.Invoke(location);
-
     }
     [AosAction(name: "Обновить место")]
     public void updatePlace(JArray data)
@@ -165,7 +163,7 @@ public class API : AosObjectBase
     public void showPoints(string info, JArray data)
     {
 
-        EnableMovingButtonEvent?.Invoke(null, null);
+        EnableRactionButtonEvent?.Invoke(null, null);
         foreach (JObject item in data)
         {
             if (item == null)
@@ -176,19 +174,19 @@ public class API : AosObjectBase
                 {
                     string eye = item.SelectToken("tool").ToString();
                     string text = item.SelectToken("name").ToString();
-                    EnableMovingButtonEvent?.Invoke(eye, text);
+                    EnableRactionButtonEvent?.Invoke(eye, text);
                 }
                 if (item.SelectToken("tool").ToString() == "hand")
                 {
                     string hand = item.SelectToken("tool").ToString();
                     string text = item.SelectToken("name").ToString();
-                    EnableMovingButtonEvent?.Invoke(hand, text);
+                    EnableRactionButtonEvent?.Invoke(hand, text);
                 }
                 if (item.SelectToken("tool").ToString() == "tool")
                 {
                     string tool = item.SelectToken("tool").ToString();
                     string text = item.SelectToken("name").ToString();
-                    EnableMovingButtonEvent?.Invoke(tool, text);
+                    EnableRactionButtonEvent?.Invoke(tool, text);
                 }
             }
 
