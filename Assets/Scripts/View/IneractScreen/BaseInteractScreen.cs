@@ -6,7 +6,9 @@ public abstract class BaseInteractScreen : MonoBehaviour
     public abstract void SetTimerText(string timerText);
     public abstract void SetLocationText(string locationText);
     public abstract void SetHelperText(string helperText);
+    public abstract void SetReactionText(string helperText);
     public abstract void EnableHelperObject(bool active);
+    public abstract void EnableReactionObject(bool active);
     public abstract void EnableLocationObject(bool active);
     public abstract void EnableTimerObject(bool active);
     public abstract void EnableActionIcons(bool active);

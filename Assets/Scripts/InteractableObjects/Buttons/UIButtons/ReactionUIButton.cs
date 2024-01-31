@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ReactionUIButton : BaseUIButton
@@ -14,6 +13,7 @@ public class ReactionUIButton : BaseUIButton
     private ButtonActionName _currentActionName;
     private StringParser _stringParser = new StringParser();
     private SceneAosObject _sceneAosObject;
+
     public ButtonActionName ButtonActionName => _currentActionName;
     public void Init(ButtonActionName buttonActionName, string text, SceneAosObject sceneAosObject)
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class MoveUiButton : BaseUIButton
 {
     [SerializeField] private MoveState _moveState;
     private BaseSideMovingObject _baseSideMovingObject;
+    public Action PointerEnterEvent;
+    public Action PointerExitEvent;
     public void SetSideMovingObject(BaseSideMovingObject obj)
     {
         _baseSideMovingObject = obj;
@@ -21,11 +24,18 @@ public class MoveUiButton : BaseUIButton
     public override void OnPointerEnter(PointerEventData eventData)
     {
         if (_baseSideMovingObject != null)
+        {
             _baseSideMovingObject.SetMoveSide(_moveState);
+            PointerEnterEvent?.Invoke();
+        }
+           
     }
     public override void OnPointerExit(PointerEventData eventData)
     {
         if (_baseSideMovingObject != null)
+        {
             _baseSideMovingObject.SetMoveSide(MoveState.None);
+            PointerExitEvent?.Invoke();
+        }
     }
 }

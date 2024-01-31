@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class APIEventsInvoker : MonoBehaviour
         _api.SetLocationEvent += OnSetLocationToLocationController;
         _api.EnableDietButtonsEvent += OnEnableDietButton;
         _api.EnableRactionButtonEvent += OnEnableReactionButton;
+        _api.ReactionEvent+=OnSetReaction;
         _api.SetTimerTextEvent+= OnSetTimerText;
         _api.AddMeasureButtonEvent += OnAddButtonToMeasureButtonsList;
         _api.ActivateByNameEvent += OnActivateSceneObjectByName;
@@ -33,6 +35,7 @@ public class APIEventsInvoker : MonoBehaviour
         _api.SetMeasureValueEvent += OnSetMeasureValue;
 
     }
+
     private void OnDisable()
     {
         _connection.ConnectionReadyEvent -= OnSetLocationAfterConnection;
@@ -43,6 +46,7 @@ public class APIEventsInvoker : MonoBehaviour
         _api.SetLocationEvent -= OnSetLocationToLocationController;
         _api.EnableDietButtonsEvent -= OnEnableDietButton;
         _api.EnableRactionButtonEvent -= OnEnableReactionButton;
+        _api.ReactionEvent -= OnSetReaction;
         _api.SetTimerTextEvent -= OnSetTimerText;
         _api.AddMeasureButtonEvent -= OnAddButtonToMeasureButtonsList;
         _api.ActivateByNameEvent -= OnActivateSceneObjectByName;
@@ -61,6 +65,14 @@ public class APIEventsInvoker : MonoBehaviour
     private void OnResetMeasureButtons()
     {
         SceneObjectsHolder.Instance.ResetMeasureButtonsCurrentList();
+    }
+    private void OnSetReaction(string text)
+    {
+        SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableReactionObject(true);
+        SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.SetReactionText(text);
+        SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableHelperObject(false);
+        SceneObjectsHolder.Instance.ModeController.BaseReactionButtonsHandler.HideAllReactions();
+        SceneObjectsHolder.Instance.MouseRayCastHandler.CanHover = false;
     }
     private void OnSetLocationToTeleport(string location)
     {

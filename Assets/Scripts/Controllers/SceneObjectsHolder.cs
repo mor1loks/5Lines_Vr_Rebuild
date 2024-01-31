@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 public enum PlayerState
 {
@@ -27,8 +28,10 @@ public class SceneObjectsHolder : MonoBehaviour
     public RadioButtonsContainer RadioButtonsContainer => _radioButtonsContainer;
     public LocationController LocationTextController => _locationController;
     public ModeController ModeController => _modeController;
+    public MouseRayCastHandler MouseRayCastHandler => _mouseRayCastHandler;
 
     private List<BaseObject> _baseObjects = new List<BaseObject>();
+    private List<BaseUIButton> _baseUiButtons = new List<BaseUIButton>();
     private List<MeasureButton> _allMeasureButtons = new List<MeasureButton>();
     private List<SceneActionButton> _sceneActionButtons = new List<SceneActionButton>();
     private List<string> _currentMeasureButtonsNames = new List<string>();
@@ -50,15 +53,15 @@ public class SceneObjectsHolder : MonoBehaviour
             _mouseRayCastHandler.MousePosHoverEvent += OnChangeHelperOnHoverEvent;
         _mouseRayCastHandler.MousePosClickEvent += OnChangeReactionPositionEvent;
     }
+    private void OnHideAllReaction()
+    {
+        _modeController.BaseReactionButtonsHandler.HideAllReactions();
+    }
     private void OnChangeReactionPositionEvent(VectorHolder holder)
     {
 
         if (holder == null)
-        {
             _modeController.BaseReactionButtonsHandler.HideAllReactions();
-            Debug.Log("OnChangeReactionPositionEvent NULL");
-        }
-
         else
             _modeController.BaseReactionButtonsHandler.SetButtonSpawnPos(holder.Position);
     }
@@ -98,18 +101,39 @@ public class SceneObjectsHolder : MonoBehaviour
         obj.AddSceneObjectEvent += OnInitCurrentSceneObject;
         _baseObjects.Add(obj);
     }
-
+    public void AddBaseUIButton(BaseUIButton obj)
+    {
+        if(obj is MoveUiButton)
+        {
+            var moveButton = (MoveUiButton)obj;
+            moveButton.PointerEnterEvent += OnHideAllReaction;
+        }
+        else if(obj is OkUiButton)
+        {
+            var okButton = (OkUiButton)obj;
+            okButton.OkClickEvent += OnHideReactionWindow;
+        }
+        obj.HoveredUiEvent += OnHandleReactionHover;
+        _baseUiButtons.Add(obj);
+    }
+    private void OnHandleReactionHover(bool active)
+    {
+        _mouseRayCastHandler.CanHover = !active;
+    }
+    private void OnHideReactionWindow()
+    {
+        _modeController.CurrentInteractScreen.EnableReactionObject(false);
+        _mouseRayCastHandler.CanHover = true;
+    }
     private void OnInitCurrentSceneObject(SceneAosObject sceneAosObject)
     {
         SceneAosObject = sceneAosObject;
     }
-
     public void AddSceneActionButton(SceneActionButton sceneActionButton)
     {
         _sceneActionButtons.Add(sceneActionButton);
         sceneActionButton.SceneActionButtonEvent += OnActivateSceneAction;
     }
-
     public void ActivateBaseObjects(string objectName, string name, string timeText)
     {
         if (timeText == "" || timeText == "0")

@@ -18,18 +18,18 @@ public class DesktopReactionButtonsHandler : BaseReactionButtonsHandler
     }
     public override void ShowReactionButtonByName(string buttonActionName, string buttonText)
     {
-   
+        Debug.Log(buttonActionName + " ACTION NAME");
         if (string.IsNullOrWhiteSpace(buttonActionName)||ButtonsSpawnPos == null || _currentAosObject == SceneObjectsHolder.Instance.SceneAosObject)
             return;
         _parent.position = ButtonsSpawnPos;
-        if (_currentAosObject != SceneObjectsHolder.Instance.SceneAosObject)
+        ButtonActionName reactionName;
+        Enum.TryParse<ButtonActionName>(buttonActionName, out reactionName);
+        if (ContainsObject(reactionName))
             HideAllReactions();
         _currentAosObject = SceneObjectsHolder.Instance.SceneAosObject;
         var reactionButton = Instantiate(_prefub, _parent);
-        ButtonActionName reactionName;
-        Enum.TryParse<ButtonActionName>(buttonActionName, out reactionName);
+   
         reactionButton.Init(reactionName, buttonText, _currentAosObject);
-        Debug.Log($"REACTION NAME {reactionName.ToString()} BUTTON TEXT {buttonText} ");
         _reactionButtons.Add(reactionButton);
     }
     public override void HideAllReactions()
@@ -42,9 +42,9 @@ public class DesktopReactionButtonsHandler : BaseReactionButtonsHandler
         _reactionButtons = new List<ReactionUIButton>();
         _currentAosObject = null;
     }
-    private bool ContainsObject(ReactionUIButton btn)
+    private bool ContainsObject(ButtonActionName buttonActionName)
     {
-        var containsObject = _reactionButtons.SingleOrDefault(b => b.ButtonActionName == btn.ButtonActionName);
+        var containsObject = _reactionButtons.SingleOrDefault(b => b.ButtonActionName == buttonActionName);
             if(containsObject != null)
             return true;
         return false;

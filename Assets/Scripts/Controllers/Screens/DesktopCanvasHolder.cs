@@ -17,7 +17,6 @@ public class DesktopCanvasHolder : MonoBehaviour
             if(canvasToShow!=null)
         {
             canvasToShow.gameObject.SetActive(true);
-            Debug.Log("in EnableCanvasByState " + state);
         }
     }
 }

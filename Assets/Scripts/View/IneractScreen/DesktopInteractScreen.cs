@@ -5,6 +5,7 @@ using UnityEngine;
 public class DesktopInteractScreen : BaseInteractScreen
 {
     [SerializeField] private GameObject _helper;
+    [SerializeField] private GameObject _reaction;
     [SerializeField] private GameObject _timer;
     [SerializeField] private GameObject _location;
     [SerializeField] private GameObject _actionIcons;
@@ -29,12 +30,17 @@ public class DesktopInteractScreen : BaseInteractScreen
     public override void EnableTimerObject(bool active) => _timer.SetActive(active);
     public override void EnableActionIcons(bool active) => _actionIcons.SetActive(active);
     public override void EnableInteractIcons(bool active) => _interactIcons.SetActive(active);
+    public override void SetReactionText(string helperText) => _reactionText.text = helperText;
+    public override void EnableReactionObject(bool active) => _reaction.SetActive(active);
     public override void SetHelperTextPosition(VectorHolder newPos)
     {
         if (newPos != null)
             _helper.transform.position = newPos.Position;
         else
+        {
             _helper.transform.position = _helperStartPos;
+            //EnableHelperObject(false);
+        }
     }
 
     public override void SetTimerText(string timerText)

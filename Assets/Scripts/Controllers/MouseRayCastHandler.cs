@@ -1,7 +1,9 @@
 using AosSdk.Core.Interaction.Interfaces;
 using AosSdk.Core.PlayerModule.Pointer;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 public class MouseRayCastHandler : MonoBehaviour
 {
     private InteractHand _interactHand;
@@ -10,14 +12,19 @@ public class MouseRayCastHandler : MonoBehaviour
     public Action<VectorHolder> MousePosHoverEvent;
     public Action<VectorHolder> MousePosClickEvent;
     private VectorHolder _mousePosHolder;
+    public bool CanHover { get; set; } = true;
     private void Start()
     {
         _mousePosHolder = new VectorHolder();
     }
     private void Update()
     {
-        if (_currentCamera == null)
+        if (_currentCamera == null || !CanHover)
+        {
+            MousePosHoverEvent?.Invoke(null);
+            MousePosClickEvent?.Invoke(null);
             return;
+        }
         var collisionObject = CheckRaycastCollider();
         if (Input.GetMouseButtonDown(0))
         {
@@ -31,7 +38,7 @@ public class MouseRayCastHandler : MonoBehaviour
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 100f;
-        mousePos = _currentCamera.ScreenToWorldPoint(mousePos); ;
+        mousePos = _currentCamera.ScreenToWorldPoint(mousePos);
         Debug.DrawRay(_currentCamera.transform.position, mousePos - _currentCamera.transform.position, Color.blue);
         Ray ray = _currentCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -43,6 +50,8 @@ public class MouseRayCastHandler : MonoBehaviour
     }
     private void CheckCollisionClick(RaycastHit hit)
     {
+        if (hit.collider.gameObject.GetComponent<IPointerClickHandler>() != null)
+            return;
         if (hit.collider.gameObject.TryGetComponent(out IClickAble obj))
         {
             obj.OnClicked(_interactHand);
@@ -50,7 +59,7 @@ public class MouseRayCastHandler : MonoBehaviour
             MousePosClickEvent?.Invoke(_mousePosHolder);
         }
         else
-            MousePosClickEvent?.Invoke(null);   
+            MousePosClickEvent?.Invoke(null);
     }
     private void CheckCollisionHover(RaycastHit hit)
     {
@@ -77,6 +86,14 @@ public class MouseRayCastHandler : MonoBehaviour
 
             _currentHoverable = null;
         }
+    }
+    private bool IsUi()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
     public void SetActionCamera(Camera camera) => _currentCamera = camera;
 
