@@ -17,7 +17,6 @@ public class DesktopInteractScreen : BaseInteractScreen
     [SerializeField] private TextMeshProUGUI _locationText;
     [SerializeField] private TextMeshProUGUI _timerText;
     private Vector3 _helperStartPos;
-    private Vector3 _reactionStartPos;
     private Timer _time = new Timer();
     private void Start()
     {
@@ -37,10 +36,7 @@ public class DesktopInteractScreen : BaseInteractScreen
         if (newPos != null)
             _helper.transform.position = newPos.Position;
         else
-        {
             _helper.transform.position = _helperStartPos;
-            //EnableHelperObject(false);
-        }
     }
 
     public override void SetTimerText(string timerText)

@@ -33,11 +33,11 @@ public abstract class BaseUIButton : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public virtual void OnPointerExit(PointerEventData eventData)
     {
-        HoveredUiEvent?.Invoke(true);
+        HoveredUiEvent?.Invoke(false);
     }
 
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
-        HoveredUiEvent?.Invoke(false);
+        HoveredUiEvent?.Invoke(true);
     }
 }

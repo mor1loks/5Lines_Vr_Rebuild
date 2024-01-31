@@ -61,7 +61,10 @@ public class SceneObjectsHolder : MonoBehaviour
     {
 
         if (holder == null)
+        {
             _modeController.BaseReactionButtonsHandler.HideAllReactions();
+            _mouseRayCastHandler.CanHover = true;
+        }
         else
             _modeController.BaseReactionButtonsHandler.SetButtonSpawnPos(holder.Position);
     }
@@ -118,7 +121,7 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void OnHandleReactionHover(bool active)
     {
-        _mouseRayCastHandler.CanHover = !active;
+        _mouseRayCastHandler.CanHover = active;
     }
     private void OnHideReactionWindow()
     {
