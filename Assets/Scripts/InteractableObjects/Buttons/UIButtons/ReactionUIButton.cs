@@ -1,22 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ReactionUIButton :BaseUIButton
+public class ReactionUIButton : BaseUIButton
 {
     [SerializeField] private Sprite[] _sprites;
     [SerializeField] private Image _currentSprite;
     [SerializeField] private TextMeshProUGUI _reactionText;
 
     private ButtonActionName _currentActionName;
-    private StringParser _stringParser;
+    private StringParser _stringParser = new StringParser();
     private SceneAosObject _sceneAosObject;
-    private void Start()
-    {
-        _stringParser = new StringParser();
-    }
+    public ButtonActionName ButtonActionName => _currentActionName;
     public void Init(ButtonActionName buttonActionName, string text, SceneAosObject sceneAosObject)
     {
         _currentActionName = buttonActionName;
@@ -37,7 +35,9 @@ public class ReactionUIButton :BaseUIButton
     {
         foreach (var sprite in _sprites)
         {
-            if(sprite.name==_stringParser.GetStringFromEnum(_currentActionName))
+            var actionText = _stringParser.GetStringFromEnum(_currentActionName);
+            var cleanString = _stringParser.GetStringWithoutNumbers(actionText);
+            if (sprite.name == cleanString)
                 return sprite;
         }
         return null;

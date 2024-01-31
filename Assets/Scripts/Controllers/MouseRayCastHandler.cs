@@ -50,7 +50,7 @@ public class MouseRayCastHandler : MonoBehaviour
             MousePosClickEvent?.Invoke(_mousePosHolder);
         }
         else
-            MousePosClickEvent?.Invoke(null);
+            MousePosClickEvent?.Invoke(null);   
     }
     private void CheckCollisionHover(RaycastHit hit)
     {

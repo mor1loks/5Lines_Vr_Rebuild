@@ -3,12 +3,13 @@ using AosSdk.Core.Interaction.Interfaces;
 using AosSdk.Core.Utils;
 using AosSdk.Core.PlayerModule.Pointer;
 using UnityEngine;
+using System;
 
 public abstract class BaseObject : MonoBehaviour, IClickAble, IHoverAble
 {
     public bool IsHoverable { get; set; } = true;
     public bool IsClickable { get; set; } = true;
-
+    public Action<SceneAosObject> AddSceneObjectEvent;
     public SceneAosObject SceneAOSObject { get; private set; }
     protected virtual void Awake() => SceneAOSObject = GetComponent<SceneAosObject>();
 
@@ -19,7 +20,10 @@ public abstract class BaseObject : MonoBehaviour, IClickAble, IHoverAble
     public void InvokeAosEvent()
     {
         if (SceneAOSObject != null)
-        SceneAOSObject.InvokeOnClick();
+        {
+            AddSceneObjectEvent?.Invoke(SceneAOSObject);
+            SceneAOSObject.InvokeOnClick();
+        }
     }
     public string GetAOSName()
     {

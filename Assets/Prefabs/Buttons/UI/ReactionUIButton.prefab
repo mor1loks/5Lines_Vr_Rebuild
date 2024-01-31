@@ -91,7 +91,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0584e5e449e40cf4885a704cc6d7f292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprites: []
+  _sprites:
+  - {fileID: 21300000, guid: 308b2f285c487554bb5d13f97bd633a9, type: 3}
+  - {fileID: 21300000, guid: dab598f2c5304d54f89af8660cb10b2a, type: 3}
+  - {fileID: 21300000, guid: 50dab1eadec8d534d9325b39f8ff3a14, type: 3}
+  - {fileID: 21300000, guid: 254514ce388f6e047978234ed7d4e010, type: 3}
   _currentSprite: {fileID: 7210818290803768147}
   _reactionText: {fileID: 4325085798665988381}
 --- !u!114 &4325085797546053084

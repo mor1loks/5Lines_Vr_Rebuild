@@ -46,16 +46,21 @@ public class SceneObjectsHolder : MonoBehaviour
     private void Start()
     {
         BackFromPlaceUIButton.ClickBackFromPlaceUiButtonEvent += OnBackUiButtonClick;
-        if(_modeController.DesktopMode)
-        _mouseRayCastHandler.MousePosHoverEvent += OnChangeHelperOnHoverEvent;
+        if (_modeController.DesktopMode)
+            _mouseRayCastHandler.MousePosHoverEvent += OnChangeHelperOnHoverEvent;
         _mouseRayCastHandler.MousePosClickEvent += OnChangeReactionPositionEvent;
     }
     private void OnChangeReactionPositionEvent(VectorHolder holder)
     {
+
         if (holder == null)
+        {
             _modeController.BaseReactionButtonsHandler.HideAllReactions();
-       else
-       _modeController.BaseReactionButtonsHandler.SetButtonSpawnPos(holder.Position);
+            Debug.Log("OnChangeReactionPositionEvent NULL");
+        }
+
+        else
+            _modeController.BaseReactionButtonsHandler.SetButtonSpawnPos(holder.Position);
     }
 
     private void OnChangeHelperOnHoverEvent(VectorHolder holder)
@@ -85,13 +90,18 @@ public class SceneObjectsHolder : MonoBehaviour
             measureButton.MeasurePositionEvent += OnSetShupPosition;
             _allMeasureButtons.Add(measureButton);
         }
-         if(obj is SceneObject)
+        if (obj is SceneObject)
         {
             var sceneObject = (SceneObject)obj;
             sceneObject.HelperTextEvent += OnShowHelperText;
         }
-   
+        obj.AddSceneObjectEvent += OnInitCurrentSceneObject;
         _baseObjects.Add(obj);
+    }
+
+    private void OnInitCurrentSceneObject(SceneAosObject sceneAosObject)
+    {
+        SceneAosObject = sceneAosObject;
     }
 
     public void AddSceneActionButton(SceneActionButton sceneActionButton)
@@ -200,6 +210,6 @@ public class SceneObjectsHolder : MonoBehaviour
     private void OnSetSideMovingObject(BaseSideMovingObject obj)
     {
         _moveUiButtonsHolder.SetSideMovingObject(obj);
-        Debug.Log("Side moving object added "+ obj.name);
+        Debug.Log("Side moving object added " + obj.name);
     }
 }

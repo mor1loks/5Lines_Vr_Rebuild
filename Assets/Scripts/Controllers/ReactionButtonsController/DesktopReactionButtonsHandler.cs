@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DesktopReactionButtonsHandler : BaseReactionButtonsHandler
 {
     [SerializeField] private ReactionUIButton _prefub;
     [SerializeField] private Transform _parent;
+    private SceneAosObject _currentAosObject;
 
     private List<ReactionUIButton> _reactionButtons;
     protected override void Start()
@@ -16,28 +18,35 @@ public class DesktopReactionButtonsHandler : BaseReactionButtonsHandler
     }
     public override void ShowReactionButtonByName(string buttonActionName, string buttonText)
     {
-        if (string.IsNullOrWhiteSpace(buttonActionName))
+   
+        if (string.IsNullOrWhiteSpace(buttonActionName)||ButtonsSpawnPos == null || _currentAosObject == SceneObjectsHolder.Instance.SceneAosObject)
             return;
-        //if (ButtonsSpawnPos == null)
-        //    return;
-        //transform.position = ButtonsSpawnPos.transform.position;
-        Debug.Log("Button name " + buttonActionName + " Button Text " + buttonText);
-        var currentSceneObject = SceneObjectsHolder.Instance.SceneAosObject;
+        _parent.position = ButtonsSpawnPos;
+        if (_currentAosObject != SceneObjectsHolder.Instance.SceneAosObject)
+            HideAllReactions();
+        _currentAosObject = SceneObjectsHolder.Instance.SceneAosObject;
         var reactionButton = Instantiate(_prefub, _parent);
         ButtonActionName reactionName;
         Enum.TryParse<ButtonActionName>(buttonActionName, out reactionName);
-        reactionButton.Init(reactionName, buttonText, currentSceneObject);
+        reactionButton.Init(reactionName, buttonText, _currentAosObject);
+        Debug.Log($"REACTION NAME {reactionName.ToString()} BUTTON TEXT {buttonText} ");
         _reactionButtons.Add(reactionButton);
     }
     public override void HideAllReactions()
     {
-        if (_reactionButtons == null || _reactionButtons.Count < 1)
-            return;
         foreach (var reactionButton in _reactionButtons)
         {
             if (reactionButton != null)
-                Destroy(reactionButton);
+                Destroy(reactionButton.gameObject);
         }
         _reactionButtons = new List<ReactionUIButton>();
+        _currentAosObject = null;
+    }
+    private bool ContainsObject(ReactionUIButton btn)
+    {
+        var containsObject = _reactionButtons.SingleOrDefault(b => b.ButtonActionName == btn.ButtonActionName);
+            if(containsObject != null)
+            return true;
+        return false;
     }
 }

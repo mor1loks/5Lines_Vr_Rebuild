@@ -14,7 +14,7 @@ public abstract class BaseUIButton : MonoBehaviour, IPointerEnterHandler, IPoint
         if (Button != null)
             Button.onClick.AddListener(() => Click());
     }
-    private void Start()
+    protected virtual void Start()
     {
         API = FindObjectOfType<API>();
     }
