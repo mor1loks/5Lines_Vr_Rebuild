@@ -1,9 +1,7 @@
 using AosSdk.Core.Interaction.Interfaces;
 using AosSdk.Core.PlayerModule.Pointer;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 public class MouseRayCastHandler : MonoBehaviour
 {
     private InteractHand _interactHand;
@@ -12,19 +10,17 @@ public class MouseRayCastHandler : MonoBehaviour
     public Action<VectorHolder> MousePosHoverEvent;
     public Action<VectorHolder> MousePosClickEvent;
     private VectorHolder _mousePosHolder;
+    public bool CanInteract { get; set; } = true;
     public bool CanHover { get; set; } = true;
+    public void SetActionCamera(Camera camera) => _currentCamera = camera;
     private void Start()
     {
         _mousePosHolder = new VectorHolder();
     }
     private void Update()
     {
-        if (_currentCamera == null || !CanHover)
-        {
-            MousePosHoverEvent?.Invoke(null);
-            MousePosClickEvent?.Invoke(null);
+        if (_currentCamera == null || !CanInteract)
             return;
-        }
         var collisionObject = CheckRaycastCollider();
         if (Input.GetMouseButtonDown(0))
         {
@@ -50,8 +46,6 @@ public class MouseRayCastHandler : MonoBehaviour
     }
     private void CheckCollisionClick(RaycastHit hit)
     {
-        if (hit.collider.gameObject.GetComponent<IPointerClickHandler>() != null)
-            return;
         if (hit.collider.gameObject.TryGetComponent(out IClickAble obj))
         {
             obj.OnClicked(_interactHand);
@@ -63,7 +57,7 @@ public class MouseRayCastHandler : MonoBehaviour
     }
     private void CheckCollisionHover(RaycastHit hit)
     {
-        if (hit.collider.gameObject.TryGetComponent(out IHoverAble obj))
+        if (hit.collider.gameObject.TryGetComponent(out IHoverAble obj) && CanHover)
         {
             ResetHoverableObject();
             _currentHoverable = obj;
@@ -83,18 +77,7 @@ public class MouseRayCastHandler : MonoBehaviour
         if (_currentHoverable != null)
         {
             _currentHoverable.OnHoverOut(_interactHand);
-
             _currentHoverable = null;
         }
     }
-    private bool IsUi()
-    {
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
-    }
-    public void SetActionCamera(Camera camera) => _currentCamera = camera;
-
 }

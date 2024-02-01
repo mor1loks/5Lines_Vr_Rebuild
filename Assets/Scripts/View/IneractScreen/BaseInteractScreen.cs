@@ -11,7 +11,8 @@ public abstract class BaseInteractScreen : MonoBehaviour
     public abstract void EnableReactionObject(bool active);
     public abstract void EnableLocationObject(bool active);
     public abstract void EnableTimerObject(bool active);
-    public abstract void EnableActionIcons(bool active);
+    public abstract void EnableActivateActionObject(SceneActionState state);
+    public abstract BaseActionObject GetActionObject(SceneActionState state);  
     public abstract void EnableInteractIcons(bool active);
     public abstract void EnableBackButton(bool active);
     public abstract void SetHelperTextPosition(VectorHolder newPos);
@@ -19,7 +20,7 @@ public abstract class BaseInteractScreen : MonoBehaviour
     {
         EnableLocationObject(active);
         EnableTimerObject(active);
-        EnableActionIcons(active);
+        EnableActivateActionObject(SceneActionState.None);
         EnableInteractIcons(active);
     }
 }

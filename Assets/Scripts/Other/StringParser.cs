@@ -18,4 +18,10 @@ public class StringParser
     {
        return Regex.Replace(text, @"[\d-]", string.Empty);
     }
+    public bool GetSearchingValue(string text, string searchingValue)
+    {
+        if(text.Contains(searchingValue))
+            return true;
+        return false;
+    }
 }

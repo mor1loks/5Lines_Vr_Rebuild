@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,7 +7,8 @@ public abstract class BaseUIButton : MonoBehaviour, IPointerEnterHandler, IPoint
 {
     protected Button Button;
     protected API API;
-    public Action<bool> HoveredUiEvent;
+    public Action<bool> InteractUiEvent;
+    public Action<bool> HoverUiEvent;
     protected virtual void Awake()
     {
         Button = GetComponent<Button>();
@@ -33,11 +32,11 @@ public abstract class BaseUIButton : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public virtual void OnPointerExit(PointerEventData eventData)
     {
-        HoveredUiEvent?.Invoke(false);
+        HoverUiEvent?.Invoke(false);
     }
 
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
-        HoveredUiEvent?.Invoke(true);
+        HoverUiEvent?.Invoke(true);
     }
 }

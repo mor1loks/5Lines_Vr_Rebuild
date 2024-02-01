@@ -16,12 +16,6 @@ public class ModeController : MonoBehaviour
     [SerializeField] private BaseInteractScreen _desktopInteractScreen;
     [SerializeField] private BaseInteractScreen _vrInteractScreen;
     [Space]
-    [SerializeField] private BaseActionObject _desktopRadioActionObject;
-    [SerializeField] private BaseActionObject _vrRadioActionObject;
-    [Space]
-    [SerializeField] private BaseActionObject _desktopSchemeActionObject;
-    [SerializeField] private BaseActionObject _vrSchemeActionObject;
-    [Space]
     [SerializeField] private BaseMenuController _desktopMenuController;
     [SerializeField] private BaseMenuController _vrMenuController;
     [Space]
@@ -33,8 +27,6 @@ public class ModeController : MonoBehaviour
     public BaseStartScreenView CurrentStartScreen { get; private set; }
     public BaseInteractScreen CurrentInteractScreen { get; private set; }
     public BaseMenuScreen CurrentMenuScreen { get; private set; }
-    public BaseActionObject CurrentRadioObject { get; private set; }
-    public BaseActionObject CurrentSchemeObject { get; private set; }
     public BaseMenuController CurrentMenuController { get; private set; }
     public BaseReactionButtonsHandler BaseReactionButtonsHandler { get; private set; }
 
@@ -61,8 +53,6 @@ public class ModeController : MonoBehaviour
             CurrentStartScreen = _desktopStartScreenView;
             CurrentInteractScreen = _desktopInteractScreen;
             CurrentMenuScreen = _deskMenuScreen;
-            CurrentRadioObject = _desktopRadioActionObject;
-            CurrentSchemeObject = _desktopSchemeActionObject;
             CurrentMenuController = _desktopMenuController;
             BaseReactionButtonsHandler = _desktopReactionButtonsHandler;
         }
@@ -71,8 +61,6 @@ public class ModeController : MonoBehaviour
             CurrentStartScreen = _vrStartScreenView;
             CurrentInteractScreen = _vrInteractScreen;
             CurrentMenuScreen = _vrMenuScreen;
-            CurrentRadioObject = _vrRadioActionObject;
-            CurrentSchemeObject = _vrSchemeActionObject;
             CurrentMenuController = _vrMenuController;
             BaseReactionButtonsHandler = _vrReactionButtonsHandler;
         }

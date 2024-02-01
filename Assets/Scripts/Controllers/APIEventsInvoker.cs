@@ -72,7 +72,7 @@ public class APIEventsInvoker : MonoBehaviour
         SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.SetReactionText(text);
         SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableHelperObject(false);
         SceneObjectsHolder.Instance.ModeController.BaseReactionButtonsHandler.HideAllReactions();
-        SceneObjectsHolder.Instance.MouseRayCastHandler.CanHover = false;
+        SceneObjectsHolder.Instance.MouseRayCastHandler.CanInteract = false;
     }
     private void OnSetLocationToTeleport(string location)
     {

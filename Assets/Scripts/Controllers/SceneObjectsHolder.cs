@@ -17,7 +17,6 @@ public class SceneObjectsHolder : MonoBehaviour
     [SerializeField] private StrelkaAOS _strelkaAOS;
     [SerializeField] private RadioButtonsContainer _radioButtonsContainer;
     [SerializeField] private LocationController _locationController;
-    [SerializeField] private SceneActionButtonsHandler _sceneButtonsHandler;
     [SerializeField] private ModeController _modeController;
     [SerializeField] private CanvasParentChanger _canvasParentChanger;
     [SerializeField] private API _api;
@@ -33,12 +32,13 @@ public class SceneObjectsHolder : MonoBehaviour
     private List<BaseObject> _baseObjects = new List<BaseObject>();
     private List<BaseUIButton> _baseUiButtons = new List<BaseUIButton>();
     private List<MeasureButton> _allMeasureButtons = new List<MeasureButton>();
-    private List<SceneActionButton> _sceneActionButtons = new List<SceneActionButton>();
+    private List<BaseActionButton> _baseActionButtons = new List<BaseActionButton>();
     private List<string> _currentMeasureButtonsNames = new List<string>();
     private List<ObjectWithAnimation> _objectsWithAnimations = new List<ObjectWithAnimation>();
     public bool CanTouch { get; set; } = true;
     public bool CanAction { get; set; } = true;
-    public SceneAosObject SceneAosObject { get; set; }
+    public SceneAosObject SceneAosObject { get;private set; }
+    private StringParser _stringParser = new StringParser();
     private SceneObjectsHolder() { }
 
     private void Awake()
@@ -63,7 +63,7 @@ public class SceneObjectsHolder : MonoBehaviour
         if (holder == null)
         {
             _modeController.BaseReactionButtonsHandler.HideAllReactions();
-            _mouseRayCastHandler.CanHover = true;
+            //_mouseRayCastHandler.CanHover = true;
         }
         else
             _modeController.BaseReactionButtonsHandler.SetButtonSpawnPos(holder.Position);
@@ -79,7 +79,7 @@ public class SceneObjectsHolder : MonoBehaviour
         if (obj is PlaceObject)
         {
             var placeObject = (PlaceObject)obj;
-            placeObject.CameraChangedEvent += OnChangeCanvasPerent;
+            placeObject.CameraChangedEvent += OnChangeCanvasPerentCamera;
             placeObject.AddAnimationObjectEvent += OnAddAnimationObject;
             placeObject.SetBackLocationNameEvent += OnSetBackLocation;
             placeObject.SetSideMovingObjectEvent += OnSetSideMovingObject;
@@ -116,36 +116,42 @@ public class SceneObjectsHolder : MonoBehaviour
             var okButton = (OkUiButton)obj;
             okButton.OkClickEvent += OnHideReactionWindow;
         }
-        obj.HoveredUiEvent += OnHandleReactionHover;
+        obj.InteractUiEvent += OnHandleIneractMouse;
+        obj.HoverUiEvent += OnHandleHoverMouse;
         _baseUiButtons.Add(obj);
     }
-    private void OnHandleReactionHover(bool active)
+    private void OnHandleIneractMouse(bool active)
     {
-        _mouseRayCastHandler.CanHover = active;
+        _mouseRayCastHandler.CanInteract = active;
+    }
+    private void OnHandleHoverMouse(bool active)
+    {
+        _mouseRayCastHandler.CanHover = !active;
     }
     private void OnHideReactionWindow()
     {
         _modeController.CurrentInteractScreen.EnableReactionObject(false);
         _mouseRayCastHandler.CanHover = true;
+        _mouseRayCastHandler.CanInteract = true;
     }
     private void OnInitCurrentSceneObject(SceneAosObject sceneAosObject)
     {
         SceneAosObject = sceneAosObject;
     }
-    public void AddSceneActionButton(SceneActionButton sceneActionButton)
+    public void AddSceneActionButton(BaseActionButton baseActionButton)
     {
-        _sceneActionButtons.Add(sceneActionButton);
-        sceneActionButton.SceneActionButtonEvent += OnActivateSceneAction;
+        _baseActionButtons.Add(baseActionButton);
+        baseActionButton.SceneActionButtonEvent += OnActivateSceneAction;
     }
-    public void ActivateBaseObjects(string objectName, string name, string timeText)
+    public void ActivateBaseObjects(string objectId, string objectName, string timeText)
     {
         if (timeText == "" || timeText == "0")
-            timeText = name;
+            timeText = objectName;
         else
-            timeText = $"{name} \nВремя перехода:{timeText}";
+            timeText = $"{objectName} \nВремя перехода:{timeText}";
         foreach (var item in _baseObjects)
         {
-            if (item.GetAOSName() == objectName)
+            if (item.GetAOSName() == objectId)
             {
                 item.EnableObject(true);
                 if (item is SceneObject)
@@ -155,6 +161,19 @@ public class SceneObjectsHolder : MonoBehaviour
                 }
             }
         }
+        ActivateActionObject(objectId);
+    }
+    private void ActivateActionObject(string name)
+    {
+        string radio = "radio";
+        string scheme = "scheme";
+        string measure = "measure";
+        if (_stringParser.GetSearchingValue(name, radio))
+            _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Radio);
+        else if (_stringParser.GetSearchingValue(name, scheme))
+            _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Scheme);
+        else if (_stringParser.GetSearchingValue(name, measure))
+            _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Measure);
     }
     public void DeactivateAllSceneObjects()
     {
@@ -204,19 +223,24 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void OnActivateSceneAction(SceneActionState state)
     {
-        _sceneButtonsHandler.EnableActionByState(state);
+     //_modeController.CurrentInteractScreen.EnableActivateActionObject(state);
+     var actionObject = _modeController.CurrentInteractScreen.GetActionObject(state);
+        if (actionObject!=null)
+            actionObject.Activate();
     }
-    private void OnChangeCanvasPerent(Camera camera)
+    private void OnChangeCanvasPerentCamera(Camera camera)
     {
         _canvasParentChanger.ChangeCameraParent(camera);
+        _mouseRayCastHandler.CanHover = true;
+        _mouseRayCastHandler.CanInteract = true;
     }
     private void OnBackUiButtonClick()
     {
         _canvasParentChanger.RevertCamera();
         _api.InvokeEndTween(_locationController.BackLocation);
         ResetAllAnimationObjects();
-        _sceneButtonsHandler.DisableAllObjects();
         _moveUiButtonsHolder.SetSideMovingObject(null);
+        _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.None);
     }
     private void OnAddAnimationObject(ObjectWithAnimation objectWithAnimation)
     {

@@ -28,7 +28,6 @@ public class DesktopReactionButtonsHandler : BaseReactionButtonsHandler
             HideAllReactions();
         _currentAosObject = SceneObjectsHolder.Instance.SceneAosObject;
         var reactionButton = Instantiate(_prefub, _parent);
-   
         reactionButton.Init(reactionName, buttonText, _currentAosObject);
         _reactionButtons.Add(reactionButton);
     }

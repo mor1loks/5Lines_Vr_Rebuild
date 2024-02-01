@@ -6,5 +6,5 @@ public class ButtonUIWithActionPerform : BaseUIButton
 {
     [SerializeField] private SceneActionButton _actionButton;
 
-    protected override void Click() => _actionButton.InvokeActionEvent();
+    protected override void Click() => _actionButton.InvokeActionButtonEvent();
 }
