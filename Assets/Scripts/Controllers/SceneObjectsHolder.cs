@@ -169,7 +169,10 @@ public class SceneObjectsHolder : MonoBehaviour
         string scheme = "scheme";
         string measure = "measure";
         if (_stringParser.GetSearchingValue(name, radio))
+        {
             _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Radio);
+       
+        }
         else if (_stringParser.GetSearchingValue(name, scheme))
             _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Scheme);
         else if (_stringParser.GetSearchingValue(name, measure))
