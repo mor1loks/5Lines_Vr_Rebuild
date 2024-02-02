@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class AmperButton : BaseButton
 {
     [SerializeField] private Ampermetr _ampermetr;
-    [SerializeField] protected Transform _amperPosition;
+
     private bool _amper = false;
     private void OnEnable()
     {
@@ -28,18 +28,18 @@ public class AmperButton : BaseButton
         {
             _amper = false;
             ShupController shup = FindObjectOfType<ShupController>();
-            shup.OnResetShupPosition();
+            shup.ResetShupPosition();
             SceneObjectsHolder.Instance.ResetMeasureButtonsCurrentList();
             PointerDevice device = FindObjectOfType<PointerDevice>();
             device.SetValue(1);
             SceneObjectsHolder.Instance.CanTouch = true;
         }
-        _ampermetr.EnableAmper(_amper, _amperPosition);
+        _ampermetr.EnableAmper(_amper);
     }
     private void OnDisableMeasureButtons()
     {
         _amper = false;
-        _ampermetr.EnableAmper(_amper, _amperPosition);
+        _ampermetr.EnableAmper(_amper);
         SceneObjectsHolder.Instance.ResetMeasureButtonsCurrentList();
         PointerDevice device = FindObjectOfType<PointerDevice>();
         device.SetValue(1);

@@ -23,15 +23,15 @@ public class APIEventsInvoker : MonoBehaviour
         _api.SetLocationEvent += OnSetLocationToLocationController;
         _api.EnableDietButtonsEvent += OnEnableDietButton;
         _api.EnableRactionButtonEvent += OnEnableReactionButton;
-        _api.ReactionEvent+=OnSetReaction;
-        _api.SetTimerTextEvent+= OnSetTimerText;
+        _api.ReactionEvent += OnSetReaction;
+        _api.SetTimerTextEvent += OnSetTimerText;
         _api.AddMeasureButtonEvent += OnAddButtonToMeasureButtonsList;
         _api.ActivateByNameEvent += OnActivateSceneObjectByName;
         _api.SetMessageTextEvent += OnSetLastScreenText;
         _api.SetResultTextEvent += OnSetResultScreenText;
         _api.ShowExitTextEvent += OnSetExitText;
         _api.ShowMenuTextEvent += OnSetMenuText;
-        _api.SetStartTextEvent+= OnSetStartText;
+        _api.SetStartTextEvent += OnSetStartText;
         _api.SetMeasureValueEvent += OnSetMeasureValue;
 
     }
@@ -68,11 +68,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnSetReaction(string text)
     {
-        SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableReactionObject(true);
-        SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.SetReactionText(text);
-        SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableHelperObject(false);
-        SceneObjectsHolder.Instance.ModeController.BaseReactionButtonsHandler.HideAllReactions();
-        SceneObjectsHolder.Instance.MouseRayCastHandler.CanInteract = false;
+        SceneObjectsHolder.Instance.SetReaction(text);
     }
     private void OnSetLocationToTeleport(string location)
     {
@@ -92,24 +88,24 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnEnableDietButton(string buttonName)
     {
-        Debug.Log(buttonName + "Radio");
         _diet.EnablePlusOrMinus(buttonName);
     }
-    private void OnEnableReactionButton(string button,string buttonName)
+    private void OnEnableReactionButton(string button, string buttonName)
     {
         _modeController.BaseReactionButtonsHandler.ShowReactionButtonByName(button, buttonName);
     }
     private void OnSetTimerText(string timerText)
     {
-      _modeController.CurrentInteractScreen.SetTimerText(timerText);
+        _modeController.CurrentInteractScreen.SetTimerText(timerText);
     }
     private void OnAddButtonToMeasureButtonsList(string buttonName)
     {
         SceneObjectsHolder.Instance.AddMeasureButtonToList(buttonName);
+        Debug.Log(buttonName + " Added to list");
     }
     private void OnActivateSceneObjectByName(string id, string name, string time)
     {
-        SceneObjectsHolder.Instance.ActivateBaseObjects(id, name,time);
+        SceneObjectsHolder.Instance.ActivateBaseObjects(id, name, time);
     }
     private void OnSetLastScreenText(string headerText, string commentText)
     {
@@ -122,7 +118,7 @@ public class APIEventsInvoker : MonoBehaviour
     }
     private void OnSetExitText(string exitText, string warnText)
     {
-      _modeController.CurrentMenuScreen.SetExitText(exitText, warnText);
+        _modeController.CurrentMenuScreen.SetExitText(exitText, warnText);
     }
     private void OnSetMenuText(string headText, string commentText, string exitSureText)
     {

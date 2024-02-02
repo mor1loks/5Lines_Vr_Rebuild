@@ -103,7 +103,6 @@ public class API : AosObjectBase
                 }
             }
             ActivateByNameEvent?.Invoke(id, name, time);
-            Debug.Log(time.ToString());
         }
 
         if (nav.SelectToken("back") != null && nav.SelectToken("back").SelectToken("action") != null && nav.SelectToken("back").SelectToken("action").ToString() != String.Empty)

@@ -8,12 +8,13 @@ public class PlaceObject : SceneObject
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private string _backLocationName;
-
+    [SerializeField] private Transform _amperRos;
     private ObjectWithAnimation _objectWithAnimation;
     private BaseSideMovingObject _sideMovingObject;
     public Action<ObjectWithAnimation> AddAnimationObjectEvent;
     public Action<Camera> CameraChangedEvent;
     public Action<BaseSideMovingObject> SetSideMovingObjectEvent;
+    public Action<Transform> SetAmperPosEvent;
     public Action<string> SetBackLocationNameEvent;
     public override void OnClicked(InteractHand interactHand)
     {
@@ -36,5 +37,7 @@ public class PlaceObject : SceneObject
         if (_camera == null || !SceneObjectsHolder.Instance.ModeController.DesktopMode)
             return;
         CameraChangedEvent?.Invoke(_camera);
+        if(_amperRos!=null)
+            SetAmperPosEvent.Invoke(_amperRos);
     }
 }
