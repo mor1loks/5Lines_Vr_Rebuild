@@ -1,6 +1,7 @@
 using AosSdk.Core.Interaction.Interfaces;
 using AosSdk.Core.PlayerModule.Pointer;
 using System;
+using UnityEditor;
 using UnityEngine;
 public class MouseRayCastHandler : MonoBehaviour
 {
@@ -46,18 +47,19 @@ public class MouseRayCastHandler : MonoBehaviour
     }
     private void CheckCollisionClick(RaycastHit hit)
     {
-        if (hit.collider.gameObject.TryGetComponent(out IClickAble obj))
+        if (hit.collider.gameObject.TryGetComponent(out SceneObject sceneObject))
         {
-            obj.OnClicked(_interactHand);
-            _mousePosHolder.Position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            MousePosClickEvent?.Invoke(_mousePosHolder);
+            sceneObject.OnClicked(_interactHand);
+            if (sceneObject.NonAOS || sceneObject is BaseButton)
+                return;
+                _mousePosHolder.Position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+                MousePosClickEvent?.Invoke(_mousePosHolder);
         }
         else
         {
             MousePosClickEvent?.Invoke(null);
             CanHover = true;
-        }
-            
+        }    
     }
     private void CheckCollisionHover(RaycastHit hit)
     {

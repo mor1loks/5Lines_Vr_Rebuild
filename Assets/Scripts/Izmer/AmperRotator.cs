@@ -7,19 +7,16 @@ public class AmperRotator : MonoBehaviour
 {
     public UnityAction<string> VoltageChangedEvent;
     [SerializeField] private GameObject _lid;
-    [SerializeField] private AmperLidButton _leftButton;
-    [SerializeField] private AmperLidButton _rightButton;
+    [SerializeField] private AmperLidRotator _rotationButton;
     [SerializeField] private PointerDevice _device;
     private float _rotator;
     private void OnEnable()
     {
-        _leftButton.RotateButton += OnRotateLid;
-        _rightButton.RotateButton += OnRotateLid;
+        _rotationButton.RotateButton += OnRotateLid;
     }
     private void OnDisable()
     {
-        _leftButton.RotateButton -= OnRotateLid;
-        _rightButton.RotateButton -= OnRotateLid;
+        _rotationButton.RotateButton -= OnRotateLid;
     }
 
     public void OnRotateLid(bool value)

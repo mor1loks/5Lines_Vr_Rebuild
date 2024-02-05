@@ -21,12 +21,14 @@ public class SceneObject : BaseObject
     }
     public override void OnHoverIn(InteractHand interactHand)
     {
+        if(!NonAOS)
         HelperTextEvent?.Invoke(HelperName);
             EnableHighlight(true);
     }
     public override void OnHoverOut(InteractHand interactHand)
     {
-        HelperTextEvent?.Invoke(null);
+        if (!NonAOS)
+            HelperTextEvent?.Invoke(null);
             EnableHighlight(false);
     }
     public override void EnableObject(bool value)
