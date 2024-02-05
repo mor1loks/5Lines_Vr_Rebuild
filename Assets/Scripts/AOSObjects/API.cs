@@ -67,10 +67,6 @@ public class API : AosObjectBase
     {
         navAction.Invoke(value);
     }
-    public void ConnectionEstablished(string currentLocation)
-    {
-        EndTween?.Invoke(currentLocation);
-    }
     [AosAction(name: "Показать место")]
     public void showPlace(JObject place, JArray data, JObject nav)
     {

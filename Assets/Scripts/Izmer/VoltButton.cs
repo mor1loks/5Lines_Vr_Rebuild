@@ -1,10 +1,7 @@
 using System.Collections;
-using AosSdk.Core.Interaction.Interfaces;
-using AosSdk.Core.Utils;
 using AosSdk.Core.PlayerModule.Pointer;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class VoltButton : BaseButton
 {
@@ -13,7 +10,6 @@ public class VoltButton : BaseButton
     
     [SerializeField] private GameObject _buttonBox;
     [SerializeField] private int _index;
-    //[SerializeField] private SceneAosObject _aosObject;
     [SerializeField] private Napr _currentNapr;
     
     private enum Napr
@@ -22,24 +18,19 @@ public class VoltButton : BaseButton
         Sopr,
         Perem
     }
-
     public override void OnClicked(InteractHand interactHand)
     {
         base.OnClicked(interactHand);   
         StartCoroutine(MoveButton(true));
         NaprChangedEvent?.Invoke(_currentNapr.ToString());
-        //_aosObject.InvokeOnClick();
     }
-    public void ResetButton()
-    {
-        StartCoroutine(MoveButton(false));
-    }
+    public void ResetButton() => StartCoroutine(MoveButton(false));
+
     private IEnumerator MoveButton(bool down)
     {
         if(down)
         {
             GetComponent<Collider>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
             ButtonDownEvent?.Invoke(_index);
        
             while(_buttonBox.transform.localPosition.y>=0.058f)
@@ -57,8 +48,6 @@ public class VoltButton : BaseButton
                 yield return new WaitForSeconds(0.005f);
             }
             GetComponent<Collider>().enabled = true;
-            GetComponent<SpriteRenderer>().enabled = true;
         }
-
     }
 }

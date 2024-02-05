@@ -19,6 +19,8 @@ public abstract class BaseMenuController : MonoBehaviour
     {
         if (!InMenu||!CanTeleport)
             return;
+        var location = SceneObjectsHolder.Instance.LocationTextController.CurrentLocation();
+        Api.InvokeEndTween(location);
         InMenu = false;
         ModeController.CurrentInteractScreen.EnableAllHelperObjects(true);
         ModeController.CurrentMenuScreen.ShowMenuScreen(false);

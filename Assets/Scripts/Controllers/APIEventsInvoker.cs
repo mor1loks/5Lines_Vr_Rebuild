@@ -101,7 +101,6 @@ public class APIEventsInvoker : MonoBehaviour
     private void OnAddButtonToMeasureButtonsList(string buttonName)
     {
         SceneObjectsHolder.Instance.AddMeasureButtonToList(buttonName);
-        Debug.Log(buttonName + " Added to list");
     }
     private void OnActivateSceneObjectByName(string id, string name, string time)
     {

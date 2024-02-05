@@ -5,7 +5,7 @@ public class LocationController : MonoBehaviour
     private string _currentLocation = "field";
     public void ConnectionEstablished()
     {
-        _api.ConnectionEstablished(_currentLocation);
+        _api.InvokeEndTween(_currentLocation);
     }
     public void SetLocation(string location)
     {
