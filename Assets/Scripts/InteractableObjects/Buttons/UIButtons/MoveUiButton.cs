@@ -14,11 +14,22 @@ public enum MoveState
 public class MoveUiButton : BaseUIButton
 {
     [SerializeField] private MoveState _moveState;
+    [SerializeField] private GameObject _sprite;
     private BaseSideMovingObject _baseSideMovingObject;
     public Action PointerEnterEvent;
     public Action PointerExitEvent;
     public void SetSideMovingObject(BaseSideMovingObject obj)
     {
+        if(obj!=null)
+        {
+            if(_sprite!=null)
+                _sprite.SetActive(true);
+        }
+        else
+        {
+            if (_sprite != null)
+                _sprite.SetActive(false);
+        }
         _baseSideMovingObject = obj;
     }
     public override void OnPointerEnter(PointerEventData eventData)
