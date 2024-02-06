@@ -8,7 +8,6 @@ public class CanvasObjectHelperController : MonoBehaviour
     [SerializeField]private TextMeshProUGUI _textMesh;
     [SerializeField] private GameObject _canvasObject;
 
-
     private string _name;
     private Transform _helperPos;
     private float _timer = 0.3f;

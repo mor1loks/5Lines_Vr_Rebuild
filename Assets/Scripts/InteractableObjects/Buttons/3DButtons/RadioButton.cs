@@ -20,17 +20,10 @@ public class RadioButton : BaseButton
     }
     private void DietEnabler()
     {
-        if (!_radio) _radio = true;
-        else _radio = false;
-        _diet.EnableDiet(_radio, _dietPosition);
+  
     }
     private void OnBackClicked()
     {
-        if(_radio)
-        {
-            _radio = false;
-            _diet.EnableDiet(_radio, _dietPosition);
 
-        }
     }
 }

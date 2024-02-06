@@ -16,9 +16,9 @@ public class DesktopMenuController : BaseMenuController
     {
         base.TeleportToGame();
 
-        if(SceneObjectsHolder.Instance.CurrentState == PlayerState.Walk)
+        if(SceneObjectsHolder.Instance.CurrentState == PlayerState.Walk && !SceneObjectsHolder.Instance.Reaction)
         _cursorManager.EnableCursor(false);
-        else
+        else if(SceneObjectsHolder.Instance.CurrentState == PlayerState.Look)
             SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableBackButton(true);
         _cameraFlash.CameraFlashStart();
     }

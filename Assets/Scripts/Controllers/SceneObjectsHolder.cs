@@ -25,6 +25,7 @@ public class SceneObjectsHolder : MonoBehaviour
     [SerializeField] private MouseRayCastHandler _mouseRayCastHandler;
     [SerializeField] private AOSActionButtonsHolder _actionButtonsHolder;
     [SerializeField] private Ampermetr _amper;
+    [SerializeField] private CursorManager _cursor;
     public PlayerState CurrentState { get; set; }
     public StrelkaAOS StrelkaAOS => _strelkaAOS;
     public RadioButtonsContainer RadioButtonsContainer => _radioButtonsContainer;
@@ -38,9 +39,12 @@ public class SceneObjectsHolder : MonoBehaviour
     private List<BaseActionButton> _baseActionButtons = new List<BaseActionButton>();
     private List<string> _currentMeasureButtonsNames = new List<string>();
     private List<ObjectWithAnimation> _objectsWithAnimations = new List<ObjectWithAnimation>();
+    private List<SceneObject> _currentSceneObjects = new List<SceneObject>();
     public bool CanTouch { get; set; } = true;
     public SceneAosObject SceneAosObject { get; private set; }
     private StringParser _stringParser = new StringParser();
+    private bool _reaction;
+    public bool Reaction => _reaction;
     private SceneObjectsHolder() { }
 
     private void Awake()
@@ -143,6 +147,9 @@ public class SceneObjectsHolder : MonoBehaviour
         _modeController.CurrentInteractScreen.EnableReactionObject(false);
         _mouseRayCastHandler.CanHover = true;
         _mouseRayCastHandler.CanInteract = true;
+        _reaction = false;
+        if (CurrentState == PlayerState.Walk)
+            _cursor.EnableCursor(false);
     }
     private void OnInitCurrentSceneObject(SceneAosObject sceneAosObject)
     {
@@ -168,6 +175,8 @@ public class SceneObjectsHolder : MonoBehaviour
                 {
                     var sceneObject = (SceneObject)item;
                     sceneObject.SetHelperName(timeText);
+                    if(CurrentState== PlayerState.Look)
+                    _currentSceneObjects.Add(sceneObject);
                 }
             }
         }
@@ -199,6 +208,11 @@ public class SceneObjectsHolder : MonoBehaviour
         foreach (var sceneObj in _baseObjects)
             sceneObj.EnableObject(false);
     }
+    private void ActivateCurrentScneObjects()
+    {
+        foreach (var sceneObject in _currentSceneObjects)
+            sceneObject.EnableObject(true);
+    }
 
     public void ActivateMeasureButton(string name)
     {
@@ -209,16 +223,14 @@ public class SceneObjectsHolder : MonoBehaviour
     private void DeactivateAllMeasureButtons()
     {
         foreach (var item in _allMeasureButtons)
-        {
             item.EnableObject(false);
-        }
+        ActivateCurrentScneObjects();
     }
     public void ActivateMeasureButtonsCurrentList()
     {
+        DeactivateAllSceneObjects();
         foreach (var item in _currentMeasureButtonsNames)
-        {
             ActivateMeasureButton(item);
-        }
     }
     public void ResetMeasureButtonsCurrentList()
     {
@@ -236,6 +248,9 @@ public class SceneObjectsHolder : MonoBehaviour
         ModeController.CurrentInteractScreen.EnableHelperObject(false);
         ModeController.BaseReactionButtonsHandler.HideAllReactions();
         Instance.MouseRayCastHandler.CanInteract = false;
+        _reaction = true;
+        if (CurrentState == PlayerState.Walk)
+            _cursor.EnableCursor(true);
     }
     private void OnSetMovingButtonsPos(Transform buttonsPos)
     {
@@ -271,6 +286,7 @@ public class SceneObjectsHolder : MonoBehaviour
         ResetAllAnimationObjects();
         _moveUiButtonsHolder.SetSideMovingObject(null);
         _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.None);
+        _currentSceneObjects = new List<SceneObject>();
     }
     private void OnAddAnimationObject(ObjectWithAnimation objectWithAnimation)
     {
