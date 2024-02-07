@@ -5,4 +5,5 @@ public class EscButton : BaseActionButton
 {
     public Action EscButtonEvent;
     protected override void OnActionPerformed(InputAction.CallbackContext c) => EscButtonEvent?.Invoke();
+    public void InvokeEscEvent() => EscButtonEvent?.Invoke();
 }

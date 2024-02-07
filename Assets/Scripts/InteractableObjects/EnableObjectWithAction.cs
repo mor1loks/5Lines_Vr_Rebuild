@@ -13,4 +13,9 @@ public class EnableObjectWithAction : MonoBehaviour
         bool value = !_objectToEnable.activeSelf;
         _objectToEnable.SetActive(value);
     }
+    public void EnableAction()
+    {
+        bool value = !_objectToEnable.activeSelf;
+        _objectToEnable.SetActive(value);
+    }
 }

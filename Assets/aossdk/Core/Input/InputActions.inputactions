@@ -1208,9 +1208,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "InfoImage",
+                    "name": "F2",
                     "type": "Button",
                     "id": "c05ac682-676e-40ca-bf50-6c294b9627a9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "F1",
+                    "type": "Button",
+                    "id": "886af242-e776-49cc-99a8-4ac6250bbf5b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1505,7 +1514,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "InfoImage",
+                    "action": "F2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1539,6 +1548,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Measure",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "32c148c8-afb8-4488-b554-dc17343434e4",
+                    "path": "<Keyboard>/f1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
