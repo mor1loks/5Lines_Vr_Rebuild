@@ -25,7 +25,7 @@ public class API : AosObjectBase
     public Action<string> ReactionEvent;
     public Action<string, string> EnableRactionButtonEvent;
     public Action<string, string, string> ActivateByNameEvent;
-    public Action<string, string> SetMessageTextEvent;
+    public Action<string, string,string,string> SetMessageTextEvent;
     public Action<string, string, string> SetResultTextEvent;
     public Action<string, string> ShowExitTextEvent;
     public Action<string, string, string> ShowMenuTextEvent;
@@ -142,9 +142,38 @@ public class API : AosObjectBase
     [AosAction(name: "Показать сообщение")]
     public void showMessage(JObject info, JObject nav)
     {
-        string headText = info.SelectToken("name").ToString();
-        string commentText = info.SelectToken("text").ToString();
-        SetMessageTextEvent?.Invoke(headText, commentText);
+        string footerText = "";
+        var header = info.SelectToken("header");
+        var footer = info.SelectToken("footer");
+        var comment = info.SelectToken("text");
+        var alarm = info.SelectToken("alarm");
+        if (header != null && footer != null && comment != null && alarm != null)
+        {
+            footerText = HtmlToText.Instance.HTMLToTextReplace(footer.ToString());
+            string commentText = HtmlToText.Instance.HTMLToTextReplace(comment.ToString());
+            string headText = header.ToString();
+            string alarmImg = alarm.ToString();
+            SetMessageTextEvent?.Invoke(headText, footerText, commentText, alarmImg);
+        }
+        else if (header != null && comment != null && alarm != null)
+        {
+
+            string commentText = HtmlToText.Instance.HTMLToTextReplace(comment.ToString());
+            string headText = header.ToString();
+            string alarmImg = alarm.ToString();
+            SetMessageTextEvent?.Invoke(headText, footerText, commentText, alarmImg);
+        }
+        else if (comment != null)
+        {
+            string commentText = HtmlToText.Instance.HTMLToTextReplace(comment.ToString());
+            footerText = "";
+            string headText = "";
+            string alarmImg = "none";
+            SetMessageTextEvent?.Invoke(headText, footerText, commentText, alarmImg);
+        }
+        //string headText = info.SelectToken("name").ToString();
+        //string commentText = info.SelectToken("text").ToString();
+        //SetMessageTextEvent?.Invoke(headText, commentText);
     }
     [AosAction(name: "Показать сообщение")]
     public void showResult(JObject info, JObject nav)

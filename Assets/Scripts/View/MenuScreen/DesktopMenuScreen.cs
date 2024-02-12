@@ -17,6 +17,7 @@ public class DesktopMenuScreen : BaseMenuScreen
     [SerializeField] private GameObject _menu;
     [SerializeField] private GameObject _exitButton;
     [SerializeField] private GameObject _backButton;
+    [SerializeField] private GameObject _messagePanel;
 
     public override void SetMenuText(string headText, string commentText, string exitSureText)
     {
@@ -30,10 +31,10 @@ public class DesktopMenuScreen : BaseMenuScreen
         _exitText.text = HtmlToText.Instance.HTMLToTextReplace(exitText);
         _warnText.text = HtmlToText.Instance.HTMLToTextReplace(warnText);
     }
-    public override void ShowMessageScreen(string headText, string commentText)
+    public override void ShowMessageScreen(string headText, string commentText, string footerText, string alarmImg)
     {
         _desktopCanvasHolder.DisableAllCanvases();
-        _desktopCanvasHolder.EnableCanvasByState(CanvasState.Last);
+        _desktopCanvasHolder.EnableCanvasByState(CanvasState.MainMenu);
         ShowMessageScreen();
         SetText(headText, commentText);
     }
@@ -59,7 +60,8 @@ public class DesktopMenuScreen : BaseMenuScreen
     }
     private void ShowMessageScreen()
     {
-        _desktopCanvasHolder.EnableCanvasByState(CanvasState.Last);
+        _desktopCanvasHolder.EnableCanvasByState(CanvasState.Menu);
+        _messagePanel.SetActive(true);
     }
 
     public override void ShowMenuScreen(bool active)
