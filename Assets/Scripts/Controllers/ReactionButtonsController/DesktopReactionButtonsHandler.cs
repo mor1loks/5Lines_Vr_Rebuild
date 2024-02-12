@@ -18,7 +18,6 @@ public class DesktopReactionButtonsHandler : BaseReactionButtonsHandler
     }
     public override void ShowReactionButtonByName(string buttonActionName, string buttonText)
     {
-        Debug.Log(buttonActionName + " ACTION NAME");
         if (string.IsNullOrWhiteSpace(buttonActionName)||ButtonsSpawnPos == null || _currentAosObject == SceneObjectsHolder.Instance.SceneAosObject)
             return;
         _parent.position = ButtonsSpawnPos;

@@ -3,12 +3,12 @@ using UnityEngine;
 public class DesktopActionObject : BaseActionObject
 {
     [SerializeField] protected GameObject Canvas;
-    [SerializeField] protected GameObject ActionView;
+    [SerializeField] protected BaseUIColorChanger ActionView;
     public override void Activate()
     {
         if (!CanActivate)
             return;
-        if(!Canvas.activeSelf)
+        if (!Canvas.activeSelf)
         {
             Canvas.SetActive(true);
             Active = true;
@@ -17,8 +17,18 @@ public class DesktopActionObject : BaseActionObject
             Deactivate();
     }
 
-    public override void ActivateView(bool active) => ActionView.SetActive(active);
-
+    public override void ActivateView(bool active)
+    {
+        if(ActionView==null)
+        {
+            Debug.Log(gameObject.name + "   NO ACTION VIEW");
+            return;
+        }
+        if(active)
+            ActionView.ChangeColorState(ButtonColorState.Active);
+        else 
+            ActionView.ChangeColorState(ButtonColorState.Disabled);
+    }
     public override void Deactivate()
     {
         Canvas.SetActive(false);
