@@ -59,11 +59,6 @@ public class DesktopInteractScreen : BaseInteractScreen
         }
     }
 
-    public override void EnableBackButton(bool active)
-    {
-        _backUIButton.gameObject.SetActive(active);
-    }
-
     public override void EnableActivateActionObject(SceneActionState state)
     {
         if(state == SceneActionState.None)

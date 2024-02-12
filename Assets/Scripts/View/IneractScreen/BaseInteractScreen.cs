@@ -14,7 +14,6 @@ public abstract class BaseInteractScreen : MonoBehaviour
     public abstract void EnableActivateActionObject(SceneActionState state);
     public abstract BaseActionObject GetActionObject(SceneActionState state);  
     public abstract void EnableInteractIcons(bool active);
-    public abstract void EnableBackButton(bool active);
     public abstract void SetHelperTextPosition(VectorHolder newPos);
     public void EnableAllHelperObjects(bool active)
     {

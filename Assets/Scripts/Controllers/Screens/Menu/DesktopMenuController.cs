@@ -10,7 +10,7 @@ public class DesktopMenuController : BaseMenuController
         _cameraFlash.CameraFlashStart();
         _cursorManager.EnableCursor(true);
         if(SceneObjectsHolder.Instance.CurrentState == PlayerState.Look)
-            SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableBackButton(false);
+            SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableInteractIcons(false);
     }
     public override void TeleportToGame()
     {
@@ -19,7 +19,7 @@ public class DesktopMenuController : BaseMenuController
         if(SceneObjectsHolder.Instance.CurrentState == PlayerState.Walk && !SceneObjectsHolder.Instance.Reaction)
         _cursorManager.EnableCursor(false);
         else if(SceneObjectsHolder.Instance.CurrentState == PlayerState.Look)
-            SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableBackButton(true);
+            SceneObjectsHolder.Instance.ModeController.CurrentInteractScreen.EnableInteractIcons(true);
         _cameraFlash.CameraFlashStart();
     }
     public override void TeleportByGameTimer()

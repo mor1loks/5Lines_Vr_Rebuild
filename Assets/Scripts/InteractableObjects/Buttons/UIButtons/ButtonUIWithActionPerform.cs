@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonUIWithActionPerform : ActionUIButton
+public class ButtonUIWithActionPerform : UIButtonWithColorChanger
 {
     [SerializeField] private SceneActionButton _actionButton;
 

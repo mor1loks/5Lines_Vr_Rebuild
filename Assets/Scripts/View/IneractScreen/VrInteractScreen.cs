@@ -8,12 +8,6 @@ public class VrInteractScreen : BaseInteractScreen
     {
         throw new System.NotImplementedException();
     }
-
-    public override void EnableBackButton(bool active)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void EnableHelperObject(bool active)
     {
         throw new System.NotImplementedException();

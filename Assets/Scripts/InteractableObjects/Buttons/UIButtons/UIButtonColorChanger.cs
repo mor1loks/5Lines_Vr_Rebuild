@@ -11,8 +11,8 @@ public class UIButtonColorChanger : BaseUIColorChanger
     [SerializeField] private Image[] _icons;
 
     private Color _disbaledImageColor = new Color(0, 0, 0, 0.3f);
-    private Color _activeImageColor = new Color(0, 0, 0, 0.5f);
-    private Color _enabledImageColor = new Color(0.3254902f, 0.7215686f, 0.5921569f, 0.5f);
+    private Color _activeImageColor = new Color(0, 0, 0, 0.7f);
+    private Color _enabledImageColor = new Color(0.3254902f, 0.7215686f, 0.5921569f, 0.7f);
     private Color _activeIconColor = new Color(1, 1, 1, 1f);
     private Color _disbaledIconColor = new Color(1, 1, 1, 0.3f);
 
