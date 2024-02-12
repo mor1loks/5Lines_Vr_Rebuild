@@ -31,6 +31,7 @@ public class SceneObjectsHolder : MonoBehaviour
     public RadioButtonsContainer RadioButtonsContainer => _radioButtonsContainer;
     public LocationController LocationTextController => _locationController;
     public ModeController ModeController => _modeController;
+    public API API => _api;
     public MouseRayCastHandler MouseRayCastHandler => _mouseRayCastHandler;
 
     private List<BaseObject> _baseObjects = new List<BaseObject>();
