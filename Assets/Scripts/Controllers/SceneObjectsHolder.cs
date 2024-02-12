@@ -29,6 +29,7 @@ public class SceneObjectsHolder : MonoBehaviour
     public LocationController LocationTextController => _locationController;
     public ModeController ModeController => _modeController;
     public MouseRayCastHandler MouseRayCastHandler => _mouseRayCastHandler;
+    public AOSActionButtonsHolder ActionButtonsHolder => _actionButtonsHolder;
 
     private List<BaseObject> _baseObjects = new List<BaseObject>();
     private List<BaseUIButton> _baseUiButtons = new List<BaseUIButton>();

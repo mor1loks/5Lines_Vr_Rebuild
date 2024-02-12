@@ -29,6 +29,7 @@ public class BaseActionObject : MonoBehaviour
     {
         if (!CanActivate)
             return;
+        SceneObjectsHolder.Instance.ActionButtonsHolder.InVokeOnClick(CurrentState);
     }
     public virtual void Deactivate()
     {
