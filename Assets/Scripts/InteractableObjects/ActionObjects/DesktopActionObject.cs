@@ -6,6 +6,8 @@ public class DesktopActionObject : BaseActionObject
     public override void Activate()
     {
         base.Activate();
+        if (!CanActivate)
+            return;
         if (!Canvas.activeSelf)
         {
             Canvas.SetActive(true);

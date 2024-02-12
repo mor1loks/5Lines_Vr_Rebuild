@@ -11,7 +11,7 @@ public enum SceneActionState
 
 public class BaseActionObject : MonoBehaviour
 {
-    public bool CanActivate { get; set; } = false;
+    protected bool CanActivate { get; set; } = false;
     public SceneActionState SceneActionState => CurrentState;
     [SerializeField] protected SceneActionState CurrentState;
     [SerializeField] protected BaseActionButton BaseActionButton;
@@ -24,6 +24,11 @@ public class BaseActionObject : MonoBehaviour
             CanActivate = true;
         if (CurrentState == SceneActionState.Back)
             CanActivate = false;
+    }
+    public void Enable()
+    {
+        BaseUIButton.BaseUIColorChanger.ActivateState();
+        CanActivate = true;
     }
     public virtual void Activate()
     {
@@ -39,5 +44,6 @@ public class BaseActionObject : MonoBehaviour
     {
         Deactivate();
         CanActivate = false;
+        BaseUIButton.BaseUIColorChanger.DeactivateState();
     }
 }

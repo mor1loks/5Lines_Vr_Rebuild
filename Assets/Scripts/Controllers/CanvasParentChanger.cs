@@ -19,7 +19,7 @@ public class CanvasParentChanger : MonoBehaviour
         _canvas.transform.SetParent(_camera.transform);
         _cursorManager.EnableCursor(true);
         SceneObjectsHolder.Instance.CurrentState = PlayerState.Look;
-        _backActionObject.CanActivate = true;
+        _backActionObject.Enable();
     }
     public void RevertCamera()
     {
@@ -30,6 +30,6 @@ public class CanvasParentChanger : MonoBehaviour
         _canvas.transform.SetParent(_mainCamera.transform);
         _cursorManager.EnableCursor(false);
         SceneObjectsHolder.Instance.CurrentState = PlayerState.Walk;
-        _backActionObject.CanActivate = false;
+        _backActionObject.Disable();
     }
 }

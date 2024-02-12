@@ -16,6 +16,8 @@ public class MeasureActionObject : BaseActionObject
     public override void Activate()
     {
         base.Activate();
+        if (!CanActivate)
+            return;
         if (!_activeAmper)
         {
             _activeAmper = true;

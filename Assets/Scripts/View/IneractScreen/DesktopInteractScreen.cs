@@ -62,7 +62,7 @@ public class DesktopInteractScreen : BaseInteractScreen
     {
         var actionObject = _baseActionObjects.FirstOrDefault(o => o.SceneActionState == state);
         if (actionObject != null)
-            actionObject.CanActivate = true;
+            actionObject.Enable();
     }
 
     public override void DisableAllActionObjects()
@@ -70,7 +70,6 @@ public class DesktopInteractScreen : BaseInteractScreen
         foreach (var baseActionObject in _baseActionObjects)
         {
             baseActionObject.Disable();
-            baseActionObject.CanActivate = false;
         }
     }
 }
