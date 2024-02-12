@@ -2,7 +2,7 @@ using AosSdk.Core.PlayerModule;
 using System.Collections;
 using UnityEngine;
 
-public class Sp6Animation : MonoBehaviour, IAnimationObject
+public class Sp6Animation : ObjectWithAnimation
 {
     [SerializeField] private Animator _anim;
     [SerializeField] private GameObject _roof;
@@ -58,13 +58,13 @@ public class Sp6Animation : MonoBehaviour, IAnimationObject
         return animLenght;
     }
 
-    public void OpenAnimation()
-    {
-        StartCoroutine(PlaySp6Anim(true));
-    }
-
-    public void CloseAnimation()
+    public override void PlayScriptableAnimationClose()
     {
         StartCoroutine(PlaySp6Anim(false));
+    }
+
+    public override void PlayScriptableAnimationOpen()
+    {
+        StartCoroutine(PlaySp6Anim(true));
     }
 }

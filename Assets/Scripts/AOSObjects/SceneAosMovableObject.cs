@@ -2,9 +2,7 @@ using System.Collections;
 using AosSdk.Core.Interaction.Interfaces;
 using AosSdk.Core.Utils;
 using UnityEngine;
-using AosSdk.Core.PlayerModule;
-using AosSdk.Core.PlayerModule.Pointer;
-using UnityEngine.Events;
+
 public class SceneAosMovableObject : SceneAosObject
 {
     [SerializeField] private MovebleObject _movebleObj;
@@ -22,7 +20,5 @@ public class SceneAosMovableObject : SceneAosObject
         {
             _movebleObj.RepairObject();
         }
-
     }
-
 }

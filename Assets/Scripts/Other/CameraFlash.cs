@@ -23,16 +23,10 @@ public class CameraFlash : MonoBehaviour
    private void Update()
     {
         if (_doCameraFlash && !_flashing)
-        {
             CameraFlashStart();
-        }
         else
-        {
             _doCameraFlash = false;
-        }
     }
-
-
     public void CameraFlashStart()
     {
         _flashImage.enabled = true;
@@ -56,7 +50,6 @@ public class CameraFlash : MonoBehaviour
 
         StartCoroutine(FlashCoroutine());
     }
-
   private IEnumerator FlashCoroutine()
     {
         bool done = false;
@@ -81,10 +74,8 @@ public class CameraFlash : MonoBehaviour
 
             yield return null;
         }
-
         _flashing = false;
         _flashImage.enabled = false;
         yield break;
     }
-
 }

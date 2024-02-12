@@ -1,4 +1,4 @@
-public interface IViewObject 
+public interface IViewObject
 {
-  void SetText(string text);
+    void SetText(string text);
 }

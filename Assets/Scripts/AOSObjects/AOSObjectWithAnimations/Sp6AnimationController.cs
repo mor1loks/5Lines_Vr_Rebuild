@@ -99,7 +99,7 @@ public class Sp6AnimationController : AosObjectBase
     [AosAction(name: "Проиграть анимацию Стретка минус трение плюс")]
     public void PlayStrelMinusFrictPlusAnim()
     {
-        if (InSoundPlace(_locationController.GetLocationName()))
+        if (InSoundPlace(_locationController.CurrentLocation()))
             SoundPlayer.Instance.PlayRailFriktSound();
         _anim.SetTrigger("otkazStrelMinusFrictPlus");
     }
@@ -116,7 +116,7 @@ public class Sp6AnimationController : AosObjectBase
     [AosAction(name: "Проиграть анимацию Камень двигатель минус")]
     public void PlayRockEngineMinusAnim()
     {
-        if (InSoundPlace(_locationController.GetLocationName()))
+        if (InSoundPlace(_locationController.CurrentLocation()))
             SoundPlayer.Instance.PlayRailStoneSound();
         _anim.SetTrigger("otkazRockEngineMinus");
       
@@ -124,7 +124,7 @@ public class Sp6AnimationController : AosObjectBase
     [AosAction(name: "Проиграть анимацию Камень двигатель плюс")]
     public void PlayRockEnginePlusAnim()
     {
-        if (InSoundPlace(_locationController.GetLocationName()))
+        if (InSoundPlace(_locationController.CurrentLocation()))
             SoundPlayer.Instance.PlayRailNormSound();
         _anim.SetTrigger("otkazRockEnginePlus");
     }
@@ -132,14 +132,14 @@ public class Sp6AnimationController : AosObjectBase
     [AosAction(name: "Проиграть анимацию плюс")]
     public void PlayPlusAnim()
     {
-        if (InSoundPlace(_locationController.GetLocationName()))
+        if (InSoundPlace(_locationController.CurrentLocation()))
             SoundPlayer.Instance.PlayRailNormSound();
         _anim.SetTrigger("plusAnim");
     }
     [AosAction(name: "Проиграть анимацию минус")]
     public void PlayMinusAnim()
     {
-        if (InSoundPlace(_locationController.GetLocationName()))
+        if (InSoundPlace(_locationController.CurrentLocation()))
             SoundPlayer.Instance.PlayRailNormSound();
         _anim.SetTrigger("minusAnim");
     }

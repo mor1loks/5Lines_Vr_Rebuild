@@ -1,22 +1,19 @@
-using System.Collections;
-using AosSdk.Core.Interaction.Interfaces;
 using AosSdk.Core.Utils;
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [AosSdk.Core.Utils.AosObject(name: "Стрелка")]
 
 public class StrelkaAOS : AosObjectBase
-    
 {
-    [SerializeField] private Strelka _strelka;
+    private bool _condition;
+    public static Action StrelkaChangedEvent;
 
     [AosAction("Задать состояние точки true +, false -")]
     public void SetStrelkaPosition([AosParameter("Направление перевода")] bool position)
     {
-        _strelka.SetCondition(position);
+        SetCondition(position);
     }
-
     [AosEvent(name: "Попытка перевода стрелки в плюс")]
     public event AosEventHandler OnSwitchStrelkaPlus;
     [AosEvent(name: "Попытка перевода стрелки в Минус")]
@@ -40,5 +37,17 @@ public class StrelkaAOS : AosObjectBase
     public void StrelkaFromMinusToPlus()
     {
         FromMinusToPlus?.Invoke();
+    }
+    public void SetCondition(bool value)
+    {
+        if (_condition && !value)
+        {
+            StrelkaFromPlusTominus();
+        }
+        else if (!_condition && value)
+        {
+            StrelkaFromMinusToPlus();
+        }
+        _condition = value;
     }
 }

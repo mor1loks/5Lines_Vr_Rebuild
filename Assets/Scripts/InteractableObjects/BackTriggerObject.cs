@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using AosSdk.Core.PlayerModule.Pointer;
 using AosSdk.Core.Utils;
 using UnityEngine;
@@ -7,44 +5,28 @@ using UnityEngine;
 
 public class BackTriggerObject : BaseObject
 {
-    private BackButtonObject _tempBackButton;
+    private BackButton _currentBackButton;
     private InteractHand _hand;
-
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
         IsHoverable = false;
         IsClickable = false;
     }
-    public override void OnClicked(InteractHand interactHand)
-    {
-        return;
-    }
-    public override void OnHoverIn(InteractHand interactHand)
-    {
-        return;
-    }
-    public override void OnHoverOut(InteractHand interactHand)
-    {
-        return;
-    }
-
-
     private void OnTriggerEnter(Collider col)
     {
         var aosObject = col.GetComponentInParent<AosObjectBase>();
         if (!aosObject)
             return;
-        if (_tempBackButton != null)
-            _tempBackButton.OnClicked(_hand);
-        EnableBackTriggerObject(false);
+        if (_currentBackButton != null)
+            _currentBackButton.OnClicked(_hand);
+        EnableObject(false);
     }
-    public void EnableBackTriggerObject(bool value)
+    public override void EnableObject(bool value)
     {
         GetComponent<Collider>().enabled = value;
     }
-public void SetButtonInvoke(BackButtonObject obj)
+    public void SetButtonInvoke(BackButton obj)
     {
-        _tempBackButton = obj;
+        _currentBackButton = obj;
     }
 }

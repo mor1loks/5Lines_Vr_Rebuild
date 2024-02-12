@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FartukAnimation : MonoBehaviour,IAnimationObject
+public class FartukAnimation : ObjectWithAnimation
 {
     [SerializeField] private GameObject _roof;
 
@@ -32,14 +32,15 @@ public class FartukAnimation : MonoBehaviour,IAnimationObject
             }
         }
         Player.Instance.CanMove = true;
-
     }
-    public void CloseAnimation()
+
+
+    public override void PlayScriptableAnimationClose()
     {
         StartCoroutine(RoofRotator(false));
     }
 
-    public void OpenAnimation()
+    public override void PlayScriptableAnimationOpen()
     {
         StartCoroutine(RoofRotator(true));
     }

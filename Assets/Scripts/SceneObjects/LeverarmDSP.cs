@@ -17,6 +17,4 @@ public class LeverarmDSP : MonoBehaviour
             _anim.SetTrigger("Right");
         else _anim.SetTrigger("Idle");
     }
-
-
 }

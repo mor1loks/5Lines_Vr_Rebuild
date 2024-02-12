@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using AosSdk.Core.PlayerModule;
 
-public class MuftaAnimation : MonoBehaviour, IAnimationObject
+public class MuftaAnimation : ObjectWithAnimation
 {
     [SerializeField] private GameObject _roof;
 
@@ -46,16 +46,16 @@ public class MuftaAnimation : MonoBehaviour, IAnimationObject
         _isAnimated = false;
         Player.Instance.CanMove = true;
     }
-    public void CloseAnimation()
+    public override void PlayScriptableAnimationClose()
     {
         if (_isOpen)
             StartCoroutine(RoofMover(false));
     }
 
-    public void OpenAnimation()
+    public override void PlayScriptableAnimationOpen()
     {
-        if(!_isOpen)
-        StartCoroutine(RoofMover(true));
+        if (!_isOpen)
+            StartCoroutine(RoofMover(true));
     }
 }
 

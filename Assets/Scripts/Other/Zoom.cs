@@ -29,11 +29,7 @@ public class Zoom : MonoBehaviour
     } 
     public void ResetZoomCamera()
     {
-<<<<<<< Updated upstream
-            _playerCamera.fieldOfView = 60;
-=======
       _playerCamera.fieldOfView = 75;
->>>>>>> Stashed changes
     }
      private void OnMouseWheel(InputAction.CallbackContext obj)
     {
@@ -50,15 +46,9 @@ public class Zoom : MonoBehaviour
         else
         {
             _zoomValue += 15;
-<<<<<<< Updated upstream
-            if (_zoomValue > 60)
-                _zoomValue = 60;
-=======
             if (_zoomValue > _minZoomValue)
                 _zoomValue = _minZoomValue;
->>>>>>> Stashed changes
         }
-       
         _playerCamera.fieldOfView = _zoomValue;
     }
 }
