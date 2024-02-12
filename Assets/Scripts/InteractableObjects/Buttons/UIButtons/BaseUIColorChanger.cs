@@ -10,31 +10,33 @@ public enum ButtonColorState
 
 public abstract class BaseUIColorChanger : MonoBehaviour
 {
+    public bool CanChangeState { get; set; } = true;
     public void ChangeColorState(ButtonColorState state)
     {
         switch (state) 
         {
             case ButtonColorState.Disabled:
-                DisabledState();
+                DeactivateState();
                 break;
             case ButtonColorState.Active:
-                ActiveState();
+                ActivateState();
                 break;
             case ButtonColorState.Enabled:
                 EnabledState();
                 break;
         }
     }
-    protected virtual void DisabledState()
+    public virtual void DeactivateState()
     {
-
     }
-    protected virtual void ActiveState()
+    public virtual void ActivateState()
     {
-
+        if (!CanChangeState)
+            return;
     }
-    protected virtual void EnabledState()
+    public virtual void EnabledState()
     {
-
+        if (!CanChangeState)
+            return;
     }
 }

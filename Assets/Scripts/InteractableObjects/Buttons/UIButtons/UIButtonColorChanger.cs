@@ -16,28 +16,27 @@ public class UIButtonColorChanger : BaseUIColorChanger
     private Color _activeIconColor = new Color(1, 1, 1, 1f);
     private Color _disbaledIconColor = new Color(1, 1, 1, 0.3f);
 
-    protected override void DisabledState()
+    public override void DeactivateState()
     {
-        Debug.Log("DisabledState");
         SetImageColor(_backgroundImages, _disbaledImageColor);
         SetImageColor(_icons, _disbaledIconColor);
         SettextColor(_texts, _disbaledIconColor);
     }
-    protected override void EnabledState()
+    public override void EnabledState()
     {
-        Debug.Log("EnabledState");
+        base.EnabledState();
         SetImageColor(_backgroundImages, _enabledImageColor);
         SetImageColor(_icons, _activeIconColor);
         SettextColor(_texts, _activeIconColor);
     }
-    protected override void ActiveState()
+    public override void ActivateState()
     {
-        Debug.Log("ActiveState");
+        base.ActivateState();
         SetImageColor(_backgroundImages, _activeImageColor);
         SetImageColor(_icons, _activeIconColor);
         SettextColor(_texts, _activeIconColor);
     }
-    private void SetImageColor(Image[] images,Color newColor)
+    private void SetImageColor(Image[] images, Color newColor)
     {
         foreach (Image image in images)
             image.color = newColor;

@@ -5,9 +5,5 @@ using UnityEngine;
 
 public class BackFromPlaceUIButton : UIButtonWithColorChanger
 {
-    public static Action ClickBackFromPlaceUiButtonEvent;
-    protected override void Click()
-    {
-        ClickBackFromPlaceUiButtonEvent?.Invoke();
-    }
+
 }
