@@ -6,7 +6,6 @@ public class Ampermetr : MonoBehaviour
 {
     [SerializeField] private GameObject _ampermetr;
     private Transform _amperPos;
-    public bool Active { get; private set; }
     private void Start()
     {
         _amperPos = GetComponent<Transform>();
@@ -24,7 +23,6 @@ public class Ampermetr : MonoBehaviour
         }
         else
             _ampermetr.SetActive(false);
-        Active = _ampermetr.activeSelf;
     }
     public void SetAmperPos(Transform newPos) => _amperPos = newPos;
  }

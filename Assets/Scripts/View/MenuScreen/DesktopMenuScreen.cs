@@ -26,7 +26,6 @@ public class DesktopMenuScreen : BaseMenuScreen
 
     public override void SetMenuText(string headText, string commentText, string exitSureText)
     {
-        Debug.Log($"head text {headText} comment text {commentText} exit sure text{exitSureText}");
         _infoHeaderText.text = HtmlToText.Instance.HTMLToTextReplace(headText);
         _infoText.text = HtmlToText.Instance.HTMLToTextReplace(commentText);
         _exitSureText.text = HtmlToText.Instance.HTMLToTextReplace(exitSureText);

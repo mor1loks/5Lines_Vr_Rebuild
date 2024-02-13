@@ -9,9 +9,5 @@ public class SchemeActionObject : DesktopActionObject
         base.Activate();
         SoundPlayer.Instance.PlayMapOpenSound();
     }
-    public override void Deactivate()
-    {
-        base.Deactivate();
-        SoundPlayer.Instance.PlayMapCloseSound();
-    }
+
 }

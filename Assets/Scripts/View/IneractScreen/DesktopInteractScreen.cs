@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -10,13 +11,12 @@ public class DesktopInteractScreen : BaseInteractScreen
     [SerializeField] private GameObject _timer;
     [SerializeField] private GameObject _location;
     [SerializeField] private GameObject _interactIcons;
-    [SerializeField] private BackFromPlaceUIButton _backUIButton;
 
     [SerializeField] private TextMeshProUGUI _helperText;
     [SerializeField] private TextMeshProUGUI _reactionText;
     [SerializeField] private TextMeshProUGUI _locationText;
     [SerializeField] private TextMeshProUGUI _timerText;
-    [SerializeField] private BaseActionObject[] _actionObjects;
+    [SerializeField] private BaseActionObject[] _baseActionObjects;
     private Vector3 _helperStartPos;
     private Timer _time = new Timer();
     private void Start()
@@ -61,28 +61,22 @@ public class DesktopInteractScreen : BaseInteractScreen
 
     public override void EnableActivateActionObject(SceneActionState state)
     {
-        if(state == SceneActionState.None)
-        {
-            foreach (var actionObject in _actionObjects)
-            {
-                actionObject.CanActivate = false;
-                actionObject.ActivateView(false);
-                actionObject.Deactivate();
-            }
-            return;
-        }
-        var actionObjectToActivate = _actionObjects.FirstOrDefault(o => o.SceneActionState == state);
-        if (actionObjectToActivate != null)
-        {
-            actionObjectToActivate.CanActivate = true;
-            actionObjectToActivate.ActivateView(true);
-        }
+        var actionObject = _baseActionObjects.FirstOrDefault(o => o.SceneActionState == state);
+        if (actionObject != null)
+            actionObject.Enable();
     }
-    public override BaseActionObject GetActionObject(SceneActionState state)
+
+    public override void DisableAllActionObjects()
     {
-        var searchableObject = _actionObjects.FirstOrDefault(o => o.SceneActionState == state);
-        if (searchableObject != null)
-            return searchableObject;
-        return null;
+        StartCoroutine(DisableDelay());
+    }
+    private IEnumerator DisableDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        foreach (var baseActionObject in _baseActionObjects)
+        {
+            if (baseActionObject != null)
+                baseActionObject.Disable();
+        }
     }
 }

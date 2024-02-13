@@ -1,40 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum ButtonColorState
-{
-    Disabled,
-    Active,
-    Enabled
-}
+
 
 public abstract class BaseUIColorChanger : MonoBehaviour
 {
-    public void ChangeColorState(ButtonColorState state)
+    public bool CanChangeState { get; set; } = true;
+    public virtual void DeactivateState()
     {
-        switch (state) 
-        {
-            case ButtonColorState.Disabled:
-                DisabledState();
-                break;
-            case ButtonColorState.Active:
-                ActiveState();
-                break;
-            case ButtonColorState.Enabled:
-                EnabledState();
-                break;
-        }
     }
-    protected virtual void DisabledState()
+    public virtual void ActivateState()
     {
-
     }
-    protected virtual void ActiveState()
+    public virtual void EnabledState()
     {
-
-    }
-    protected virtual void EnabledState()
-    {
-
     }
 }
