@@ -18,20 +18,24 @@ public class UIButtonColorChanger : BaseUIColorChanger
 
     public override void DeactivateState()
     {
+        if (!CanChangeState)
+            return;
         SetImageColor(_backgroundImages, _disbaledImageColor);
         SetImageColor(_icons, _disbaledIconColor);
         SettextColor(_texts, _disbaledIconColor);
     }
     public override void EnabledState()
     {
-        base.EnabledState();
+        if (!CanChangeState)
+            return;
         SetImageColor(_backgroundImages, _enabledImageColor);
         SetImageColor(_icons, _activeIconColor);
         SettextColor(_texts, _activeIconColor);
     }
     public override void ActivateState()
     {
-        base.ActivateState();
+        if (!CanChangeState)
+            return;
         SetImageColor(_backgroundImages, _activeImageColor);
         SetImageColor(_icons, _activeIconColor);
         SettextColor(_texts, _activeIconColor);

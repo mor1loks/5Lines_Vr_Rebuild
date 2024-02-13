@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -67,9 +68,15 @@ public class DesktopInteractScreen : BaseInteractScreen
 
     public override void DisableAllActionObjects()
     {
+        StartCoroutine(DisableDelay());
+    }
+    private IEnumerator DisableDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
         foreach (var baseActionObject in _baseActionObjects)
         {
-            baseActionObject.Disable();
+            if (baseActionObject != null)
+                baseActionObject.Disable();
         }
     }
 }

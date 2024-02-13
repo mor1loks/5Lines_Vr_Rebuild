@@ -20,30 +20,35 @@ public class BaseActionObject : MonoBehaviour
     {
         BaseActionButton.ActionButtonEvent += Activate;
         BaseUIButton.ClickButtonEvent += Activate;
-        if(CurrentState==SceneActionState.None)
+        if (CurrentState == SceneActionState.None)
             CanActivate = true;
-        if (CurrentState == SceneActionState.Back)
-            CanActivate = false;
     }
     public void Enable()
     {
-        BaseUIButton.BaseUIColorChanger.ActivateState();
         CanActivate = true;
+        BaseUIButton.BaseUIColorChanger.CanChangeState = true;
+        BaseUIButton.BaseUIColorChanger.ActivateState();
+        BaseUIButton.EnableUIButton(true);
     }
     public virtual void Activate()
     {
         if (!CanActivate)
             return;
         SceneObjectsHolder.Instance.ActionButtonsHolder.InVokeOnClick(CurrentState);
+        BaseUIButton.BaseUIColorChanger.EnabledState();
+        BaseUIButton.BaseUIColorChanger.CanChangeState = false;
     }
     public virtual void Deactivate()
     {
-        Debug.Log("Deactivate " + gameObject.name);
+        BaseUIButton.BaseUIColorChanger.CanChangeState = true;
+        BaseUIButton.BaseUIColorChanger.ActivateState();
     }
     public virtual void Disable()
     {
         Deactivate();
         CanActivate = false;
         BaseUIButton.BaseUIColorChanger.DeactivateState();
+        BaseUIButton.EnableUIButton(false);
+        BaseUIButton.BaseUIColorChanger.CanChangeState = false;
     }
 }

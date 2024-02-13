@@ -180,6 +180,7 @@ public class SceneObjectsHolder : MonoBehaviour
         {
             _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Radio);
             _actionButtonsHolder.SetCurrentRadioButton(name);
+            _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Back);
         }
         else if (_stringParser.GetSearchingValue(name, scheme))
         {
@@ -287,6 +288,5 @@ public class SceneObjectsHolder : MonoBehaviour
     private void OnSetSideMovingObject(BaseSideMovingObject obj)
     {
         _moveUiButtonsHolder.SetSideMovingObject(obj);
-        Debug.Log("Side moving object added " + obj.name);
     }
 }

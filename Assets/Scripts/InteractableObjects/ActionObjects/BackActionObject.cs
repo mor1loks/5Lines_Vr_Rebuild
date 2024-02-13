@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class BackActionObject : BaseActionObject
 {
@@ -9,6 +6,9 @@ public class BackActionObject : BaseActionObject
     public override void Activate()
     {
         base.Activate();
+        if (!CanActivate)
+            return;
         BackEvent?.Invoke();
+        BaseUIButton.BaseUIColorChanger.DeactivateState();
     }
 }

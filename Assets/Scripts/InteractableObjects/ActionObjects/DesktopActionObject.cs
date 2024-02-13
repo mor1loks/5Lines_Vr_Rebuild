@@ -17,8 +17,7 @@ public class DesktopActionObject : BaseActionObject
     }
 
     public override void Deactivate()
-    {
-        base.Deactivate();
+    {base.Deactivate();
         Canvas.SetActive(false);
     }
 }

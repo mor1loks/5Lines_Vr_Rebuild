@@ -7,12 +7,6 @@ public class MeasureActionObject : BaseActionObject
     [SerializeField] private PointerDevice _pointerDevice;
     [SerializeField] private Ampermetr _amper;
     private bool _activeAmper = false;
-    protected override void Start()
-    {
-        base.Start();
-        if (_amper == null)
-            Debug.LogError($"{gameObject.name} Canvas object must be Ampermetr");
-    }
     public override void Activate()
     {
         base.Activate();
