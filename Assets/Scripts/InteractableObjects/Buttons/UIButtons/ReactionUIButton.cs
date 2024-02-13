@@ -18,9 +18,12 @@ public class ReactionUIButton : BaseUIButton
     public void Init(ButtonActionName buttonActionName, string text, SceneAosObject sceneAosObject)
     {
         _currentActionName = buttonActionName;
+        Debug.Log(_currentActionName.ToString()+" ACTION NAME");
         var sprite = GetSpriteByName();
         if (sprite != null)
+        {
             _currentSprite.sprite = sprite;
+        }
         _reactionText.text = text;
         _sceneAosObject = sceneAosObject;
     }

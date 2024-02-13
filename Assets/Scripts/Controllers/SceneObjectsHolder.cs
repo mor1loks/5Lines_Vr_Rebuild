@@ -59,6 +59,8 @@ public class SceneObjectsHolder : MonoBehaviour
     private void OnHideAllReaction()
     {
         _modeController.BaseReactionButtonsHandler.HideAllReactions();
+        _mouseRayCastHandler.CanHover = true;
+        _mouseRayCastHandler.CanInteract = true;
     }
     private void OnChangeReactionPositionEvent(VectorHolder holder)
     {
