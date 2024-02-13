@@ -26,8 +26,8 @@ public class DesktopInteractScreen : BaseInteractScreen
     public override void SetHelperText(string helperText) => EnableTextObject(helperText, _helperText, _helper);
     public override void SetLocationText(string locationText) => _locationText.text = locationText;
     public override void EnableHelperObject(bool active) => _helper.SetActive(active);
-    public override void EnableLocationObject(bool active) => _location.SetActive(true);
-    public override void EnableTimerObject(bool active) => _timer.SetActive(true);
+    public override void EnableLocationObject(bool active) => _location.SetActive(active);
+    public override void EnableTimerObject(bool active) => _timer.SetActive(active);
     public override void EnableInteractIcons(bool active) => _interactIcons.SetActive(active);
     public override void SetReactionText(string helperText) => _reactionText.text = helperText;
     public override void EnableReactionObject(bool active) => _reaction.SetActive(active);

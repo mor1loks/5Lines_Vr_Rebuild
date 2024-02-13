@@ -5,11 +5,6 @@ public abstract class BaseStartScreenView : MonoBehaviour
 {
     [SerializeField] protected ModeController ModeController;
     [SerializeField] protected GameObject NextButtonGameObject;
-    [SerializeField] protected GameObject _exitButtonMidle;
-    [SerializeField] protected GameObject _exitButton;
-    [SerializeField] protected GameObject _loadImage;
-    [SerializeField] protected GameObject _catoImage;
-    [SerializeField] protected GameObject _lineImage;
     [Space]
     [SerializeField] protected TextMeshProUGUI HeaderText;
     [SerializeField] protected TextMeshProUGUI CommentText;
@@ -28,20 +23,7 @@ public abstract class BaseStartScreenView : MonoBehaviour
     }
     public virtual void SetStartScreenText(string headerText, string commentText, string buttonText, NextButtonState state)
     {
-        if (state == NextButtonState.Start)
-        {
-            _catoImage.SetActive(true);
-            buttonText = "Далее";
-        }
-        else
-        {
-            _catoImage.SetActive(false);
-            buttonText = "Начать";
-        }
         NextButtonGameObject.SetActive(true);
-        _exitButtonMidle.SetActive(false);
-        _exitButton.SetActive(true);
-        _loadImage.SetActive(false);
         HeaderText.text = headerText;
         CommentText.text = commentText;
         NextButtonText.text = buttonText;
@@ -54,7 +36,6 @@ public abstract class BaseStartScreenView : MonoBehaviour
             DisableStartScreen();
             ModeController.CurrentInteractScreen.EnableAllHelperObjects(true);
             ModeController.CurrentMenuController.CanTeleport = true;
-            _lineImage.SetActive(true);
         }
     }
     protected abstract void DisableStartScreen();

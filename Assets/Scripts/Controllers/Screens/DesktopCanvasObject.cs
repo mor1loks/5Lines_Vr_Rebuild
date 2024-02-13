@@ -10,8 +10,7 @@ public enum CanvasState
     Phone,
     Last,
     Other,
-    MainMenu,
-    Result
+    MainMenu
 }
 public class DesktopCanvasObject : MonoBehaviour
 {

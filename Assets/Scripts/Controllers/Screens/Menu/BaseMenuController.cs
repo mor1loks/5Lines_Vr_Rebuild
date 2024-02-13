@@ -1,16 +1,13 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public abstract class BaseMenuController : MonoBehaviour
 {
     [SerializeField] protected API Api;
     [SerializeField] protected ModeController ModeController;
-   
     public bool CanTeleport { get; set; } = false;
     public bool InMenu { get; private set; }
     public virtual void TeleportToMenu()
     {
-       
         if (InMenu || !CanTeleport)
             return;
         InMenu = true;
@@ -20,13 +17,11 @@ public abstract class BaseMenuController : MonoBehaviour
     }
     public virtual void TeleportToGame()
     {
-        
         if (!InMenu||!CanTeleport)
             return;
         var location = SceneObjectsHolder.Instance.LocationTextController.CurrentLocation();
         Api.InvokeEndTween(location);
         InMenu = false;
-        Debug.Log("THIS");
         ModeController.CurrentInteractScreen.EnableAllHelperObjects(true);
         ModeController.CurrentMenuScreen.ShowMenuScreen(false);
     }

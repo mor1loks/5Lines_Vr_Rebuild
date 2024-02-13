@@ -106,9 +106,9 @@ public class APIEventsInvoker : MonoBehaviour
     {
         SceneObjectsHolder.Instance.ActivateBaseObjects(id, name, time);
     }
-    private void OnSetLastScreenText(string headerText, string commentText,string footerText,string alarmImg)
+    private void OnSetLastScreenText(string headerText, string commentText)
     {
-        _modeController.CurrentMenuScreen.ShowMessageScreen(headerText, commentText, footerText, alarmImg);
+        _modeController.CurrentMenuScreen.ShowMessageScreen(headerText, commentText);
     }
     private void OnSetResultScreenText(string headerText, string commentText, string evalText)
     {

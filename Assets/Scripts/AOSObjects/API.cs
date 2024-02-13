@@ -24,10 +24,8 @@ public class API : AosObjectBase
     public Action<string> AddMeasureButtonEvent;
     public Action<string> ReactionEvent;
     public Action<string, string> EnableRactionButtonEvent;
-    public Action<string, string> ResultNameTextButtonSingleEvent;
     public Action<string, string, string> ActivateByNameEvent;
-    public Action<string, string, string> ResultNameTextButtonEvent;
-    public Action<string, string,string,string> SetMessageTextEvent;
+    public Action<string, string> SetMessageTextEvent;
     public Action<string, string, string> SetResultTextEvent;
     public Action<string, string> ShowExitTextEvent;
     public Action<string, string, string> ShowMenuTextEvent;
@@ -144,85 +142,17 @@ public class API : AosObjectBase
     [AosAction(name: "Показать сообщение")]
     public void showMessage(JObject info, JObject nav)
     {
-        string footerText = "";
-        var header = info.SelectToken("header");
-        var footer = info.SelectToken("footer");
-        var comment = info.SelectToken("text");
-        var alarm = info.SelectToken("alarm");
-        if (header != null && footer != null && comment != null && alarm != null)
-        {
-            footerText = HtmlToText.Instance.HTMLToTextReplace(footer.ToString());
-            string commentText = HtmlToText.Instance.HTMLToTextReplace(comment.ToString());
-            string headText = header.ToString();
-            string alarmImg = alarm.ToString();
-            SetMessageTextEvent?.Invoke(headText, footerText, commentText, alarmImg);
-        }
-        else if (header != null && comment != null && alarm != null)
-        {
-
-            string commentText = HtmlToText.Instance.HTMLToTextReplace(comment.ToString());
-            string headText = header.ToString();
-            string alarmImg = alarm.ToString();
-            SetMessageTextEvent?.Invoke(headText, footerText, commentText, alarmImg);
-        }
-        else if (comment != null)
-        {
-            string commentText = HtmlToText.Instance.HTMLToTextReplace(comment.ToString());
-            footerText = "";
-            string headText = "";
-            string alarmImg = "none";
-            SetMessageTextEvent?.Invoke(headText, footerText, commentText, alarmImg);
-        }
-        //string headText = info.SelectToken("name").ToString();
-        //string commentText = info.SelectToken("text").ToString();
-        //SetMessageTextEvent?.Invoke(headText, commentText);
+        string headText = info.SelectToken("name").ToString();
+        string commentText = info.SelectToken("text").ToString();
+        SetMessageTextEvent?.Invoke(headText, commentText);
     }
     [AosAction(name: "Показать сообщение")]
     public void showResult(JObject info, JObject nav)
     {
-        string resultText = "";
-        Debug.Log("RESULT " + info.ToString());
         string headText = info.SelectToken("name").ToString();
         string commentText = HtmlToText.Instance.HTMLToTextReplace(HtmlToText.Instance.HTMLToTextReplace(info.SelectToken("text").ToString()));
         string evalText = HtmlToText.Instance.HTMLToTextReplace(info.SelectToken("eval").ToString());
         SetResultTextEvent?.Invoke(headText, commentText, evalText);
-        var result = info.SelectToken("result");
-
-
-        if (result != null)
-        {
-            foreach (JObject item in result)
-            {
-                resultText = "";
-                var name = item.SelectToken("name").ToString();
-                var penalty = item.SelectToken("penalty").ToString();
-                var msg = item.SelectToken("msg");
-                if (msg == null)
-                {
-                    ResultNameTextButtonSingleEvent?.Invoke(name, penalty);
-                }
-                else
-                {
-
-                    foreach (var item2 in msg)
-                    {
-                        var message2 = item2.SelectToken("msg");
-                        var name2 = item2.SelectToken("name");
-                        if (message2 != null && name2 != null)
-                        {
-                            resultText += name2.ToString() + message2.ToString();
-                        }
-                        else
-                        {
-                            resultText += HtmlToText.Instance.HTMLToTextReplace(item2.ToString()) + "\n";
-                        }
-                    }
-                    ResultNameTextButtonEvent?.Invoke(name, penalty, resultText);
-                }
-
-            }
-
-        }
     }
     [AosAction(name: "Показать точки")]
     public void showPoints(string info, JArray data)
