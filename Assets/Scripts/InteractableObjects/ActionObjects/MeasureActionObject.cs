@@ -1,31 +1,34 @@
 using System.Collections;
 using UnityEngine;
 
-public class MeasureActionObject : BaseActionObject
+public class MeasureActionObject : DesktopActionObject
 {
     [SerializeField] private ShupController _shupController;
     [SerializeField] private PointerDevice _pointerDevice;
-    [SerializeField] private Ampermetr _amper;
-    private bool _activeAmper = false;
+    private Ampermetr _amper;
+    private void Start()
+    {
+        _amper = Canvas.GetComponent<Ampermetr>();
+        if (_amper == null)
+            Debug.LogError($"{gameObject.name} Canvas object must be Ampermetr");
+    }
     public override void Activate()
     {
-        base.Activate();
         if (!CanActivate)
             return;
-        if (!_activeAmper)
+        if (!_amper.Active)
         {
-            _activeAmper = true;
-            _amper.EnableAmper(_activeAmper);
+            _amper.EnableAmper(true);
+            Active = true;
             StartCoroutine(ButtonsActivatorAsync());
         }
         else Deactivate();
     }
     public override void Deactivate()
     {
-        base.Deactivate();
-        _activeAmper = false;
         _amper.EnableAmper(false);
-        _shupController.ResetShupPosition();
+        Active = false;
+       _shupController.ResetShupPosition();
         SceneObjectsHolder.Instance.ResetMeasureButtonsCurrentList();
         _pointerDevice.SetValue(1);
     }

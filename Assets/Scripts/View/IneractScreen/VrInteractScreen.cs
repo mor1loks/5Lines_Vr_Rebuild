@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class VrInteractScreen : BaseInteractScreen
 {
-    public override void DisableAllActionObjects()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void EnableActivateActionObject(SceneActionState state)
     {
         throw new System.NotImplementedException();
@@ -34,6 +29,11 @@ public class VrInteractScreen : BaseInteractScreen
     }
 
     public override void EnableTimerObject(bool active)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override BaseActionObject GetActionObject(SceneActionState state)
     {
         throw new System.NotImplementedException();
     }

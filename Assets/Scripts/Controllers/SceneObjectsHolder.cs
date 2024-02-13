@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 public enum PlayerState
 {
@@ -30,11 +32,11 @@ public class SceneObjectsHolder : MonoBehaviour
     public ModeController ModeController => _modeController;
     public API API => _api;
     public MouseRayCastHandler MouseRayCastHandler => _mouseRayCastHandler;
-    public AOSActionButtonsHolder ActionButtonsHolder => _actionButtonsHolder;
 
     private List<BaseObject> _baseObjects = new List<BaseObject>();
     private List<BaseUIButton> _baseUiButtons = new List<BaseUIButton>();
     private List<MeasureButton> _allMeasureButtons = new List<MeasureButton>();
+    private List<BaseActionButton> _baseActionButtons = new List<BaseActionButton>();
     private List<string> _currentMeasureButtonsNames = new List<string>();
     private List<ObjectWithAnimation> _objectsWithAnimations = new List<ObjectWithAnimation>();
     private List<SceneObject> _currentSceneObjects = new List<SceneObject>();
@@ -52,7 +54,7 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void Start()
     {
-        BackActionObject.BackEvent += OnBackUiButtonClick;
+        BackFromPlaceUIButton.ClickBackFromPlaceUiButtonEvent += OnBackUiButtonClick;
         if (_modeController.DesktopMode)
             _mouseRayCastHandler.MousePosHoverEvent += OnChangeHelperOnHoverEvent;
         _mouseRayCastHandler.MousePosClickEvent += OnChangeReactionPositionEvent;
@@ -128,10 +130,14 @@ public class SceneObjectsHolder : MonoBehaviour
             var okButton = (OkUiButton)obj;
             okButton.OkClickEvent += OnHideReactionWindow;
         }
+        obj.InteractUiEvent += OnHandleIneractMouse;
         obj.HoverUiEvent += OnHandleHoverMouse;
         _baseUiButtons.Add(obj);
     }
-
+    private void OnHandleIneractMouse(bool active)
+    {
+        _mouseRayCastHandler.CanInteract = active;
+    }
     private void OnHandleHoverMouse(bool active)
     {
         //_mouseRayCastHandler.CanHover = !active;
@@ -149,7 +155,11 @@ public class SceneObjectsHolder : MonoBehaviour
     {
         SceneAosObject = sceneAosObject;
     }
-
+    public void AddSceneActionButton(BaseActionButton baseActionButton)
+    {
+        _baseActionButtons.Add(baseActionButton);
+        baseActionButton.SceneActionButtonEvent += OnActivateSceneAction;
+    }
     public void ActivateBaseObjects(string objectId, string objectName, string timeText)
     {
         if (timeText == "" || timeText == "0")
@@ -181,7 +191,6 @@ public class SceneObjectsHolder : MonoBehaviour
         {
             _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Radio);
             _actionButtonsHolder.SetCurrentRadioButton(name);
-            _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Back);
         }
         else if (_stringParser.GetSearchingValue(name, scheme))
         {
@@ -199,7 +208,7 @@ public class SceneObjectsHolder : MonoBehaviour
         foreach (var sceneObj in _baseObjects)
             sceneObj.EnableObject(false);
     }
-    private void ActivateCurrentSceneObjects()
+    private void ActivateCurrentScneObjects()
     {
         foreach (var sceneObject in _currentSceneObjects)
             sceneObject.EnableObject(true);
@@ -215,7 +224,7 @@ public class SceneObjectsHolder : MonoBehaviour
     {
         foreach (var item in _allMeasureButtons)
             item.EnableObject(false);
-        ActivateCurrentSceneObjects();
+        ActivateCurrentScneObjects();
     }
     public void ActivateMeasureButtonsCurrentList()
     {
@@ -255,6 +264,15 @@ public class SceneObjectsHolder : MonoBehaviour
     {
         _shupController.SetShupPosition(pos, name);
     }
+    private void OnActivateSceneAction(SceneActionState state)
+    {
+        var actionObject = _modeController.CurrentInteractScreen.GetActionObject(state);
+        if (actionObject != null)
+        {
+            actionObject.Activate();
+            _actionButtonsHolder.InVokeOnClick(state);
+        }
+    }
     private void OnChangeCanvasPerentCamera(Camera camera)
     {
         _canvasParentChanger.ChangeCameraParent(camera);
@@ -267,7 +285,7 @@ public class SceneObjectsHolder : MonoBehaviour
         _api.InvokeEndTween(_locationController.BackLocation);
         ResetAllAnimationObjects();
         _moveUiButtonsHolder.SetSideMovingObject(null);
-        _modeController.CurrentInteractScreen.DisableAllActionObjects();
+        _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.None);
         _currentSceneObjects = new List<SceneObject>();
     }
     private void OnAddAnimationObject(ObjectWithAnimation objectWithAnimation)
@@ -289,5 +307,6 @@ public class SceneObjectsHolder : MonoBehaviour
     private void OnSetSideMovingObject(BaseSideMovingObject obj)
     {
         _moveUiButtonsHolder.SetSideMovingObject(obj);
+        Debug.Log("Side moving object added " + obj.name);
     }
 }

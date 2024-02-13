@@ -22,7 +22,7 @@ public class ModeController : MonoBehaviour
     [SerializeField] private BaseReactionButtonsHandler _desktopReactionButtonsHandler;
     [SerializeField] private BaseReactionButtonsHandler _vrReactionButtonsHandler;
     [Space]
-    [SerializeField] private EscActionObject _actionObject;
+    [SerializeField] private EscButton _escButton;
 
     public BaseStartScreenView CurrentStartScreen { get; private set; }
     public BaseInteractScreen CurrentInteractScreen { get; private set; }
@@ -36,7 +36,7 @@ public class ModeController : MonoBehaviour
     {
         _currentMode = _aosSettings.launchMode;
         EnableObjectsByMode();
-        _actionObject.EscActionEvent += OnEscButtonAction;
+        _escButton.EscButtonEvent += OnEscButtonAction;
     }
     public Transform GetPlayerTransform()
     {

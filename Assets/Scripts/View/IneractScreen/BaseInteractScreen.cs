@@ -12,7 +12,7 @@ public abstract class BaseInteractScreen : MonoBehaviour
     public abstract void EnableLocationObject(bool active);
     public abstract void EnableTimerObject(bool active);
     public abstract void EnableActivateActionObject(SceneActionState state);
-    public abstract void DisableAllActionObjects();
+    public abstract BaseActionObject GetActionObject(SceneActionState state);  
     public abstract void EnableInteractIcons(bool active);
     public abstract void SetHelperTextPosition(VectorHolder newPos);
     public void EnableAllHelperObjects(bool active)
