@@ -1,23 +1,11 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public enum SceneActionState
+
+public class BaseActionButton : MonoBehaviour
 {
-    None,
-    Radio,
-    Scheme,
-    Measure
-}
-public abstract class BaseActionButton : MonoBehaviour
-{
-    [SerializeField] protected bool NonAos;
-    public Action<SceneActionState> SceneActionButtonEvent;
+    public Action ActionButtonEvent;
     [SerializeField] protected InputActionProperty ActionProp;
-    public bool NonAosActionButton => NonAos;
-    protected void Start()
-    {
-        SceneObjectsHolder.Instance.AddSceneActionButton(this);
-    }
     protected virtual void OnEnable()
     {
         ActionProp.action.performed += OnActionPerformed;
@@ -26,6 +14,8 @@ public abstract class BaseActionButton : MonoBehaviour
     {
         ActionProp.action.performed -= OnActionPerformed;
     }
-    protected abstract void OnActionPerformed(InputAction.CallbackContext c);
-
+    protected virtual void OnActionPerformed(InputAction.CallbackContext c)
+    {
+        ActionButtonEvent?.Invoke();
+    }
 }

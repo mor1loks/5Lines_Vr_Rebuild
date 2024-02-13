@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 [RequireComponent(typeof(BaseUIColorChanger))]
 
 public class UIButtonWithColorChanger : BaseUIButton
@@ -11,5 +10,14 @@ public class UIButtonWithColorChanger : BaseUIButton
     {
         base.Start();
         _baseUiColorChanger = GetComponent<BaseUIColorChanger>();
+    }
+
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        _baseUiColorChanger.EnabledState();
+    }
+    public override void OnPointerExit(PointerEventData eventData)
+    {
+        _baseUiColorChanger.ActivateState();
     }
 }
