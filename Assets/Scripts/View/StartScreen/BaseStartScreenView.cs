@@ -35,6 +35,8 @@ public abstract class BaseStartScreenView : MonoBehaviour
         {
             DisableStartScreen();
             ModeController.CurrentInteractScreen.EnableAllHelperObjects(true);
+            ModeController.CurrentInteractScreen.EnableLocationObject(true);
+            ModeController.CurrentInteractScreen.EnableTimerObject(true);
             ModeController.CurrentMenuController.CanTeleport = true;
         }
     }

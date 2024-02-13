@@ -17,8 +17,6 @@ public abstract class BaseInteractScreen : MonoBehaviour
     public abstract void SetHelperTextPosition(VectorHolder newPos);
     public void EnableAllHelperObjects(bool active)
     {
-        EnableLocationObject(active);
-        EnableTimerObject(active);
         EnableActivateActionObject(SceneActionState.None);
         EnableInteractIcons(active);
     }
