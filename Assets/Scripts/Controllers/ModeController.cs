@@ -67,6 +67,7 @@ public class ModeController : MonoBehaviour
     }
     private void OnEscButtonAction()
     {
+      
         if (CurrentMenuController.InMenu)
             CurrentMenuController.TeleportToGame();
         else
