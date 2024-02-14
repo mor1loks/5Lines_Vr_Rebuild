@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class DesktopReactionButtonsHandler : BaseReactionButtonsHandler
 {
-    [SerializeField] private ReactionUIButton _prefub;
+    [SerializeField] private GameObject _prefub;
     [SerializeField] private Transform _parent;
+    private ReactionUIButton _reactionUiButton;
     private SceneAosObject _currentAosObject;
 
     private List<ReactionUIButton> _reactionButtons;
@@ -26,9 +27,10 @@ public class DesktopReactionButtonsHandler : BaseReactionButtonsHandler
         if (ContainsObject(reactionName))
             HideAllReactions();
         _currentAosObject = SceneObjectsHolder.Instance.SceneAosObject;
-        var reactionButton = Instantiate(_prefub, _parent);
-        reactionButton.Init(reactionName, buttonText, _currentAosObject);
-        _reactionButtons.Add(reactionButton);
+        var prefub = Instantiate(_prefub, _parent);
+        _reactionUiButton = prefub.GetComponentInChildren<ReactionUIButton>();
+        _reactionUiButton.Init(reactionName, buttonText, _currentAosObject);
+        _reactionButtons.Add(_reactionUiButton);
     }
     public override void HideAllReactions()
     {

@@ -30,6 +30,8 @@ public class MouseRayCastHandler : MonoBehaviour
         }
         if (collisionObject.collider != null)
             CheckCollisionHover(collisionObject);
+        Debug.Log(CanInteract + "   INTERACT");
+        Debug.Log(CanHover + "   HOVER");
     }
     private RaycastHit CheckRaycastCollider()
     {
@@ -47,19 +49,22 @@ public class MouseRayCastHandler : MonoBehaviour
     }
     private void CheckCollisionClick(RaycastHit hit)
     {
-        if (hit.collider.gameObject.TryGetComponent(out SceneObject sceneObject))
+        if (!CanHover)
+            return;
+        if (hit.collider.gameObject.TryGetComponent(out SceneObject sceneObject) )
         {
             sceneObject.OnClicked(_interactHand);
             if (sceneObject.NonAOS || sceneObject is BaseButton)
                 return;
-                _mousePosHolder.Position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-                MousePosClickEvent?.Invoke(_mousePosHolder);
+            _mousePosHolder.Position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            MousePosClickEvent?.Invoke(_mousePosHolder);
         }
-        else
+        else 
         {
             MousePosClickEvent?.Invoke(null);
             CanHover = true;
-        }    
+        }
+
     }
     private void CheckCollisionHover(RaycastHit hit)
     {

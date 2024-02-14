@@ -134,7 +134,7 @@ public class SceneObjectsHolder : MonoBehaviour
 
     private void OnHandleHoverMouse(bool active)
     {
-        //_mouseRayCastHandler.CanHover = !active;
+       _mouseRayCastHandler.CanHover = !active;
     }
     private void OnHideReactionWindow()
     {
