@@ -13,6 +13,7 @@ public class UIButtonColorChanger : BaseUIColorChanger
     private Color _disbaledImageColor = new Color(0, 0, 0, 0.3f);
     private Color _activeImageColor = new Color(0, 0, 0, 0.7f);
     private Color _enabledImageColor = new Color(0.3254902f, 0.7215686f, 0.5921569f, 0.7f);
+    private Color _hoveredImageColor = new Color(0.75f, 0.75f, 0.75f, 1f);
     private Color _activeIconColor = new Color(1, 1, 1, 1f);
     private Color _disbaledIconColor = new Color(1, 1, 1, 0.3f);
 
@@ -49,5 +50,13 @@ public class UIButtonColorChanger : BaseUIColorChanger
     {
         foreach (TextMeshProUGUI text in texts)
             text.color = newColor;
+    }
+    public override void HoveredState()
+    {
+        if (!CanChangeState)
+            return;
+        SetImageColor(_backgroundImages, _hoveredImageColor);
+        SetImageColor(_icons, _activeIconColor);
+        SettextColor(_texts, _activeIconColor);
     }
 }

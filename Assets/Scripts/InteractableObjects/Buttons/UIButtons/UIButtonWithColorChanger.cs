@@ -14,7 +14,7 @@ public class UIButtonWithColorChanger : BaseUIButton
 
     public override void OnPointerEnter(PointerEventData eventData)
     {
-        _baseUiColorChanger.EnabledState();
+        _baseUiColorChanger.HoveredState();
     }
     public override void OnPointerExit(PointerEventData eventData)
     {

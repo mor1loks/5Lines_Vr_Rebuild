@@ -64,7 +64,6 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void OnChangeReactionPositionEvent(VectorHolder holder)
     {
-
         if (holder == null)
         {
             _modeController.BaseReactionButtonsHandler.HideAllReactions();

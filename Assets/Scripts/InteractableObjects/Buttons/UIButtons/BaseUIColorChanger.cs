@@ -15,4 +15,7 @@ public abstract class BaseUIColorChanger : MonoBehaviour
     public virtual void EnabledState()
     {
     }
+    public virtual void HoveredState()
+    {
+    }
 }
