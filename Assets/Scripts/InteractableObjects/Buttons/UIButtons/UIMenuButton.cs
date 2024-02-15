@@ -14,7 +14,7 @@ public class UIMenuButton : BaseUIButton
 
     protected override void Click()
     {
-        _showScreen.SetActive(true);
+        if(_showScreen !=null) _showScreen.SetActive(true);
         _hideScreen.SetActive(false);
         ButtonClickedEvent?.Invoke();
     }
