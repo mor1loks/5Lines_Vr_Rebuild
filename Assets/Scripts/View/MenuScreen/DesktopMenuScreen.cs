@@ -6,8 +6,8 @@ public class DesktopMenuScreen : BaseMenuScreen
 {
     [SerializeField] private Text _infoHeaderText;
     [SerializeField] private Text _infoText;
-    [SerializeField] private TextMeshProUGUI _exitSureText;
-    [SerializeField] private TextMeshProUGUI _exitText;
+    [SerializeField] private Text _exitSureText;
+    [SerializeField] private Text _exitText;
     [SerializeField] private TextMeshProUGUI _warnText;
     [SerializeField] private TextMeshProUGUI _headerText;
     [SerializeField] private TextMeshProUGUI _evalText;
@@ -23,11 +23,11 @@ public class DesktopMenuScreen : BaseMenuScreen
     {
         _infoHeaderText.text = HtmlToText.Instance.HTMLToTextReplace(headText);
         _infoText.text = HtmlToText.Instance.HTMLToTextReplace(commentText);
-        _exitSureText.text = HtmlToText.Instance.HTMLToTextReplace(exitSureText);
+        _exitText.text = HtmlToText.Instance.HTMLToTextReplace(exitSureText);
     }
     public override void SetExitText(string exitText, string warnText)
     {
-        _exitText.text = HtmlToText.Instance.HTMLToTextReplace(exitText);
+        _exitSureText.text = HtmlToText.Instance.HTMLToTextReplace(exitText);
         _warnText.text = HtmlToText.Instance.HTMLToTextReplace(warnText);
     }
     public override void ShowMessageScreen(string headText, string commentText)
