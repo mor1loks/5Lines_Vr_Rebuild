@@ -1,14 +1,18 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class BaseStartScreenView : MonoBehaviour
 {
     [SerializeField] protected ModeController ModeController;
     [SerializeField] protected GameObject NextButtonGameObject;
+    [SerializeField] protected GameObject LoadImage;
+    [SerializeField] protected GameObject CatoLogoImage;
+    [SerializeField] protected GameObject LineImage;
     [Space]
     [SerializeField] protected TextMeshProUGUI HeaderText;
     [SerializeField] protected TextMeshProUGUI CommentText;
-    [SerializeField] protected TextMeshProUGUI NextButtonText;
+    [SerializeField] protected Text NextButtonText;
 
     protected INextButton NextButton;
     protected virtual void Awake()
@@ -23,7 +27,17 @@ public abstract class BaseStartScreenView : MonoBehaviour
     }
     public virtual void SetStartScreenText(string headerText, string commentText, string buttonText, NextButtonState state)
     {
+        if(state == NextButtonState.Start)
+        {
+            LoadImage.SetActive(false);
+            CatoLogoImage.SetActive(true);
+        }
+        else
+        {
+            CatoLogoImage.SetActive(false);
+        }
         NextButtonGameObject.SetActive(true);
+       
         HeaderText.text = headerText;
         CommentText.text = commentText;
         NextButtonText.text = buttonText;
@@ -33,11 +47,13 @@ public abstract class BaseStartScreenView : MonoBehaviour
     {
         if (text == "start")
         {
+            LineImage.SetActive(true);
             DisableStartScreen();
             ModeController.CurrentInteractScreen.EnableAllHelperObjects(true);
             ModeController.CurrentInteractScreen.EnableLocationObject(true);
             ModeController.CurrentInteractScreen.EnableTimerObject(true);
             ModeController.CurrentMenuController.CanTeleport = true;
+            
         }
     }
     protected abstract void DisableStartScreen();
