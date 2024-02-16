@@ -15,11 +15,14 @@ public class DesktopMenuScreen : BaseMenuScreen
     [SerializeField] private Text _commentMessageText;
     [SerializeField] private Text _footerMessageText;
     [SerializeField] private Text _warnText;   
+    [SerializeField] private Text _headResutText;   
+    [SerializeField] private Text _evalResultText;   
+    [SerializeField] private Text _commentResultText;   
     [Space]
     [SerializeField] private DesktopCanvasHolder _desktopCanvasHolder;  
     [SerializeField] private GameObject _menu;
-    [SerializeField] private GameObject _exitButton;
-    [SerializeField] private GameObject _backButton;
+    [SerializeField] private GameObject _hideBackButton;
+    [SerializeField] private GameObject _showBackButton;
     [SerializeField] private AlarmImageController _armImageController;
 
     public override void SetMenuText(string headText, string commentText, string exitSureText)
@@ -46,14 +49,18 @@ public class DesktopMenuScreen : BaseMenuScreen
         _desktopCanvasHolder.DisableAllCanvases();
         _desktopCanvasHolder.EnableCanvasByState(CanvasState.MainMenu);
         _desktopCanvasHolder.EnableCanvasByState(CanvasState.Last);
-        _backButton.SetActive(false);
-        _exitButton.SetActive(true);
-       // SetText(headText, commentText, evalText);
+        _showBackButton.SetActive(true);   
+        _hideBackButton.SetActive(false);
+        SetResultText(headText, commentText, evalText);
     }
    
-    private void SetText(string headText, string commentText, string evalText)
+    private void SetResultText(string headText, string commentText, string evalText)
     {
-       
+        _headResutText.text = headText;
+        _evalResultText.text = evalText;
+        _commentResultText.text = commentText;
+
+
     }
     private void SetMessageText(string headText, string commentText, string footerText, string alarmImg)
     {

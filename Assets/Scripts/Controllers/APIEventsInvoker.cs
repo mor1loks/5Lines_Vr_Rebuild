@@ -12,6 +12,7 @@ public class APIEventsInvoker : MonoBehaviour
     [SerializeField] private Diet _diet;
     [SerializeField] private ModeController _modeController;
     [SerializeField] private MeasureController _measureController;
+    [SerializeField] private InstantiateResultButton _instantiateResultButton;
 
     private void OnEnable()
     {
@@ -33,8 +34,13 @@ public class APIEventsInvoker : MonoBehaviour
         _api.ShowMenuTextEvent += OnSetMenuText;
         _api.SetStartTextEvent += OnSetStartText;
         _api.SetMeasureValueEvent += OnSetMeasureValue;
+        _api.ResultNameTextButtonSingleEvent += OnSetInstantiateSingleButtons;
+        _api.ResultNameTextButtonEvent += OnSetInstantiateButtons;
+
 
     }
+
+   
 
     private void OnDisable()
     {
@@ -56,7 +62,17 @@ public class APIEventsInvoker : MonoBehaviour
         _api.ShowMenuTextEvent -= OnSetMenuText;
         _api.SetStartTextEvent -= OnSetStartText;
         _api.SetMeasureValueEvent -= OnSetMeasureValue;
+        _api.ResultNameTextButtonSingleEvent -= OnSetInstantiateSingleButtons;
+        _api.ResultNameTextButtonEvent -= OnSetInstantiateButtons;
 
+    }
+    private void OnSetInstantiateButtons(string name, string penalty, string resultText)
+    {
+        _instantiateResultButton.InstantiateButtons(name, penalty, resultText);
+    }
+    private void OnSetInstantiateSingleButtons(string nameText, string penalty)
+    {
+        _instantiateResultButton.InstantiateSingleButtons(nameText, penalty);
     }
     private void OnDeactivateCollidersInStart()
     {
