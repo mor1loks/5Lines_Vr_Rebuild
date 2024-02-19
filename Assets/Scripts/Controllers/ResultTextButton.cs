@@ -13,14 +13,10 @@ public class ResultTextButton : MonoBehaviour
     [SerializeField] private Sprite _okImage;
     [SerializeField] private Sprite _notOkImage;
 
-
     public bool Open = false;
-
-
 
     public UnityAction ButtonClickEvent;
     private Button _button;
-
 
     private void Awake()
     {
@@ -46,7 +42,6 @@ public class ResultTextButton : MonoBehaviour
         {
             _penaltyImage.sprite = _notOkImage;
         }
-       
     }
     public void ShowImage()
     {

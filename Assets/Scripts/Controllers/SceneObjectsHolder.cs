@@ -6,7 +6,6 @@ public enum PlayerState
     Walk,
     Look
 }
-
 public class SceneObjectsHolder : MonoBehaviour
 {
     public static SceneObjectsHolder Instance;

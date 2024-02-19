@@ -12,9 +12,7 @@ public class OtkazAOSUIButton : BaseUIButton
     [SerializeField] private Sprite _selectedOk;
     [SerializeField] private Sprite _selectedNotOk;
 
-
     public bool Check = false;
-
     protected override void Click()
     {
         if (!Check)
@@ -32,7 +30,6 @@ public class OtkazAOSUIButton : BaseUIButton
             _answerButton.SetColor();
             _answerButton.SetId(_buttonId);
             _selectedImage.sprite = _selectedOk;
-
         }
 
         else
@@ -41,11 +38,7 @@ public class OtkazAOSUIButton : BaseUIButton
             _answerButton.SetColor();
             _selectedImage.sprite = _selectedNotOk;
             _placeUiButton.SetDotSprite(false);
-
-
         }
-
-
     }
 }
 
