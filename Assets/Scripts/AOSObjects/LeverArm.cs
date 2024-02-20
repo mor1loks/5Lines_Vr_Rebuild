@@ -7,7 +7,7 @@ public class LeverArm : AosObjectBase
     [SerializeField] private LeverarmDSP _leverarm;
 
     [AosAction(name: "Сминить положение рукоятки 0-лево 1 -право, все остальное  - середина")]
-    public void SetRotationSide(int direction)
+    public void SetRotationSide(string direction)
     {
         _leverarm.Rotate(direction);
     }
