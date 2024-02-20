@@ -26,9 +26,13 @@ public class AOSActionButtonsHolder : MonoBehaviour
     }
     public void SetCurrentMeasureButton(string name)
     {
-        var currentMeasure = SearchObject(_measureAOSButtons, name);
+       
+        var currentMeasure = SearchObject(_measureAOSButtons, name);     
         if (currentMeasure != null)
-            _currentMeasureButton = currentMeasure;
+        {
+            _currentMeasureButton = currentMeasure;       
+        }
+            
     }
     private SceneAosObject SearchObject(SceneAosObject[] sceneObjects, string name)
     {
