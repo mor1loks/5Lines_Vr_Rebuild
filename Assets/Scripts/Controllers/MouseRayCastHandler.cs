@@ -30,8 +30,6 @@ public class MouseRayCastHandler : MonoBehaviour
         }
         if (collisionObject.collider != null)
             CheckCollisionHover(collisionObject);
-        Debug.Log(CanInteract + "   INTERACT");
-        Debug.Log(CanHover + "   HOVER");
     }
     private RaycastHit CheckRaycastCollider()
     {
@@ -64,7 +62,6 @@ public class MouseRayCastHandler : MonoBehaviour
             MousePosClickEvent?.Invoke(null);
             CanHover = true;
         }
-
     }
     private void CheckCollisionHover(RaycastHit hit)
     {

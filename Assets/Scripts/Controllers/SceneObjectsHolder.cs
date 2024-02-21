@@ -180,7 +180,6 @@ public class SceneObjectsHolder : MonoBehaviour
         {
             _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Radio);
             _actionButtonsHolder.SetCurrentRadioButton(name);
-            _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Back);
         }
         else if (_stringParser.GetSearchingValue(name, scheme))
         {
@@ -256,6 +255,7 @@ public class SceneObjectsHolder : MonoBehaviour
     }
     private void OnChangeCanvasPerentCamera(Camera camera)
     {
+        _modeController.CurrentInteractScreen.EnableActivateActionObject(SceneActionState.Back);
         _canvasParentChanger.ChangeCameraParent(camera);
         _mouseRayCastHandler.CanHover = true;
         _mouseRayCastHandler.CanInteract = true;
