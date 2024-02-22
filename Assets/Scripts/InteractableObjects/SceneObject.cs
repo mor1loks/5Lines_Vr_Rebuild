@@ -10,7 +10,7 @@ public class SceneObject : BaseObject
     [SerializeField] private GameObject[] _highlights;
     public Action<string> HelperTextEvent;
     protected string HelperName;
-    private float _emissionValue = 0.5f;
+    private float _emissionValue = 0.1f;
     protected virtual void Start()
     {
         if (!NonAOS)
